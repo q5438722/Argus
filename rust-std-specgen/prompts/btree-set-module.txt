@@ -1,0 +1,39 @@
+Regenerate Rust 1.96 Verus/vstd specifications, implementation proofs, and completeness proofs for exactly one module: alloc::collections::btree_set.
+
+Scope and isolation
+- Work only on stable executable APIs publicly reachable through alloc::collections::btree_set in Rust 1.96, including stable public set iterators and range/set-operation adapters owned by this module.
+- Derive all counts and target ownership from authoritative Rust 1.96 source/rustdoc. Do not merge BTreeMap into this campaign.
+- Write all generated artifacts only under:
+  /home/chentianyu/nanvix-rust-std-spec-survey/nanvix-rust-std-btree-set-regeneration-20260901-v011-8798
+- Do not generate BTreeMap, Result, Cmp, VecDeque, HashSet, or unrelated artifacts.
+- Do not modify canonical Rust or vstd trees.
+- Treat prior broad/combined artifacts only as negative lessons and independently regenerate all evidence.
+
+Authoritative process and dependencies
+- Follow:
+  /home/chentianyu/.argus-skill/workspaces/s-8d9b336f/research/rust-std-lib-specgen-process.md
+- Reuse accepted sequence/container and trust methodology only when semantically identical. Record BTreeMap and core::cmp behavior as explicit narrow dependencies; do not treat either concurrently running campaign as already accepted.
+- Reference:
+  /home/chentianyu/nanvix-rust-std-spec-survey/nanvix-rust-std-slice-vec-implproof-2026-08-12/TRUST_BOUNDARY_AUDIT.md
+
+Mandatory delivery layout
+- Create top-level specs/ containing README.md, generated_btree_set_specs.rs, all_btree_set_specs.json, shared vocabulary, and existing_vstd/ references.
+- Create top-level proof_harnesses/ with exactly one child per selected API.
+- Colocate implementation_proof.rs and completeness_proof.rs with source, contract/equivalence, transformation, dependency, trust, mutation, and two-mode evidence records.
+- Missing or broken specs/ or proof_harnesses/ blocks final acceptance.
+
+Required gates
+1. Freeze Rust 1.96/vstd source, versions, commands, target ownership, and hashes.
+2. Inventory every stable executable BTreeSet-owned API, including iterators, ranges, set-operation adapters, entry APIs if stable, and trait implementations; detect re-export/blanket/default duplicates.
+3. Subtract exact-vstd coverage only after exact target and signature matching.
+4. Define one coherent ordered-set view and shared order, membership, subset/disjointness, range, iterator, and set-operation vocabulary.
+5. State principal behavior directly in ensures: membership, bool/Option returns, insertion/removal/replacement state, length, ordered iteration, union/intersection/difference/symmetric-difference observations, split/append effects, range domains, callbacks, and panic conditions. Do not wrap an entire target in one helper.
+6. Preserve the real BTreeSet-to-BTreeMap delegation path where Rust uses it. A convenient direct mathematical set implementation is not source-shaped proof unless the exact dependency call path is retained or separately proved and bound.
+7. Completeness compares two accepted-contract outcomes/post-states; exact observable equality is default. Any weaker equivalence requires target-specific source/doc justification and witnesses.
+8. Build source-shaped implementation proofs and colocated completeness proofs for every selected target.
+9. Run separate --no-verify and actual-Verus evidence, meaningful negative mutations, source/contract/hash audits, and reject stale or incomplete outcomes.
+10. Account target/completeness/helper/dependency/harness literal external_body and semantic boundaries, including order laws, BTreeMap delegation, iterator state, mutable references, allocation, and representation.
+11. Require canonical independent Reviewer gates for inventory/specification, proof/completeness, and final aggregate. Only producer_role=reviewer with review.status=done counts.
+12. Produce the mandatory top-level browsing interfaces and a reproducible final aggregate with no hidden pending rows.
+
+Do not stop at planning or a bounded gate. Complete alloc::collections::btree_set only, through canonical final aggregate acceptance.

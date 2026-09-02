@@ -1,0 +1,40 @@
+note: function body check: not all errors may have been reported; rerun with a higher value for --multiple-errors to find other potential errors in this function
+  --> proof_harnesses/001_rustdoc_26760_core_result_Result_T_E_as_core_iter_traits_accum_Sum_core_result_Result_U_E_sum/mutations/completeness_mutant.rs:68:1
+   |
+68 | pub proof fn completeness_theorem<T: Sum<U>, U, E, I: Iterator<Item = Result<U, E>>>(iter: I, left: Result<T, E>, right: Result<T, E>)
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: assertion failed
+  --> proof_harnesses/001_rustdoc_26760_core_result_Result_T_E_as_core_iter_traits_accum_Sum_core_result_Result_U_E_sum/mutations/completeness_mutant.rs:79:16
+   |
+79 |         assert(left_payloads =~= right_payloads);
+   |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ assertion failed
+
+error: postcondition not satisfied
+  --> proof_harnesses/001_rustdoc_26760_core_result_Result_T_E_as_core_iter_traits_accum_Sum_core_result_Result_U_E_sum/mutations/completeness_mutant.rs:74:9
+   |
+74 |           outcomes_equivalent(left, right),
+   |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ failed this postcondition
+75 |   {
+76 | /     if result_all_ok(into_iter_remaining::<Result<U, E>, I>(iter)) {
+77 | |         let left_payloads = choose|payloads: Seq<U>| result_ok_payloads_match(into_iter_remaining::<Result<U, E>, I>(iter), payloa...
+78 | |         let right_payloads = choose|payloads: Seq<U>| result_ok_payloads_match(into_iter_remaining::<Result<U, E>, I>(iter), paylo...
+79 | |         assert(left_payloads =~= right_payloads);
+...  |
+89 | |     }
+   | |_____- at the end of the function body
+
+note: recommendation not met: cannot prove that there exists values that satisfy the condition of the choose expression
+  --> proof_harnesses/001_rustdoc_26760_core_result_Result_T_E_as_core_iter_traits_accum_Sum_core_result_Result_U_E_sum/mutations/completeness_mutant.rs:77:54
+   |
+77 | ...>| result_ok_payloads_match(into_iter_remaining::<Result<U, E>, I>(iter), payloads) && left == Ok(result_sum_output::<U, T>(payloads));
+   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+note: recommendation not met: cannot prove that there exists values that satisfy the condition of the choose expression
+  --> proof_harnesses/001_rustdoc_26760_core_result_Result_T_E_as_core_iter_traits_accum_Sum_core_result_Result_U_E_sum/mutations/completeness_mutant.rs:78:55
+   |
+78 | ...>| result_ok_payloads_match(into_iter_remaining::<Result<U, E>, I>(iter), payloads) && right == Ok(result_sum_output::<U, T>(payloads));
+   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: aborting due to 2 previous errors
+

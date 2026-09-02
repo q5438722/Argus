@@ -1,0 +1,4269 @@
+{
+  "counts": {
+    "canonical_upstream": 116,
+    "exact_vstd": 124,
+    "frozen_dirty_or_untracked": 8
+  },
+  "module": "core::cmp",
+  "records": [
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-bool-eq",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/cmp.rs",
+            "declaration_begin_line": 250,
+            "declaration_end_line": 250,
+            "declaration_sha256": "7416adaa75245a1360d201b4fa3dbb00ad0bb01accd590464f9478678425e726",
+            "git_status_code": "",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [
+              "impl PartialEqSpecImpl for bool",
+              "open spec fn obeys_eq_spec() -> bool",
+              "open spec fn eq_spec(&self, other: &bool) -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &bool, y: &bool) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/cmp.rs",
+            "snapshot_sha256": "975a47ca5dc7fb3ad013fd55e894d6362752b080dd0024434f4368f7339a682c"
+          },
+          "semantic_adequacy": "binding_plus_partial_eq_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10794-10792",
+      "target": "<bool as PartialEq<bool>>::eq",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-bool-ne",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/cmp.rs",
+            "declaration_begin_line": 252,
+            "declaration_end_line": 252,
+            "declaration_sha256": "a371f5b2f956443cedbf6b5b032c5f0ac26e988ede29aa7d6fc2ddebf7da2055",
+            "git_status_code": "",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [
+              "impl PartialEqSpecImpl for bool",
+              "open spec fn obeys_eq_spec() -> bool",
+              "open spec fn eq_spec(&self, other: &bool) -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &bool, y: &bool) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/cmp.rs",
+            "snapshot_sha256": "975a47ca5dc7fb3ad013fd55e894d6362752b080dd0024434f4368f7339a682c"
+          },
+          "semantic_adequacy": "binding_plus_partial_eq_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10794-10793",
+      "target": "<bool as PartialEq<bool>>::ne",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-usize-eq",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 64,
+            "declaration_end_line": 64,
+            "declaration_sha256": "847c5059727a2862c2e576a9bb3a7fb9abd9cfcc1996814a790b5c963a8b32d6",
+            "git_status_code": "",
+            "macro_instantiation_line": 469,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialEqSpecImpl for $uN",
+              "open spec fn obeys_eq_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10800-10798",
+      "target": "<usize as PartialEq<usize>>::eq",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-usize-ne",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 66,
+            "declaration_end_line": 66,
+            "declaration_sha256": "09ea6e459ba1ea0cf69fb183389de92a210d4c8e6ed2729e8c93f31e0357feeb",
+            "git_status_code": "",
+            "macro_instantiation_line": 469,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialEqSpecImpl for $uN",
+              "open spec fn obeys_eq_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10800-10799",
+      "target": "<usize as PartialEq<usize>>::ne",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u8-eq",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 64,
+            "declaration_end_line": 64,
+            "declaration_sha256": "847c5059727a2862c2e576a9bb3a7fb9abd9cfcc1996814a790b5c963a8b32d6",
+            "git_status_code": "",
+            "macro_instantiation_line": 453,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialEqSpecImpl for $uN",
+              "open spec fn obeys_eq_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10803-10801",
+      "target": "<u8 as PartialEq<u8>>::eq",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u8-ne",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 66,
+            "declaration_end_line": 66,
+            "declaration_sha256": "09ea6e459ba1ea0cf69fb183389de92a210d4c8e6ed2729e8c93f31e0357feeb",
+            "git_status_code": "",
+            "macro_instantiation_line": 453,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialEqSpecImpl for $uN",
+              "open spec fn obeys_eq_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10803-10802",
+      "target": "<u8 as PartialEq<u8>>::ne",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u16-eq",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 64,
+            "declaration_end_line": 64,
+            "declaration_sha256": "847c5059727a2862c2e576a9bb3a7fb9abd9cfcc1996814a790b5c963a8b32d6",
+            "git_status_code": "",
+            "macro_instantiation_line": 454,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialEqSpecImpl for $uN",
+              "open spec fn obeys_eq_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10806-10804",
+      "target": "<u16 as PartialEq<u16>>::eq",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u16-ne",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 66,
+            "declaration_end_line": 66,
+            "declaration_sha256": "09ea6e459ba1ea0cf69fb183389de92a210d4c8e6ed2729e8c93f31e0357feeb",
+            "git_status_code": "",
+            "macro_instantiation_line": 454,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialEqSpecImpl for $uN",
+              "open spec fn obeys_eq_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10806-10805",
+      "target": "<u16 as PartialEq<u16>>::ne",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u32-eq",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 64,
+            "declaration_end_line": 64,
+            "declaration_sha256": "847c5059727a2862c2e576a9bb3a7fb9abd9cfcc1996814a790b5c963a8b32d6",
+            "git_status_code": "",
+            "macro_instantiation_line": 455,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialEqSpecImpl for $uN",
+              "open spec fn obeys_eq_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10809-10807",
+      "target": "<u32 as PartialEq<u32>>::eq",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u32-ne",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 66,
+            "declaration_end_line": 66,
+            "declaration_sha256": "09ea6e459ba1ea0cf69fb183389de92a210d4c8e6ed2729e8c93f31e0357feeb",
+            "git_status_code": "",
+            "macro_instantiation_line": 455,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialEqSpecImpl for $uN",
+              "open spec fn obeys_eq_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10809-10808",
+      "target": "<u32 as PartialEq<u32>>::ne",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u64-eq",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 64,
+            "declaration_end_line": 64,
+            "declaration_sha256": "847c5059727a2862c2e576a9bb3a7fb9abd9cfcc1996814a790b5c963a8b32d6",
+            "git_status_code": "",
+            "macro_instantiation_line": 456,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialEqSpecImpl for $uN",
+              "open spec fn obeys_eq_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10812-10810",
+      "target": "<u64 as PartialEq<u64>>::eq",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u64-ne",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 66,
+            "declaration_end_line": 66,
+            "declaration_sha256": "09ea6e459ba1ea0cf69fb183389de92a210d4c8e6ed2729e8c93f31e0357feeb",
+            "git_status_code": "",
+            "macro_instantiation_line": 456,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialEqSpecImpl for $uN",
+              "open spec fn obeys_eq_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10812-10811",
+      "target": "<u64 as PartialEq<u64>>::ne",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u128-eq",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 64,
+            "declaration_end_line": 64,
+            "declaration_sha256": "847c5059727a2862c2e576a9bb3a7fb9abd9cfcc1996814a790b5c963a8b32d6",
+            "git_status_code": "",
+            "macro_instantiation_line": 460,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialEqSpecImpl for $uN",
+              "open spec fn obeys_eq_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10815-10813",
+      "target": "<u128 as PartialEq<u128>>::eq",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u128-ne",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 66,
+            "declaration_end_line": 66,
+            "declaration_sha256": "09ea6e459ba1ea0cf69fb183389de92a210d4c8e6ed2729e8c93f31e0357feeb",
+            "git_status_code": "",
+            "macro_instantiation_line": 460,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialEqSpecImpl for $uN",
+              "open spec fn obeys_eq_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10815-10814",
+      "target": "<u128 as PartialEq<u128>>::ne",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-isize-eq",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 291,
+            "declaration_end_line": 291,
+            "declaration_sha256": "a97ff2528448312c5c90470ecfc486f3200a70b75225a6bc756b3bd01a7a0344",
+            "git_status_code": "",
+            "macro_instantiation_line": 470,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialEqSpecImpl for $iN",
+              "open spec fn obeys_eq_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10818-10816",
+      "target": "<isize as PartialEq<isize>>::eq",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-isize-ne",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 293,
+            "declaration_end_line": 293,
+            "declaration_sha256": "a766295caeb3de59ec246cb6d6af4b48058f74edd1379a2da951218d1088a95e",
+            "git_status_code": "",
+            "macro_instantiation_line": 470,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialEqSpecImpl for $iN",
+              "open spec fn obeys_eq_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10818-10817",
+      "target": "<isize as PartialEq<isize>>::ne",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i8-eq",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 291,
+            "declaration_end_line": 291,
+            "declaration_sha256": "a97ff2528448312c5c90470ecfc486f3200a70b75225a6bc756b3bd01a7a0344",
+            "git_status_code": "",
+            "macro_instantiation_line": 453,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialEqSpecImpl for $iN",
+              "open spec fn obeys_eq_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10821-10819",
+      "target": "<i8 as PartialEq<i8>>::eq",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i8-ne",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 293,
+            "declaration_end_line": 293,
+            "declaration_sha256": "a766295caeb3de59ec246cb6d6af4b48058f74edd1379a2da951218d1088a95e",
+            "git_status_code": "",
+            "macro_instantiation_line": 453,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialEqSpecImpl for $iN",
+              "open spec fn obeys_eq_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10821-10820",
+      "target": "<i8 as PartialEq<i8>>::ne",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i16-eq",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 291,
+            "declaration_end_line": 291,
+            "declaration_sha256": "a97ff2528448312c5c90470ecfc486f3200a70b75225a6bc756b3bd01a7a0344",
+            "git_status_code": "",
+            "macro_instantiation_line": 454,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialEqSpecImpl for $iN",
+              "open spec fn obeys_eq_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10824-10822",
+      "target": "<i16 as PartialEq<i16>>::eq",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i16-ne",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 293,
+            "declaration_end_line": 293,
+            "declaration_sha256": "a766295caeb3de59ec246cb6d6af4b48058f74edd1379a2da951218d1088a95e",
+            "git_status_code": "",
+            "macro_instantiation_line": 454,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialEqSpecImpl for $iN",
+              "open spec fn obeys_eq_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10824-10823",
+      "target": "<i16 as PartialEq<i16>>::ne",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i32-eq",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 291,
+            "declaration_end_line": 291,
+            "declaration_sha256": "a97ff2528448312c5c90470ecfc486f3200a70b75225a6bc756b3bd01a7a0344",
+            "git_status_code": "",
+            "macro_instantiation_line": 455,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialEqSpecImpl for $iN",
+              "open spec fn obeys_eq_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10827-10825",
+      "target": "<i32 as PartialEq<i32>>::eq",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i32-ne",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 293,
+            "declaration_end_line": 293,
+            "declaration_sha256": "a766295caeb3de59ec246cb6d6af4b48058f74edd1379a2da951218d1088a95e",
+            "git_status_code": "",
+            "macro_instantiation_line": 455,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialEqSpecImpl for $iN",
+              "open spec fn obeys_eq_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10827-10826",
+      "target": "<i32 as PartialEq<i32>>::ne",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i64-eq",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 291,
+            "declaration_end_line": 291,
+            "declaration_sha256": "a97ff2528448312c5c90470ecfc486f3200a70b75225a6bc756b3bd01a7a0344",
+            "git_status_code": "",
+            "macro_instantiation_line": 456,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialEqSpecImpl for $iN",
+              "open spec fn obeys_eq_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10830-10828",
+      "target": "<i64 as PartialEq<i64>>::eq",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i64-ne",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 293,
+            "declaration_end_line": 293,
+            "declaration_sha256": "a766295caeb3de59ec246cb6d6af4b48058f74edd1379a2da951218d1088a95e",
+            "git_status_code": "",
+            "macro_instantiation_line": 456,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialEqSpecImpl for $iN",
+              "open spec fn obeys_eq_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10830-10829",
+      "target": "<i64 as PartialEq<i64>>::ne",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i128-eq",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 291,
+            "declaration_end_line": 291,
+            "declaration_sha256": "a97ff2528448312c5c90470ecfc486f3200a70b75225a6bc756b3bd01a7a0344",
+            "git_status_code": "",
+            "macro_instantiation_line": 461,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialEqSpecImpl for $iN",
+              "open spec fn obeys_eq_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10833-10831",
+      "target": "<i128 as PartialEq<i128>>::eq",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i128-ne",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 293,
+            "declaration_end_line": 293,
+            "declaration_sha256": "a766295caeb3de59ec246cb6d6af4b48058f74edd1379a2da951218d1088a95e",
+            "git_status_code": "",
+            "macro_instantiation_line": 461,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialEqSpecImpl for $iN",
+              "open spec fn obeys_eq_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10833-10832",
+      "target": "<i128 as PartialEq<i128>>::ne",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-shared-reference-eq",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/cmp.rs",
+            "declaration_begin_line": 367,
+            "declaration_end_line": 373,
+            "declaration_sha256": "0a73394e750419176e7dd7fdf3f40761a615460d51b32be38cd07280910c3c06",
+            "git_status_code": "",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [
+              "PartialEqSpecImpl<&B> for &A",
+              "open spec fn obeys_eq_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "<'_0, 'a, A: PointeeSized, B: PointeeSized>",
+              "a: &&'a A",
+              "b: &&B",
+              "-> bool",
+              "where A: PartialEq<B>"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/cmp.rs",
+            "snapshot_sha256": "975a47ca5dc7fb3ad013fd55e894d6362752b080dd0024434f4368f7339a682c"
+          },
+          "semantic_adequacy": "exact_shared_reference_forwarding_contract",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10850-10848",
+      "target": "<&A as PartialEq<&B>>::eq",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-shared-reference-ne",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/cmp.rs",
+            "declaration_begin_line": 375,
+            "declaration_end_line": 381,
+            "declaration_sha256": "73923c20d4a901bb53aeeb6d3bda157bdf070e48cfa54ecbb92ca7ca195d13bc",
+            "git_status_code": "",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [
+              "PartialEqSpecImpl<&B> for &A",
+              "open spec fn obeys_eq_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "<'_0, 'a, A: PointeeSized, B: PointeeSized>",
+              "a: &&'a A",
+              "b: &&B",
+              "-> bool",
+              "where A: PartialEq<B>"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/cmp.rs",
+            "snapshot_sha256": "975a47ca5dc7fb3ad013fd55e894d6362752b080dd0024434f4368f7339a682c"
+          },
+          "semantic_adequacy": "exact_shared_reference_forwarding_contract",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10850-10849",
+      "target": "<&A as PartialEq<&B>>::ne",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-option-eq",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/option.rs",
+            "declaration_begin_line": 298,
+            "declaration_end_line": 302,
+            "declaration_sha256": "10adfa6a775dc47ff7030e953862e0d2b59999e9d6aa34b56ac4d5bcad2a0e21",
+            "git_status_code": "",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [
+              "PartialEqSpecImpl for Option<T>",
+              "open spec fn obeys_eq_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "<T: PartialEq>",
+              "x: &Option<T>",
+              "y: &Option<T>",
+              "-> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/option.rs",
+            "snapshot_sha256": "5e029b4ec250bd9c5643b039951b5c159d010474b0c7fc4fb09810c34e4a153b"
+          },
+          "semantic_adequacy": "exact_option_branch_contract",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-10997-10996",
+      "target": "<Option<T> as PartialEq<Option<T>>>::eq",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-ordering-is_eq",
+          "canonical_upstream_binding": false,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": false,
+            "candidate_source_untracked": true,
+            "checkout_path": "source/vstd/std_specs/ordering.rs",
+            "declaration_begin_line": 8,
+            "declaration_end_line": 11,
+            "declaration_sha256": "7ca2a8988c01ccde2b4b9075d4b434b35ebe5d0d87c3cdc1a8238c57c1892e99",
+            "git_status_code": "??",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [],
+            "required_declaration_fragments": [
+              "(ordering: Ordering)",
+              "-> (result: bool)",
+              "ensures"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/ordering.rs",
+            "snapshot_sha256": "4dc86f717c1bd143b3655639ac31d997abb9fd260e90177d81326ef36d10f7ae"
+          },
+          "semantic_adequacy": "direct_ordering_branch_contract",
+          "vstd_provenance_class": "frozen_dirty_or_untracked_current_vstd"
+        }
+      ],
+      "canonical_upstream_binding": false,
+      "row_id": "rustdoc-11181-11172",
+      "target": "Ordering::is_eq",
+      "vstd_provenance_class": "frozen_dirty_or_untracked_current_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-ordering-is_ne",
+          "canonical_upstream_binding": false,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": false,
+            "candidate_source_untracked": true,
+            "checkout_path": "source/vstd/std_specs/ordering.rs",
+            "declaration_begin_line": 13,
+            "declaration_end_line": 16,
+            "declaration_sha256": "164953f574d6c2395ffb07d3a063e1f79358b7e1c08fa13352c57c30453e5a97",
+            "git_status_code": "??",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [],
+            "required_declaration_fragments": [
+              "(ordering: Ordering)",
+              "-> (result: bool)",
+              "ensures"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/ordering.rs",
+            "snapshot_sha256": "4dc86f717c1bd143b3655639ac31d997abb9fd260e90177d81326ef36d10f7ae"
+          },
+          "semantic_adequacy": "direct_ordering_branch_contract",
+          "vstd_provenance_class": "frozen_dirty_or_untracked_current_vstd"
+        }
+      ],
+      "canonical_upstream_binding": false,
+      "row_id": "rustdoc-11181-11173",
+      "target": "Ordering::is_ne",
+      "vstd_provenance_class": "frozen_dirty_or_untracked_current_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-ordering-is_lt",
+          "canonical_upstream_binding": false,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": false,
+            "candidate_source_untracked": true,
+            "checkout_path": "source/vstd/std_specs/ordering.rs",
+            "declaration_begin_line": 18,
+            "declaration_end_line": 21,
+            "declaration_sha256": "ec2a473236ca06946bc07c9e7ee898a41d2de2d8a29ff6a53807b7836e3e2642",
+            "git_status_code": "??",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [],
+            "required_declaration_fragments": [
+              "(ordering: Ordering)",
+              "-> (result: bool)",
+              "ensures"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/ordering.rs",
+            "snapshot_sha256": "4dc86f717c1bd143b3655639ac31d997abb9fd260e90177d81326ef36d10f7ae"
+          },
+          "semantic_adequacy": "direct_ordering_branch_contract",
+          "vstd_provenance_class": "frozen_dirty_or_untracked_current_vstd"
+        }
+      ],
+      "canonical_upstream_binding": false,
+      "row_id": "rustdoc-11181-11174",
+      "target": "Ordering::is_lt",
+      "vstd_provenance_class": "frozen_dirty_or_untracked_current_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-ordering-is_gt",
+          "canonical_upstream_binding": false,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": false,
+            "candidate_source_untracked": true,
+            "checkout_path": "source/vstd/std_specs/ordering.rs",
+            "declaration_begin_line": 23,
+            "declaration_end_line": 26,
+            "declaration_sha256": "1423d7daffb59ca5ba073979cda8c32fa277ff2eee359d425c30a445c925f09d",
+            "git_status_code": "??",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [],
+            "required_declaration_fragments": [
+              "(ordering: Ordering)",
+              "-> (result: bool)",
+              "ensures"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/ordering.rs",
+            "snapshot_sha256": "4dc86f717c1bd143b3655639ac31d997abb9fd260e90177d81326ef36d10f7ae"
+          },
+          "semantic_adequacy": "direct_ordering_branch_contract",
+          "vstd_provenance_class": "frozen_dirty_or_untracked_current_vstd"
+        }
+      ],
+      "canonical_upstream_binding": false,
+      "row_id": "rustdoc-11181-11175",
+      "target": "Ordering::is_gt",
+      "vstd_provenance_class": "frozen_dirty_or_untracked_current_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-ordering-is_le",
+          "canonical_upstream_binding": false,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": false,
+            "candidate_source_untracked": true,
+            "checkout_path": "source/vstd/std_specs/ordering.rs",
+            "declaration_begin_line": 28,
+            "declaration_end_line": 31,
+            "declaration_sha256": "10b93f39db1270dae5541a54ff0fbfc6803b519bdcdbaf6eba075b122dba40a6",
+            "git_status_code": "??",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [],
+            "required_declaration_fragments": [
+              "(ordering: Ordering)",
+              "-> (result: bool)",
+              "ensures"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/ordering.rs",
+            "snapshot_sha256": "4dc86f717c1bd143b3655639ac31d997abb9fd260e90177d81326ef36d10f7ae"
+          },
+          "semantic_adequacy": "direct_ordering_branch_contract",
+          "vstd_provenance_class": "frozen_dirty_or_untracked_current_vstd"
+        }
+      ],
+      "canonical_upstream_binding": false,
+      "row_id": "rustdoc-11181-11176",
+      "target": "Ordering::is_le",
+      "vstd_provenance_class": "frozen_dirty_or_untracked_current_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-ordering-is_ge",
+          "canonical_upstream_binding": false,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": false,
+            "candidate_source_untracked": true,
+            "checkout_path": "source/vstd/std_specs/ordering.rs",
+            "declaration_begin_line": 33,
+            "declaration_end_line": 36,
+            "declaration_sha256": "dad5c5b74732904238186d380c7d4acc9baf77c707f9cbdfa980846aca6d2125",
+            "git_status_code": "??",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [],
+            "required_declaration_fragments": [
+              "(ordering: Ordering)",
+              "-> (result: bool)",
+              "ensures"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/ordering.rs",
+            "snapshot_sha256": "4dc86f717c1bd143b3655639ac31d997abb9fd260e90177d81326ef36d10f7ae"
+          },
+          "semantic_adequacy": "direct_ordering_branch_contract",
+          "vstd_provenance_class": "frozen_dirty_or_untracked_current_vstd"
+        }
+      ],
+      "canonical_upstream_binding": false,
+      "row_id": "rustdoc-11181-11177",
+      "target": "Ordering::is_ge",
+      "vstd_provenance_class": "frozen_dirty_or_untracked_current_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-ordering-reverse",
+          "canonical_upstream_binding": false,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": false,
+            "candidate_source_untracked": true,
+            "checkout_path": "source/vstd/std_specs/ordering.rs",
+            "declaration_begin_line": 38,
+            "declaration_end_line": 45,
+            "declaration_sha256": "8fd6682c2b80363075d141d14d32c0d979335158dba672be8dec0b944b4e3ff4",
+            "git_status_code": "??",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [],
+            "required_declaration_fragments": [
+              "(ordering: Ordering)",
+              "-> (result: Ordering)",
+              "ensures"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/ordering.rs",
+            "snapshot_sha256": "4dc86f717c1bd143b3655639ac31d997abb9fd260e90177d81326ef36d10f7ae"
+          },
+          "semantic_adequacy": "direct_ordering_branch_contract",
+          "vstd_provenance_class": "frozen_dirty_or_untracked_current_vstd"
+        }
+      ],
+      "canonical_upstream_binding": false,
+      "row_id": "rustdoc-11181-11178",
+      "target": "Ordering::reverse",
+      "vstd_provenance_class": "frozen_dirty_or_untracked_current_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-ordering-then",
+          "canonical_upstream_binding": false,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": false,
+            "candidate_source_untracked": true,
+            "checkout_path": "source/vstd/std_specs/ordering.rs",
+            "declaration_begin_line": 47,
+            "declaration_end_line": 55,
+            "declaration_sha256": "cd62c7f4608a63bef1696834aa546f7a539b141a482c45a35fe4fc81a19b5ed5",
+            "git_status_code": "??",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [],
+            "required_declaration_fragments": [
+              "(ordering: Ordering, other: Ordering)",
+              "-> (result: Ordering)",
+              "ensures"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/ordering.rs",
+            "snapshot_sha256": "4dc86f717c1bd143b3655639ac31d997abb9fd260e90177d81326ef36d10f7ae"
+          },
+          "semantic_adequacy": "direct_ordering_branch_contract",
+          "vstd_provenance_class": "frozen_dirty_or_untracked_current_vstd"
+        }
+      ],
+      "canonical_upstream_binding": false,
+      "row_id": "rustdoc-11181-11179",
+      "target": "Ordering::then",
+      "vstd_provenance_class": "frozen_dirty_or_untracked_current_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-usize-cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 68,
+            "declaration_end_line": 68,
+            "declaration_sha256": "4c580c744f41710cd679176630eb85da364b63acca0423a4c19158b7f0051192",
+            "git_status_code": "",
+            "macro_instantiation_line": 469,
+            "required_context_fragments": [
+              "impl super::super::cmp::OrdSpecImpl for $uN",
+              "open spec fn obeys_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> Ordering"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11260-11258",
+      "target": "<usize as Ord>::cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u8-cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 68,
+            "declaration_end_line": 68,
+            "declaration_sha256": "4c580c744f41710cd679176630eb85da364b63acca0423a4c19158b7f0051192",
+            "git_status_code": "",
+            "macro_instantiation_line": 453,
+            "required_context_fragments": [
+              "impl super::super::cmp::OrdSpecImpl for $uN",
+              "open spec fn obeys_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> Ordering"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11263-11261",
+      "target": "<u8 as Ord>::cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u16-cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 68,
+            "declaration_end_line": 68,
+            "declaration_sha256": "4c580c744f41710cd679176630eb85da364b63acca0423a4c19158b7f0051192",
+            "git_status_code": "",
+            "macro_instantiation_line": 454,
+            "required_context_fragments": [
+              "impl super::super::cmp::OrdSpecImpl for $uN",
+              "open spec fn obeys_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> Ordering"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11266-11264",
+      "target": "<u16 as Ord>::cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u32-cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 68,
+            "declaration_end_line": 68,
+            "declaration_sha256": "4c580c744f41710cd679176630eb85da364b63acca0423a4c19158b7f0051192",
+            "git_status_code": "",
+            "macro_instantiation_line": 455,
+            "required_context_fragments": [
+              "impl super::super::cmp::OrdSpecImpl for $uN",
+              "open spec fn obeys_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> Ordering"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11269-11267",
+      "target": "<u32 as Ord>::cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u64-cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 68,
+            "declaration_end_line": 68,
+            "declaration_sha256": "4c580c744f41710cd679176630eb85da364b63acca0423a4c19158b7f0051192",
+            "git_status_code": "",
+            "macro_instantiation_line": 456,
+            "required_context_fragments": [
+              "impl super::super::cmp::OrdSpecImpl for $uN",
+              "open spec fn obeys_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> Ordering"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11272-11270",
+      "target": "<u64 as Ord>::cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u128-cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 68,
+            "declaration_end_line": 68,
+            "declaration_sha256": "4c580c744f41710cd679176630eb85da364b63acca0423a4c19158b7f0051192",
+            "git_status_code": "",
+            "macro_instantiation_line": 460,
+            "required_context_fragments": [
+              "impl super::super::cmp::OrdSpecImpl for $uN",
+              "open spec fn obeys_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> Ordering"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11275-11273",
+      "target": "<u128 as Ord>::cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-isize-cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 295,
+            "declaration_end_line": 295,
+            "declaration_sha256": "bb7c714b111b84e91fcf851607bee720a1b74e69ccc8087369255ced893ab373",
+            "git_status_code": "",
+            "macro_instantiation_line": 470,
+            "required_context_fragments": [
+              "impl super::super::cmp::OrdSpecImpl for $iN",
+              "open spec fn obeys_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> Ordering"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11278-11276",
+      "target": "<isize as Ord>::cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i8-cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 295,
+            "declaration_end_line": 295,
+            "declaration_sha256": "bb7c714b111b84e91fcf851607bee720a1b74e69ccc8087369255ced893ab373",
+            "git_status_code": "",
+            "macro_instantiation_line": 453,
+            "required_context_fragments": [
+              "impl super::super::cmp::OrdSpecImpl for $iN",
+              "open spec fn obeys_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> Ordering"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11281-11279",
+      "target": "<i8 as Ord>::cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i16-cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 295,
+            "declaration_end_line": 295,
+            "declaration_sha256": "bb7c714b111b84e91fcf851607bee720a1b74e69ccc8087369255ced893ab373",
+            "git_status_code": "",
+            "macro_instantiation_line": 454,
+            "required_context_fragments": [
+              "impl super::super::cmp::OrdSpecImpl for $iN",
+              "open spec fn obeys_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> Ordering"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11284-11282",
+      "target": "<i16 as Ord>::cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i32-cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 295,
+            "declaration_end_line": 295,
+            "declaration_sha256": "bb7c714b111b84e91fcf851607bee720a1b74e69ccc8087369255ced893ab373",
+            "git_status_code": "",
+            "macro_instantiation_line": 455,
+            "required_context_fragments": [
+              "impl super::super::cmp::OrdSpecImpl for $iN",
+              "open spec fn obeys_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> Ordering"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11287-11285",
+      "target": "<i32 as Ord>::cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i64-cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 295,
+            "declaration_end_line": 295,
+            "declaration_sha256": "bb7c714b111b84e91fcf851607bee720a1b74e69ccc8087369255ced893ab373",
+            "git_status_code": "",
+            "macro_instantiation_line": 456,
+            "required_context_fragments": [
+              "impl super::super::cmp::OrdSpecImpl for $iN",
+              "open spec fn obeys_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> Ordering"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11290-11288",
+      "target": "<i64 as Ord>::cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i128-cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 295,
+            "declaration_end_line": 295,
+            "declaration_sha256": "bb7c714b111b84e91fcf851607bee720a1b74e69ccc8087369255ced893ab373",
+            "git_status_code": "",
+            "macro_instantiation_line": 461,
+            "required_context_fragments": [
+              "impl super::super::cmp::OrdSpecImpl for $iN",
+              "open spec fn obeys_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> Ordering"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11293-11291",
+      "target": "<i128 as Ord>::cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-shared-reference-cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/cmp.rs",
+            "declaration_begin_line": 446,
+            "declaration_end_line": 450,
+            "declaration_sha256": "dd95d7ebee8d8e2746e65c460addc97294ea36670a791ef12fad3833d78454ca",
+            "git_status_code": "",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [
+              "impl<A: PointeeSized + Ord> OrdSpecImpl for &A",
+              "open spec fn obeys_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "<'a, A: PointeeSized + Ord>",
+              "a: &&'a A",
+              "b: &&'a A",
+              "-> core::cmp::Ordering"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/cmp.rs",
+            "snapshot_sha256": "975a47ca5dc7fb3ad013fd55e894d6362752b080dd0024434f4368f7339a682c"
+          },
+          "semantic_adequacy": "exact_shared_reference_forwarding_contract",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11297-11296",
+      "target": "<&A as Ord>::cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-option-cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/option.rs",
+            "declaration_begin_line": 341,
+            "declaration_end_line": 345,
+            "declaration_sha256": "35840f24fd1d24430c5776f15c832c23a6b7e0ab184474898e76dfa41c6a4cfb",
+            "git_status_code": "",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [
+              "OrdSpecImpl for Option<T>",
+              "open spec fn obeys_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "<T: Ord>",
+              "x: &Option<T>",
+              "y: &Option<T>",
+              "-> core::cmp::Ordering"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/option.rs",
+            "snapshot_sha256": "5e029b4ec250bd9c5643b039951b5c159d010474b0c7fc4fb09810c34e4a153b"
+          },
+          "semantic_adequacy": "exact_option_branch_contract",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11351-11350",
+      "target": "<Option<T> as Ord>::cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-usize-partial_cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 70,
+            "declaration_end_line": 70,
+            "declaration_sha256": "eb2ae3477a44c08d583c85725f4d6790f22985d805c89d11859a81b1997ebfd0",
+            "git_status_code": "",
+            "macro_instantiation_line": 469,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> Option<Ordering>"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11438-11433",
+      "target": "<usize as PartialOrd<usize>>::partial_cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-usize-lt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 72,
+            "declaration_end_line": 72,
+            "declaration_sha256": "54e35cf3eb79986b29ffdd4aaeb6e8c53457b116069053708404c0706d12e90e",
+            "git_status_code": "",
+            "macro_instantiation_line": 469,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11438-11434",
+      "target": "<usize as PartialOrd<usize>>::lt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-usize-le",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 74,
+            "declaration_end_line": 74,
+            "declaration_sha256": "f752dea3423865aebb88de6dfd261366c388c18effffeb7c416ae4fea9349296",
+            "git_status_code": "",
+            "macro_instantiation_line": 469,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11438-11435",
+      "target": "<usize as PartialOrd<usize>>::le",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-usize-gt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 76,
+            "declaration_end_line": 76,
+            "declaration_sha256": "0a51d1676635cb1fe2d06cc6c898e4ebd23706729696e5c68cdb01525867303c",
+            "git_status_code": "",
+            "macro_instantiation_line": 469,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11438-11436",
+      "target": "<usize as PartialOrd<usize>>::gt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-usize-ge",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 78,
+            "declaration_end_line": 78,
+            "declaration_sha256": "9a3e680481c5e337cbcc398738f9ccd609bab150414d8ddfa50f08c334fcdd46",
+            "git_status_code": "",
+            "macro_instantiation_line": 469,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11438-11437",
+      "target": "<usize as PartialOrd<usize>>::ge",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u8-partial_cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 70,
+            "declaration_end_line": 70,
+            "declaration_sha256": "eb2ae3477a44c08d583c85725f4d6790f22985d805c89d11859a81b1997ebfd0",
+            "git_status_code": "",
+            "macro_instantiation_line": 453,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> Option<Ordering>"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11444-11439",
+      "target": "<u8 as PartialOrd<u8>>::partial_cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u8-lt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 72,
+            "declaration_end_line": 72,
+            "declaration_sha256": "54e35cf3eb79986b29ffdd4aaeb6e8c53457b116069053708404c0706d12e90e",
+            "git_status_code": "",
+            "macro_instantiation_line": 453,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11444-11440",
+      "target": "<u8 as PartialOrd<u8>>::lt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u8-le",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 74,
+            "declaration_end_line": 74,
+            "declaration_sha256": "f752dea3423865aebb88de6dfd261366c388c18effffeb7c416ae4fea9349296",
+            "git_status_code": "",
+            "macro_instantiation_line": 453,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11444-11441",
+      "target": "<u8 as PartialOrd<u8>>::le",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u8-gt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 76,
+            "declaration_end_line": 76,
+            "declaration_sha256": "0a51d1676635cb1fe2d06cc6c898e4ebd23706729696e5c68cdb01525867303c",
+            "git_status_code": "",
+            "macro_instantiation_line": 453,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11444-11442",
+      "target": "<u8 as PartialOrd<u8>>::gt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u8-ge",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 78,
+            "declaration_end_line": 78,
+            "declaration_sha256": "9a3e680481c5e337cbcc398738f9ccd609bab150414d8ddfa50f08c334fcdd46",
+            "git_status_code": "",
+            "macro_instantiation_line": 453,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11444-11443",
+      "target": "<u8 as PartialOrd<u8>>::ge",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u16-partial_cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 70,
+            "declaration_end_line": 70,
+            "declaration_sha256": "eb2ae3477a44c08d583c85725f4d6790f22985d805c89d11859a81b1997ebfd0",
+            "git_status_code": "",
+            "macro_instantiation_line": 454,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> Option<Ordering>"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11450-11445",
+      "target": "<u16 as PartialOrd<u16>>::partial_cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u16-lt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 72,
+            "declaration_end_line": 72,
+            "declaration_sha256": "54e35cf3eb79986b29ffdd4aaeb6e8c53457b116069053708404c0706d12e90e",
+            "git_status_code": "",
+            "macro_instantiation_line": 454,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11450-11446",
+      "target": "<u16 as PartialOrd<u16>>::lt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u16-le",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 74,
+            "declaration_end_line": 74,
+            "declaration_sha256": "f752dea3423865aebb88de6dfd261366c388c18effffeb7c416ae4fea9349296",
+            "git_status_code": "",
+            "macro_instantiation_line": 454,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11450-11447",
+      "target": "<u16 as PartialOrd<u16>>::le",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u16-gt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 76,
+            "declaration_end_line": 76,
+            "declaration_sha256": "0a51d1676635cb1fe2d06cc6c898e4ebd23706729696e5c68cdb01525867303c",
+            "git_status_code": "",
+            "macro_instantiation_line": 454,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11450-11448",
+      "target": "<u16 as PartialOrd<u16>>::gt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u16-ge",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 78,
+            "declaration_end_line": 78,
+            "declaration_sha256": "9a3e680481c5e337cbcc398738f9ccd609bab150414d8ddfa50f08c334fcdd46",
+            "git_status_code": "",
+            "macro_instantiation_line": 454,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11450-11449",
+      "target": "<u16 as PartialOrd<u16>>::ge",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u32-partial_cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 70,
+            "declaration_end_line": 70,
+            "declaration_sha256": "eb2ae3477a44c08d583c85725f4d6790f22985d805c89d11859a81b1997ebfd0",
+            "git_status_code": "",
+            "macro_instantiation_line": 455,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> Option<Ordering>"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11456-11451",
+      "target": "<u32 as PartialOrd<u32>>::partial_cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u32-lt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 72,
+            "declaration_end_line": 72,
+            "declaration_sha256": "54e35cf3eb79986b29ffdd4aaeb6e8c53457b116069053708404c0706d12e90e",
+            "git_status_code": "",
+            "macro_instantiation_line": 455,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11456-11452",
+      "target": "<u32 as PartialOrd<u32>>::lt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u32-le",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 74,
+            "declaration_end_line": 74,
+            "declaration_sha256": "f752dea3423865aebb88de6dfd261366c388c18effffeb7c416ae4fea9349296",
+            "git_status_code": "",
+            "macro_instantiation_line": 455,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11456-11453",
+      "target": "<u32 as PartialOrd<u32>>::le",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u32-gt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 76,
+            "declaration_end_line": 76,
+            "declaration_sha256": "0a51d1676635cb1fe2d06cc6c898e4ebd23706729696e5c68cdb01525867303c",
+            "git_status_code": "",
+            "macro_instantiation_line": 455,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11456-11454",
+      "target": "<u32 as PartialOrd<u32>>::gt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u32-ge",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 78,
+            "declaration_end_line": 78,
+            "declaration_sha256": "9a3e680481c5e337cbcc398738f9ccd609bab150414d8ddfa50f08c334fcdd46",
+            "git_status_code": "",
+            "macro_instantiation_line": 455,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11456-11455",
+      "target": "<u32 as PartialOrd<u32>>::ge",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u64-partial_cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 70,
+            "declaration_end_line": 70,
+            "declaration_sha256": "eb2ae3477a44c08d583c85725f4d6790f22985d805c89d11859a81b1997ebfd0",
+            "git_status_code": "",
+            "macro_instantiation_line": 456,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> Option<Ordering>"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11462-11457",
+      "target": "<u64 as PartialOrd<u64>>::partial_cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u64-lt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 72,
+            "declaration_end_line": 72,
+            "declaration_sha256": "54e35cf3eb79986b29ffdd4aaeb6e8c53457b116069053708404c0706d12e90e",
+            "git_status_code": "",
+            "macro_instantiation_line": 456,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11462-11458",
+      "target": "<u64 as PartialOrd<u64>>::lt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u64-le",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 74,
+            "declaration_end_line": 74,
+            "declaration_sha256": "f752dea3423865aebb88de6dfd261366c388c18effffeb7c416ae4fea9349296",
+            "git_status_code": "",
+            "macro_instantiation_line": 456,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11462-11459",
+      "target": "<u64 as PartialOrd<u64>>::le",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u64-gt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 76,
+            "declaration_end_line": 76,
+            "declaration_sha256": "0a51d1676635cb1fe2d06cc6c898e4ebd23706729696e5c68cdb01525867303c",
+            "git_status_code": "",
+            "macro_instantiation_line": 456,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11462-11460",
+      "target": "<u64 as PartialOrd<u64>>::gt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u64-ge",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 78,
+            "declaration_end_line": 78,
+            "declaration_sha256": "9a3e680481c5e337cbcc398738f9ccd609bab150414d8ddfa50f08c334fcdd46",
+            "git_status_code": "",
+            "macro_instantiation_line": 456,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11462-11461",
+      "target": "<u64 as PartialOrd<u64>>::ge",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u128-partial_cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 70,
+            "declaration_end_line": 70,
+            "declaration_sha256": "eb2ae3477a44c08d583c85725f4d6790f22985d805c89d11859a81b1997ebfd0",
+            "git_status_code": "",
+            "macro_instantiation_line": 460,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> Option<Ordering>"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11468-11463",
+      "target": "<u128 as PartialOrd<u128>>::partial_cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u128-lt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 72,
+            "declaration_end_line": 72,
+            "declaration_sha256": "54e35cf3eb79986b29ffdd4aaeb6e8c53457b116069053708404c0706d12e90e",
+            "git_status_code": "",
+            "macro_instantiation_line": 460,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11468-11464",
+      "target": "<u128 as PartialOrd<u128>>::lt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u128-le",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 74,
+            "declaration_end_line": 74,
+            "declaration_sha256": "f752dea3423865aebb88de6dfd261366c388c18effffeb7c416ae4fea9349296",
+            "git_status_code": "",
+            "macro_instantiation_line": 460,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11468-11465",
+      "target": "<u128 as PartialOrd<u128>>::le",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u128-gt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 76,
+            "declaration_end_line": 76,
+            "declaration_sha256": "0a51d1676635cb1fe2d06cc6c898e4ebd23706729696e5c68cdb01525867303c",
+            "git_status_code": "",
+            "macro_instantiation_line": 460,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11468-11466",
+      "target": "<u128 as PartialOrd<u128>>::gt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-u128-ge",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 78,
+            "declaration_end_line": 78,
+            "declaration_sha256": "9a3e680481c5e337cbcc398738f9ccd609bab150414d8ddfa50f08c334fcdd46",
+            "git_status_code": "",
+            "macro_instantiation_line": 460,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $uN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$uN, y: &$uN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11468-11467",
+      "target": "<u128 as PartialOrd<u128>>::ge",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-isize-partial_cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 297,
+            "declaration_end_line": 297,
+            "declaration_sha256": "fbfd78e942a12221ee0a4230d7b9baee77d660e2619a46d260ed316cf92c1e67",
+            "git_status_code": "",
+            "macro_instantiation_line": 470,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> Option<Ordering>"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11474-11469",
+      "target": "<isize as PartialOrd<isize>>::partial_cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-isize-lt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 299,
+            "declaration_end_line": 299,
+            "declaration_sha256": "90d4ed1784c7c25e8750a7764a2c3268a2f5681c19560a880bff7ff4684dcdc6",
+            "git_status_code": "",
+            "macro_instantiation_line": 470,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11474-11470",
+      "target": "<isize as PartialOrd<isize>>::lt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-isize-le",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 301,
+            "declaration_end_line": 301,
+            "declaration_sha256": "5035932bfcdc96ae03616f305114e9b4b7f7a03bd0295a2f779a90a8d052aa06",
+            "git_status_code": "",
+            "macro_instantiation_line": 470,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11474-11471",
+      "target": "<isize as PartialOrd<isize>>::le",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-isize-gt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 303,
+            "declaration_end_line": 303,
+            "declaration_sha256": "cb92a5f7687ff853f6c62497a049e396a8c6f49eb6ff85d176897b954a097f25",
+            "git_status_code": "",
+            "macro_instantiation_line": 470,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11474-11472",
+      "target": "<isize as PartialOrd<isize>>::gt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-isize-ge",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 305,
+            "declaration_end_line": 305,
+            "declaration_sha256": "6ed462a3b6f0131dc81a043ab02cedaa5021e835500cde5b0d7770aa80c6df11",
+            "git_status_code": "",
+            "macro_instantiation_line": 470,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11474-11473",
+      "target": "<isize as PartialOrd<isize>>::ge",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i8-partial_cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 297,
+            "declaration_end_line": 297,
+            "declaration_sha256": "fbfd78e942a12221ee0a4230d7b9baee77d660e2619a46d260ed316cf92c1e67",
+            "git_status_code": "",
+            "macro_instantiation_line": 453,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> Option<Ordering>"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11480-11475",
+      "target": "<i8 as PartialOrd<i8>>::partial_cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i8-lt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 299,
+            "declaration_end_line": 299,
+            "declaration_sha256": "90d4ed1784c7c25e8750a7764a2c3268a2f5681c19560a880bff7ff4684dcdc6",
+            "git_status_code": "",
+            "macro_instantiation_line": 453,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11480-11476",
+      "target": "<i8 as PartialOrd<i8>>::lt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i8-le",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 301,
+            "declaration_end_line": 301,
+            "declaration_sha256": "5035932bfcdc96ae03616f305114e9b4b7f7a03bd0295a2f779a90a8d052aa06",
+            "git_status_code": "",
+            "macro_instantiation_line": 453,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11480-11477",
+      "target": "<i8 as PartialOrd<i8>>::le",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i8-gt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 303,
+            "declaration_end_line": 303,
+            "declaration_sha256": "cb92a5f7687ff853f6c62497a049e396a8c6f49eb6ff85d176897b954a097f25",
+            "git_status_code": "",
+            "macro_instantiation_line": 453,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11480-11478",
+      "target": "<i8 as PartialOrd<i8>>::gt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i8-ge",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 305,
+            "declaration_end_line": 305,
+            "declaration_sha256": "6ed462a3b6f0131dc81a043ab02cedaa5021e835500cde5b0d7770aa80c6df11",
+            "git_status_code": "",
+            "macro_instantiation_line": 453,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11480-11479",
+      "target": "<i8 as PartialOrd<i8>>::ge",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i16-partial_cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 297,
+            "declaration_end_line": 297,
+            "declaration_sha256": "fbfd78e942a12221ee0a4230d7b9baee77d660e2619a46d260ed316cf92c1e67",
+            "git_status_code": "",
+            "macro_instantiation_line": 454,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> Option<Ordering>"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11486-11481",
+      "target": "<i16 as PartialOrd<i16>>::partial_cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i16-lt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 299,
+            "declaration_end_line": 299,
+            "declaration_sha256": "90d4ed1784c7c25e8750a7764a2c3268a2f5681c19560a880bff7ff4684dcdc6",
+            "git_status_code": "",
+            "macro_instantiation_line": 454,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11486-11482",
+      "target": "<i16 as PartialOrd<i16>>::lt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i16-le",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 301,
+            "declaration_end_line": 301,
+            "declaration_sha256": "5035932bfcdc96ae03616f305114e9b4b7f7a03bd0295a2f779a90a8d052aa06",
+            "git_status_code": "",
+            "macro_instantiation_line": 454,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11486-11483",
+      "target": "<i16 as PartialOrd<i16>>::le",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i16-gt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 303,
+            "declaration_end_line": 303,
+            "declaration_sha256": "cb92a5f7687ff853f6c62497a049e396a8c6f49eb6ff85d176897b954a097f25",
+            "git_status_code": "",
+            "macro_instantiation_line": 454,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11486-11484",
+      "target": "<i16 as PartialOrd<i16>>::gt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i16-ge",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 305,
+            "declaration_end_line": 305,
+            "declaration_sha256": "6ed462a3b6f0131dc81a043ab02cedaa5021e835500cde5b0d7770aa80c6df11",
+            "git_status_code": "",
+            "macro_instantiation_line": 454,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11486-11485",
+      "target": "<i16 as PartialOrd<i16>>::ge",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i32-partial_cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 297,
+            "declaration_end_line": 297,
+            "declaration_sha256": "fbfd78e942a12221ee0a4230d7b9baee77d660e2619a46d260ed316cf92c1e67",
+            "git_status_code": "",
+            "macro_instantiation_line": 455,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> Option<Ordering>"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11492-11487",
+      "target": "<i32 as PartialOrd<i32>>::partial_cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i32-lt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 299,
+            "declaration_end_line": 299,
+            "declaration_sha256": "90d4ed1784c7c25e8750a7764a2c3268a2f5681c19560a880bff7ff4684dcdc6",
+            "git_status_code": "",
+            "macro_instantiation_line": 455,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11492-11488",
+      "target": "<i32 as PartialOrd<i32>>::lt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i32-le",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 301,
+            "declaration_end_line": 301,
+            "declaration_sha256": "5035932bfcdc96ae03616f305114e9b4b7f7a03bd0295a2f779a90a8d052aa06",
+            "git_status_code": "",
+            "macro_instantiation_line": 455,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11492-11489",
+      "target": "<i32 as PartialOrd<i32>>::le",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i32-gt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 303,
+            "declaration_end_line": 303,
+            "declaration_sha256": "cb92a5f7687ff853f6c62497a049e396a8c6f49eb6ff85d176897b954a097f25",
+            "git_status_code": "",
+            "macro_instantiation_line": 455,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11492-11490",
+      "target": "<i32 as PartialOrd<i32>>::gt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i32-ge",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 305,
+            "declaration_end_line": 305,
+            "declaration_sha256": "6ed462a3b6f0131dc81a043ab02cedaa5021e835500cde5b0d7770aa80c6df11",
+            "git_status_code": "",
+            "macro_instantiation_line": 455,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11492-11491",
+      "target": "<i32 as PartialOrd<i32>>::ge",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i64-partial_cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 297,
+            "declaration_end_line": 297,
+            "declaration_sha256": "fbfd78e942a12221ee0a4230d7b9baee77d660e2619a46d260ed316cf92c1e67",
+            "git_status_code": "",
+            "macro_instantiation_line": 456,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> Option<Ordering>"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11498-11493",
+      "target": "<i64 as PartialOrd<i64>>::partial_cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i64-lt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 299,
+            "declaration_end_line": 299,
+            "declaration_sha256": "90d4ed1784c7c25e8750a7764a2c3268a2f5681c19560a880bff7ff4684dcdc6",
+            "git_status_code": "",
+            "macro_instantiation_line": 456,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11498-11494",
+      "target": "<i64 as PartialOrd<i64>>::lt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i64-le",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 301,
+            "declaration_end_line": 301,
+            "declaration_sha256": "5035932bfcdc96ae03616f305114e9b4b7f7a03bd0295a2f779a90a8d052aa06",
+            "git_status_code": "",
+            "macro_instantiation_line": 456,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11498-11495",
+      "target": "<i64 as PartialOrd<i64>>::le",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i64-gt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 303,
+            "declaration_end_line": 303,
+            "declaration_sha256": "cb92a5f7687ff853f6c62497a049e396a8c6f49eb6ff85d176897b954a097f25",
+            "git_status_code": "",
+            "macro_instantiation_line": 456,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11498-11496",
+      "target": "<i64 as PartialOrd<i64>>::gt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i64-ge",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 305,
+            "declaration_end_line": 305,
+            "declaration_sha256": "6ed462a3b6f0131dc81a043ab02cedaa5021e835500cde5b0d7770aa80c6df11",
+            "git_status_code": "",
+            "macro_instantiation_line": 456,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11498-11497",
+      "target": "<i64 as PartialOrd<i64>>::ge",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i128-partial_cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 297,
+            "declaration_end_line": 297,
+            "declaration_sha256": "fbfd78e942a12221ee0a4230d7b9baee77d660e2619a46d260ed316cf92c1e67",
+            "git_status_code": "",
+            "macro_instantiation_line": 461,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> Option<Ordering>"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11504-11499",
+      "target": "<i128 as PartialOrd<i128>>::partial_cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i128-lt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 299,
+            "declaration_end_line": 299,
+            "declaration_sha256": "90d4ed1784c7c25e8750a7764a2c3268a2f5681c19560a880bff7ff4684dcdc6",
+            "git_status_code": "",
+            "macro_instantiation_line": 461,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11504-11500",
+      "target": "<i128 as PartialOrd<i128>>::lt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i128-le",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 301,
+            "declaration_end_line": 301,
+            "declaration_sha256": "5035932bfcdc96ae03616f305114e9b4b7f7a03bd0295a2f779a90a8d052aa06",
+            "git_status_code": "",
+            "macro_instantiation_line": 461,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11504-11501",
+      "target": "<i128 as PartialOrd<i128>>::le",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i128-gt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 303,
+            "declaration_end_line": 303,
+            "declaration_sha256": "cb92a5f7687ff853f6c62497a049e396a8c6f49eb6ff85d176897b954a097f25",
+            "git_status_code": "",
+            "macro_instantiation_line": 461,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11504-11502",
+      "target": "<i128 as PartialOrd<i128>>::gt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-i128-ge",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/num.rs",
+            "declaration_begin_line": 305,
+            "declaration_end_line": 305,
+            "declaration_sha256": "6ed462a3b6f0131dc81a043ab02cedaa5021e835500cde5b0d7770aa80c6df11",
+            "git_status_code": "",
+            "macro_instantiation_line": 461,
+            "required_context_fragments": [
+              "impl super::super::cmp::PartialOrdSpecImpl for $iN",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "(x: &$iN, y: &$iN) -> bool"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/num.rs",
+            "snapshot_sha256": "0529e7787146e163b06d94c43e688124efd9d81980ecb05b805c002a3b8a4042"
+          },
+          "semantic_adequacy": "binding_plus_integer_spec_impl_dependency",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11504-11503",
+      "target": "<i128 as PartialOrd<i128>>::ge",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-shared-reference-partial_cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/cmp.rs",
+            "declaration_begin_line": 396,
+            "declaration_end_line": 402,
+            "declaration_sha256": "d4fdfe8ea545e8aec95d78fc843d8b20df606182439f849c90c77ce0c478fa4b",
+            "git_status_code": "",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [
+              "PartialOrdSpecImpl<&B> for &A",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "<'_0, 'a, A: PointeeSized, B: PointeeSized>",
+              "a: &&'a A",
+              "b: &&B",
+              "-> Option<core::cmp::Ordering>",
+              "where A: PartialOrd<B>"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/cmp.rs",
+            "snapshot_sha256": "975a47ca5dc7fb3ad013fd55e894d6362752b080dd0024434f4368f7339a682c"
+          },
+          "semantic_adequacy": "exact_shared_reference_forwarding_contract",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11512-11507",
+      "target": "<&A as PartialOrd<&B>>::partial_cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-shared-reference-lt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/cmp.rs",
+            "declaration_begin_line": 404,
+            "declaration_end_line": 410,
+            "declaration_sha256": "971e75e273dd9dc22d712bf040f7f8a08714816f0f793a463b2fbae996fa43b2",
+            "git_status_code": "",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [
+              "PartialOrdSpecImpl<&B> for &A",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "<'_0, 'a, A: PointeeSized, B: PointeeSized>",
+              "a: &&'a A",
+              "b: &&B",
+              "-> bool",
+              "where A: PartialOrd<B>"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/cmp.rs",
+            "snapshot_sha256": "975a47ca5dc7fb3ad013fd55e894d6362752b080dd0024434f4368f7339a682c"
+          },
+          "semantic_adequacy": "exact_shared_reference_forwarding_contract",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11512-11508",
+      "target": "<&A as PartialOrd<&B>>::lt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-shared-reference-le",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/cmp.rs",
+            "declaration_begin_line": 412,
+            "declaration_end_line": 418,
+            "declaration_sha256": "7632d8fbf142f841aa53ad79238670234cec5fb0c39dfcb533ee59c7d24c5cb8",
+            "git_status_code": "",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [
+              "PartialOrdSpecImpl<&B> for &A",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "<'_0, 'a, A: PointeeSized, B: PointeeSized>",
+              "a: &&'a A",
+              "b: &&B",
+              "-> bool",
+              "where A: PartialOrd<B>"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/cmp.rs",
+            "snapshot_sha256": "975a47ca5dc7fb3ad013fd55e894d6362752b080dd0024434f4368f7339a682c"
+          },
+          "semantic_adequacy": "exact_shared_reference_forwarding_contract",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11512-11509",
+      "target": "<&A as PartialOrd<&B>>::le",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-shared-reference-gt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/cmp.rs",
+            "declaration_begin_line": 420,
+            "declaration_end_line": 426,
+            "declaration_sha256": "135cf36d90c6611e8ad63e926572a8f405c9711e11cfe15862e84a59fb3bb07b",
+            "git_status_code": "",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [
+              "PartialOrdSpecImpl<&B> for &A",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "<'_0, 'a, A: PointeeSized, B: PointeeSized>",
+              "a: &&'a A",
+              "b: &&B",
+              "-> bool",
+              "where A: PartialOrd<B>"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/cmp.rs",
+            "snapshot_sha256": "975a47ca5dc7fb3ad013fd55e894d6362752b080dd0024434f4368f7339a682c"
+          },
+          "semantic_adequacy": "exact_shared_reference_forwarding_contract",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11512-11510",
+      "target": "<&A as PartialOrd<&B>>::gt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-shared-reference-ge",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/cmp.rs",
+            "declaration_begin_line": 428,
+            "declaration_end_line": 434,
+            "declaration_sha256": "f9a6bce9f7c2687adc46ab31fc86761dbb13c67d6155031880ee80c74315d487",
+            "git_status_code": "",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [
+              "PartialOrdSpecImpl<&B> for &A",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "<'_0, 'a, A: PointeeSized, B: PointeeSized>",
+              "a: &&'a A",
+              "b: &&B",
+              "-> bool",
+              "where A: PartialOrd<B>"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/cmp.rs",
+            "snapshot_sha256": "975a47ca5dc7fb3ad013fd55e894d6362752b080dd0024434f4368f7339a682c"
+          },
+          "semantic_adequacy": "exact_shared_reference_forwarding_contract",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11512-11511",
+      "target": "<&A as PartialOrd<&B>>::ge",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-option-partial_cmp",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/option.rs",
+            "declaration_begin_line": 320,
+            "declaration_end_line": 324,
+            "declaration_sha256": "a51c05499bf5e83bb5ab5f636d8c771222c7fd658bf5a22b3e0d5a758aecb5a3",
+            "git_status_code": "",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [
+              "PartialOrdSpecImpl for Option<T>",
+              "open spec fn obeys_partial_cmp_spec() -> bool"
+            ],
+            "required_declaration_fragments": [
+              "<T: PartialOrd>",
+              "x: &Option<T>",
+              "y: &Option<T>",
+              "-> Option<core::cmp::Ordering>"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/option.rs",
+            "snapshot_sha256": "5e029b4ec250bd9c5643b039951b5c159d010474b0c7fc4fb09810c34e4a153b"
+          },
+          "semantic_adequacy": "exact_option_branch_contract",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "rustdoc-11590-11589",
+      "target": "<Option<T> as PartialOrd<Option<T>>>::partial_cmp",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-trait-default-ord-max",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/cmp.rs",
+            "declaration_begin_line": 127,
+            "declaration_end_line": 141,
+            "declaration_sha256": "ceb859fa418c5cd12b81674b1a2518c87190a52127dbc762148a3867ef102a0c",
+            "git_status_code": "",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [
+              "pub trait ExOrd: Eq + PartialOrd + PointeeSized",
+              "type ExternalTraitSpecificationFor: Ord"
+            ],
+            "required_declaration_fragments": [
+              "fn max(self, other: Self) -> (r: Self)",
+              "default_ensures"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/cmp.rs",
+            "snapshot_sha256": "975a47ca5dc7fb3ad013fd55e894d6362752b080dd0024434f4368f7339a682c"
+          },
+          "semantic_adequacy": "external_trait_default_ensures_matches_source_body",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "trait-default-50-11239",
+      "target": "Ord::max",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-trait-default-ord-min",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/cmp.rs",
+            "declaration_begin_line": 143,
+            "declaration_end_line": 157,
+            "declaration_sha256": "6296ad4f00c256359c07d373d1094355065a161152359886d8b62b70dcc29a19",
+            "git_status_code": "",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [
+              "pub trait ExOrd: Eq + PartialOrd + PointeeSized",
+              "type ExternalTraitSpecificationFor: Ord"
+            ],
+            "required_declaration_fragments": [
+              "fn min(self, other: Self) -> (r: Self)",
+              "default_ensures"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/cmp.rs",
+            "snapshot_sha256": "975a47ca5dc7fb3ad013fd55e894d6362752b080dd0024434f4368f7339a682c"
+          },
+          "semantic_adequacy": "external_trait_default_ensures_matches_source_body",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "trait-default-50-11240",
+      "target": "Ord::min",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-trait-default-partialeq-ne",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/cmp.rs",
+            "declaration_begin_line": 23,
+            "declaration_end_line": 27,
+            "declaration_sha256": "c49a7b13b0bdaafa493c07251ba214d65fc35d844bfc5b5c8f37397fa983c886",
+            "git_status_code": "",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [
+              "pub trait ExPartialEq<Rhs: PointeeSized = Self>: PointeeSized",
+              "type ExternalTraitSpecificationFor: PartialEq<Rhs>"
+            ],
+            "required_declaration_fragments": [
+              "fn ne(&self, other: &Rhs) -> (r: bool)",
+              "default_ensures"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/cmp.rs",
+            "snapshot_sha256": "975a47ca5dc7fb3ad013fd55e894d6362752b080dd0024434f4368f7339a682c"
+          },
+          "semantic_adequacy": "external_trait_default_ensures_matches_source_body",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "trait-default-54-10778",
+      "target": "PartialEq::ne",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-trait-default-partialord-lt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/cmp.rs",
+            "declaration_begin_line": 53,
+            "declaration_end_line": 63,
+            "declaration_sha256": "7b2bd82570e7f92f3dfd4b8fb295e114c4462d67c0be4e5f5c3cdfd60643e48d",
+            "git_status_code": "",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [
+              "pub trait ExPartialOrd<Rhs: PointeeSized = Self>: PartialEq<Rhs> + PointeeSized",
+              "type ExternalTraitSpecificationFor: PartialOrd<Rhs>"
+            ],
+            "required_declaration_fragments": [
+              "fn lt(&self, other: &Rhs) -> (r: bool)",
+              "default_ensures"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/cmp.rs",
+            "snapshot_sha256": "975a47ca5dc7fb3ad013fd55e894d6362752b080dd0024434f4368f7339a682c"
+          },
+          "semantic_adequacy": "external_trait_default_ensures_matches_source_body",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "trait-default-58-11377",
+      "target": "PartialOrd::lt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-trait-default-partialord-le",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/cmp.rs",
+            "declaration_begin_line": 65,
+            "declaration_end_line": 81,
+            "declaration_sha256": "229db186a93bd39da37805bd3f2c378d974af02d04322de797bbed17ea975ffe",
+            "git_status_code": "",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [
+              "pub trait ExPartialOrd<Rhs: PointeeSized = Self>: PartialEq<Rhs> + PointeeSized",
+              "type ExternalTraitSpecificationFor: PartialOrd<Rhs>"
+            ],
+            "required_declaration_fragments": [
+              "fn le(&self, other: &Rhs) -> (r: bool)",
+              "default_ensures"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/cmp.rs",
+            "snapshot_sha256": "975a47ca5dc7fb3ad013fd55e894d6362752b080dd0024434f4368f7339a682c"
+          },
+          "semantic_adequacy": "external_trait_default_ensures_matches_source_body",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "trait-default-58-11378",
+      "target": "PartialOrd::le",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-trait-default-partialord-gt",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/cmp.rs",
+            "declaration_begin_line": 83,
+            "declaration_end_line": 93,
+            "declaration_sha256": "ee98a003c3fb9bb786f4b68cf297ccd3b60ea140ee6bdbe03b39351e5537399c",
+            "git_status_code": "",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [
+              "pub trait ExPartialOrd<Rhs: PointeeSized = Self>: PartialEq<Rhs> + PointeeSized",
+              "type ExternalTraitSpecificationFor: PartialOrd<Rhs>"
+            ],
+            "required_declaration_fragments": [
+              "fn gt(&self, other: &Rhs) -> (r: bool)",
+              "default_ensures"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/cmp.rs",
+            "snapshot_sha256": "975a47ca5dc7fb3ad013fd55e894d6362752b080dd0024434f4368f7339a682c"
+          },
+          "semantic_adequacy": "external_trait_default_ensures_matches_source_body",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "trait-default-58-11379",
+      "target": "PartialOrd::gt",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    },
+    {
+      "bindings": [
+        {
+          "candidate_id": "vstd-trait-default-partialord-ge",
+          "canonical_upstream_binding": true,
+          "current_snapshot_loaded": true,
+          "evidence": {
+            "candidate_source_tracked_clean_at_head": true,
+            "candidate_source_untracked": false,
+            "checkout_path": "source/vstd/std_specs/cmp.rs",
+            "declaration_begin_line": 95,
+            "declaration_end_line": 111,
+            "declaration_sha256": "81537ffd9db622fc77cf765acf67ee63cb7568318b52273e4f7e21d7eff749d2",
+            "git_status_code": "",
+            "macro_instantiation_line": null,
+            "required_context_fragments": [
+              "pub trait ExPartialOrd<Rhs: PointeeSized = Self>: PartialEq<Rhs> + PointeeSized",
+              "type ExternalTraitSpecificationFor: PartialOrd<Rhs>"
+            ],
+            "required_declaration_fragments": [
+              "fn ge(&self, other: &Rhs) -> (r: bool)",
+              "default_ensures"
+            ],
+            "snapshot_path": "provenance/snapshots/verus/source/vstd/std_specs/cmp.rs",
+            "snapshot_sha256": "975a47ca5dc7fb3ad013fd55e894d6362752b080dd0024434f4368f7339a682c"
+          },
+          "semantic_adequacy": "external_trait_default_ensures_matches_source_body",
+          "vstd_provenance_class": "tracked_clean_vstd"
+        }
+      ],
+      "canonical_upstream_binding": true,
+      "row_id": "trait-default-58-11380",
+      "target": "PartialOrd::ge",
+      "vstd_provenance_class": "tracked_clean_vstd"
+    }
+  ],
+  "rule": "These are references to frozen vstd bindings, not regenerated contracts. canonical_upstream_binding=false is current dirty or untracked checkout coverage and is never reported as upstream.",
+  "schema_version": 1
+}

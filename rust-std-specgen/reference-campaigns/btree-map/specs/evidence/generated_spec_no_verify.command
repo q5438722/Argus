@@ -1,0 +1,1 @@
+/home/chentianyu/nanvix-rust-std-spec-survey/verus/source/target-verus/release/verus --crate-type=lib --triggers-mode silent --no-verify /home/chentianyu/nanvix-rust-std-spec-survey/nanvix-rust-std-btree-map-regeneration-20260901-v011-8798/specs/generated_btree_map_specs.rs

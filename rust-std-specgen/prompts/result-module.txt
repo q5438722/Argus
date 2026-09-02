@@ -1,0 +1,40 @@
+Regenerate Rust 1.96 Verus/vstd specifications, implementation proofs, and completeness proofs for exactly one module: core::result.
+
+Scope and isolation
+- Work only on stable executable APIs publicly reachable through core::result in Rust 1.96.
+- Derive the live inventory from authoritative Rust 1.96 source/rustdoc. Do not hard-code the historical count; explicitly reconcile any difference from the older 37-row campaign.
+- Write all generated artifacts only under:
+  /home/chentianyu/nanvix-rust-std-spec-survey/nanvix-rust-std-result-regeneration-20260901-v011-8798
+- Do not generate Convert, Cmp, BTreeMap, BTreeSet, or any other module's campaign artifacts.
+- Do not modify canonical Rust or vstd source trees.
+- Treat /home/chentianyu/nanvix-rust-std-spec-survey/nanvix-rust-std-next-six-modules-2026-08-25 only as a record of prior attempts and pitfalls. Do not copy its contracts, proofs, counts, verification outcomes, or acceptance claims.
+
+Authoritative process and accepted methodology
+- Follow:
+  /home/chentianyu/.argus-skill/workspaces/s-8d9b336f/research/rust-std-lib-specgen-process.md
+- Reuse only reviewed methodology and compatible semantic vocabulary from the completed Slice, Vec, Array, Option, and String campaigns. Do not infer core::result correctness from another module.
+- Use the trust-accounting methodology in:
+  /home/chentianyu/nanvix-rust-std-spec-survey/nanvix-rust-std-slice-vec-implproof-2026-08-12/TRUST_BOUNDARY_AUDIT.md
+
+Mandatory delivery layout
+- The output root must contain a top-level specs/ directory for the complete module specification view.
+- specs/ must contain README.md, generated_result_specs.rs, all_result_specs.json, shared vocabulary where used, and existing_vstd/ references.
+- The output root must contain a top-level proof_harnesses/ directory with exactly one child per selected API.
+- Every proof_harnesses/<target>/ must colocate implementation_proof.rs and completeness_proof.rs with source excerpt, contract/equivalence binding, transformation, dependency, trust-boundary, and evidence records.
+- Missing or broken specs/ or proof_harnesses/ blocks final acceptance.
+
+Required gates
+1. Pin Rust 1.96, vstd/Verus, Verus binary, Z3, commands, environment, and hashes.
+2. Build a complete stable executable inventory including inherent methods, trait implementations, iterator/helper APIs, unsafe APIs, and relevant blanket implementations. Exclude experimental/nightly and non-executable declarations explicitly.
+3. Subtract only exact-vstd contracts after checking target, receiver, lifetimes, parameters, return type, generics, bounds, and mutability.
+4. Generate meaningful source-backed contracts for every remaining target. Principal branch, Ok/Err payload, mutation, post-state, callback, panic, ownership, residual, and short-circuit semantics must appear directly in requires/ensures as applicable. Do not encode a whole target as ensures helper(args, result, post). Helpers are limited to shared mathematical views, trace elements, private-state projections, and narrow dependency laws.
+5. Typecheck generated contracts with Verus and run anti-vacuity, direct-ensures, source-fidelity, signature, provenance, and negative-mutation audits.
+6. Define completeness relative to accepted contracts: two outputs/post-states satisfying the contract must be exactly equal by default or related by a narrowly justified, source-backed target equivalence. Generic dependency under-specification is not target nondeterminism.
+7. Construct source-shaped implementation proofs from exact Rust 1.96 bodies. Preserve Result branching, residual/error forwarding, callback order, mutation, early return, panic/unsafe domains, and dependency call paths. Do not prove a convenient replacement implementation.
+8. Run separate Verus --no-verify and actual-Verus commands per implementation and completeness harness. Unknown, timeout, unsupported, stale evidence, or --no-verify is not proof success.
+9. Add meaningful target-specific mutations to implementation and completeness obligations.
+10. Account separately for target-level, completeness-level, helper/model, generic-dependency, and whole-harness literal external_body, plus semantic boundaries without literal external_body. Do not claim foundational trust freedom unless all foundations are discharged.
+11. Require canonical independent Reviewer gates for inventory/specification, implementation/completeness, and final aggregate. Acceptance requires producer_role=reviewer and review.status=done in canonical Argus handoffs. Engineer self-attestation and local review JSON are not acceptance.
+12. Produce a reproducible final aggregate with inventory-derived counts, commands, actual-Verus results, completeness classifications, mutation results, trust counts, unresolved rows, hashes, and canonical Reviewer links.
+
+Do not stop after planning, inventory, specification generation, typechecking, or a bounded Reviewer gate. Continue through source-shaped implementation proofs, colocated completeness proofs, mutations, trust audits, and canonical final aggregate acceptance for core::result only.

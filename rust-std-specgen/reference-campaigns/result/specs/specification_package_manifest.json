@@ -1,0 +1,176 @@
+{
+  "artifacts": [
+    {
+      "path": "inventory/core_result_exec_fn_inventory.json",
+      "sha256": "b658a75975d1971e375f7423229a05fee5a7e9ae8e715ee4697efa9e3a2223cf"
+    },
+    {
+      "path": "inventory/core_result_exclusions.json",
+      "sha256": "564d19da7da5d47884664bc9fa9b167e9eef1ddaae6a9246774a0e707ff178f1"
+    },
+    {
+      "path": "inventory/coverage_summary.json",
+      "sha256": "46042cd732b6fec22964941314835fefb2ac01ff4786fb6c2b812042fa7ca8e4"
+    },
+    {
+      "path": "inventory/exact_vstd_audit.json",
+      "sha256": "03526864a2fd6b9e1f4a82ca329475fd28548727f249472d71a22ed151356f7a"
+    },
+    {
+      "path": "provenance/result_derive_expansion.json",
+      "sha256": "23e8727940e66f5816097f27edcc94c90c5ad1fedbc5497e0183b02c823c18b0"
+    },
+    {
+      "path": "provenance/result_derive_expansion.rs",
+      "sha256": "ca7865062a0909d2e09e42b600bbd4ba69a61a9a875374a99fc99c6709952f36"
+    },
+    {
+      "path": "provenance/vstd_dependency_closure.json",
+      "sha256": "c23279ca7c99dc2800017dac34c60b4f76188ce88c84baf6be15d63627262a45"
+    },
+    {
+      "path": "provenance/vstd_dependency_closure_independent_audit.json",
+      "sha256": "1c1bc670e48680b8ef025af7ba8e0c12d5e152c1964e6521aa2e742835becb3e"
+    },
+    {
+      "path": "provenance/vstd_contracts.json",
+      "sha256": "02dfd9d7f7c733375c4dd28420193aafcbbf8457e55949d695273fa66afda17f"
+    },
+    {
+      "path": "specgen/result_feedback_relation_capability.json",
+      "sha256": "2d9c3085d8791256c628813b1ed7c5582f57449bf928ea804b061379e99c6882"
+    },
+    {
+      "path": "specgen/result_seed_candidates.json",
+      "sha256": "d45a5cef14cbe150fbe18e6ae69437a283f8aaad3390cb5f25ae8729dc79a371"
+    },
+    {
+      "path": "specgen/result_stable_manifest.json",
+      "sha256": "4880ce17ba6034b57ab721a1bb3234ce91c5f462a8e35436cb9c9a0a9f5e83ed"
+    },
+    {
+      "path": "specs/README.md",
+      "sha256": "5136763ba95d35234d06f7c018e47f7b8b2114d6ae33936f3db434f9a6b4d1a4"
+    },
+    {
+      "path": "specs/all_result_specs.json",
+      "sha256": "eaa95817923b0de1f3f7823a8a0bafb76c40f2ca8a36482a026ffba5e6b21b78"
+    },
+    {
+      "path": "specs/existing_vstd/README.md",
+      "sha256": "5d7ae619083c211226e4a9070f64bb52546a85b91948952ee90faee174c37a8e"
+    },
+    {
+      "path": "specs/existing_vstd/exact_result_references.json",
+      "sha256": "652592fd51960a7cbdb81ff05660466e7af3182f086b2126fb7f209cc7217200"
+    },
+    {
+      "path": "specs/generated_result_specs.rs",
+      "sha256": "d543751041a29992472b9767926edf155638e9e5078a8d1217ef39fbedc1aab7"
+    },
+    {
+      "path": "specs/result_helper_usage.json",
+      "sha256": "d9c8e6b13deed380801d92d63dfefdb5c15e9fda3a86357c524114bc09c15e33"
+    },
+    {
+      "path": "specs/result_outcome_equivalence.json",
+      "sha256": "9a56c2c7ff20c265d66812bb821f165ed8d3f21351fd8ecfd1e457dd6ba9fe4a"
+    },
+    {
+      "path": "specs/result_shared_vocabulary.rs",
+      "sha256": "1d34ce6c72f630bad19b28c7cfcf69d533e7006b052adae154980ae6fbcfbfd0"
+    },
+    {
+      "path": "tests/test_specification_package.py",
+      "sha256": "3be87f6a2210a830208be97a634f4b533a18819e045d90452f4c3f9793069442"
+    },
+    {
+      "path": "tools/audit_specification.py",
+      "sha256": "542b23e81e7de3e45d4d404373494c9e77c0f2106647f51f8aa7aaadc56d0198"
+    },
+    {
+      "path": "tools/build_specification_package.py",
+      "sha256": "c8841e03dfe4d6e206215fc9449a51066d7830a66594170c0a491306ff2dec2f"
+    },
+    {
+      "path": "tools/check_specification_gate.py",
+      "sha256": "3f6c7b8b217e61812d1af23f5c26a78aa6fa6b2a5916c32827713ce8ad707122"
+    },
+    {
+      "path": "tools/prepare_specification_review.py",
+      "sha256": "17134bb21b42bb54526be078e168c275a533434a04188e17e8583b1a6be7d74a"
+    },
+    {
+      "path": "tools/run_feedback_with_equivalence.py",
+      "sha256": "ff5f562b5ee498dd25e389a5ff31ee5a1a9c13abcf7a077a444cbee9a0221865"
+    },
+    {
+      "path": "tools/run_spec_negative_mutations.py",
+      "sha256": "e24088392ad3b78bbb016dcefa38110fe7352b420b96d413970e07e2e341971f"
+    },
+    {
+      "path": "tools/run_supervised_feedback.py",
+      "sha256": "7c0b4b1494e7e381455d0b558372467946f7d356a6d7099aa6ccc876c1a66250"
+    },
+    {
+      "path": "tools/run_verus_typecheck.py",
+      "sha256": "b301b099173c4268e204e1042500e655f9b0791f3830a98d492e159981f55af5"
+    },
+    {
+      "path": "tools/specification_support.py",
+      "sha256": "ee06a9c06a7f3355cec2e4de726343f7afeaea4b1dc699d79aafc8aa57b5a47e"
+    },
+    {
+      "path": "tools/audit_from_iter_projection.py",
+      "sha256": "91c6800c1877081db06e35eb1d18edb41337683f06eacf2b52ba2d0865e0fd23"
+    },
+    {
+      "path": "tools/run_from_iter_projection_probe.py",
+      "sha256": "009782bbfafa5ecb2e8a7bbe254d1c34aceb97c113f6d8a31e74ec799957b411"
+    },
+    {
+      "path": "verification/audits/negative_mutation.json",
+      "sha256": "93819920a0fd7f584b7df4027584b8213b60d224799c7f4570bd1eb22efc9d3f"
+    },
+    {
+      "path": "verification/feedback_determinism/final/batch_summary.json",
+      "sha256": "4a697b6760b71dd2c6a2f95debbee1083bdd9d04996a34dad17f488c862a2a95"
+    },
+    {
+      "path": "verification/feedback_determinism/final/run_binding.json",
+      "sha256": "60259ff81d34fec4e8e24c7a2cd05b94ff4eab978ea3a9bf27de4844eb0a6b57"
+    },
+    {
+      "path": "verification/feedback_determinism/from_iter_projection_adjudication.json",
+      "sha256": "872faced1f26dc47f62ef76859a50bc4ab0edb896ad749e0fdab0b1462fc5f4f"
+    },
+    {
+      "path": "verification/feedback_determinism/from_iter_projection_probe/result.json",
+      "sha256": "d2a750e4508c0171aa40ead7a2a631c3333f892064f20ebea3e86ab1d78111b4"
+    },
+    {
+      "path": "verification/feedback_probes/from_iter_projection_determinism.rs",
+      "sha256": "0dfb48abfe62a20ecf672291fcf5ccd29d1227c45a785afcaacdabf61dec045b"
+    },
+    {
+      "path": "verification/verus_typecheck.json",
+      "sha256": "ad75cf0c25dc74293c99fe64ab5bd204a2ea37963816eb1cc328d2ecdcc0e177"
+    },
+    {
+      "path": "verification/verus_typecheck.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/verus_typecheck.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "counts": {
+    "exact_vstd": 10,
+    "generated": 54,
+    "specified": 64
+  },
+  "module": "core::result",
+  "proof_harnesses_authorized": false,
+  "schema_version": 2
+}

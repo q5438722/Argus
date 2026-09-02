@@ -1,0 +1,95 @@
+{
+  "contract": {
+    "accepted_path": "specs/generated_result_specs.rs",
+    "accepted_segment_sha256": "0fe143042f6b6ecc9ad64c088f3703b71d3369ad76d5dde7b1fd32b921d440a4",
+    "local_sha256": "e77bd9c7497335fe5233b2e7a75e9c704c0ac33a6c79c2c68529812ef8c779f4",
+    "mode": "frozen_declaration"
+  },
+  "directory": "001_rustdoc_26760_core_result_Result_T_E_as_core_iter_traits_accum_Sum_core_result_Result_U_E_sum",
+  "disposition": "generated",
+  "files": {
+    "accepted_contract.rs": {
+      "sha256": "e77bd9c7497335fe5233b2e7a75e9c704c0ac33a6c79c2c68529812ef8c779f4",
+      "size": 2597
+    },
+    "completeness_proof.rs": {
+      "sha256": "0a402473dd4f31e65f826743db94baf434e586cc34394b58684b0e66a1eccf99",
+      "size": 6856
+    },
+    "contract_equivalence.json": {
+      "sha256": "3942039bbfae9c11b6143f148cfa1de7f6b34c8c2231c7b03fc8d7d56c5b90f8",
+      "size": 5058
+    },
+    "dependency_assumptions.json": {
+      "sha256": "a646975cf3f3a6778d7c967b630a2122616ff9c7b0fa3bfb0e31112dda5d19f0",
+      "size": 6231
+    },
+    "implementation_proof.rs": {
+      "sha256": "788b0521ac6d6c7edb319b0821d8db34691e9a7303d5d8113b8100c7edd7fc56",
+      "size": 6580
+    },
+    "mutations/completeness_mutant.rs": {
+      "sha256": "1f2bb69575d0d52263e2a32387588cd0d55309b373de0852e34ec4e302b2b127",
+      "size": 6641
+    },
+    "mutations/implementation_mutant.rs": {
+      "sha256": "eb9d3e3e6be0bd5946eafeab56b53a9a7609ce3738bb97a2a0ebb5818bc2c5aa",
+      "size": 6578
+    },
+    "source_excerpt.rs": {
+      "sha256": "5374edcc9ff452ccf8cb0d145492592c7057f346285fa64876ffcc8e3f7fc68d",
+      "size": 449
+    },
+    "transformation_manifest.json": {
+      "sha256": "245d3d97bd7fb65a6ac9d7285ccf0d531cd4b116657855ff74532591c47dfc96",
+      "size": 2848
+    },
+    "trust_boundaries.json": {
+      "sha256": "8d9ddab014d0712c6f97cb18bfd99fc0fbc32b79f312e585f1c25723b00c4bcc",
+      "size": 4160
+    }
+  },
+  "index": 1,
+  "mutation_plan": {
+    "completeness": {
+      "anchor": "    &&& result_all_ok(into_iter_remaining::<Result<U, E>, I>(iter)) ==> exists|payloads: Seq<U>| result_ok_payloads_match(into_iter_remaining::<Result<U, E>, I>(iter), payloads) && result == Ok(result_sum_output::<U, T>(payloads))",
+      "description": "Without the aggregate payload witness the all-Ok case only knows that the outcome is some `Ok`, so two accepted runs may aggregate to different values.",
+      "expected_actual": "nonzero",
+      "expected_no_verify": 0,
+      "kind": "omitted_aggregate_payload_witness_clause",
+      "observable": "result_all_ok(remaining) ==> exists payloads. matched && result == Ok(result_sum_output::<U, T>(payloads))",
+      "replacement": "    &&& true"
+    },
+    "implementation": {
+      "anchor": "        Some(error) => Err(error),",
+      "description": "The first-Err residual is discarded and an Ok aggregate is produced instead of the accepted short-circuit error.",
+      "expected_actual": "nonzero",
+      "expected_no_verify": 0,
+      "kind": "residual_not_forwarded",
+      "observable": "!result_all_ok(remaining) ==> result == Err(remaining[stop]->Err_0)",
+      "replacement": "        Some(_) => Ok(value),"
+    }
+  },
+  "proof_manifest_directory": "proof_manifests/001_rustdoc_26760_core_result_Result_T_E_as_core_iter_traits_accum_Sum_core_result_Result_U_E_sum",
+  "proof_signature": "pub fn implementation_target<T: Sum<U>, U, E, I: Iterator<Item = Result<U, E>>>(iter: I) -> Result<T, E>",
+  "proof_template_id": "short_circuit_sum",
+  "required_command_count": 8,
+  "rustdoc_item_id": 26760,
+  "schema_version": 2,
+  "semantic_family": "short_circuit_first_err_forwarding",
+  "signature": "fn sum<I>(iter: I) -> core::result::Result<T, E>",
+  "signature_shape_sha256": "eb21bd06a6a5fd754ca984178d637188962515cb4b0b7865584a25f69166f12f",
+  "source": {
+    "canonical_path": "/home/chentianyu/nanvix-rust-std-spec-survey/rust-1.96/library/core/src/iter/traits/accum.rs",
+    "copied_path": "provenance/rust-source/library/core/src/iter/traits/accum.rs",
+    "end_column": 6,
+    "end_line": 238,
+    "excerpt_sha256": "da050c3bf87df6a96dbc7bccf116bbe998dedbbf78f51a96d4804635a1d49f9c",
+    "file_sha256": "6555f677413d4f09131fb4544f8b4b9780cd9b8398c1495e10cf74be9b3c402b",
+    "kind": "exact_rust_source_body",
+    "start_column": 5,
+    "start_line": 233
+  },
+  "status": "generated_awaiting_full_evidence",
+  "target": "<core::result::Result<T, E> as core::iter::traits::accum::Sum<core::result::Result<U, E>>>::sum"
+}

@@ -1,0 +1,39 @@
+Regenerate Rust 1.96 Verus/vstd specifications, implementation proofs, and completeness proofs for exactly one module: alloc::collections::btree_map.
+
+Scope and isolation
+- Work only on stable executable APIs publicly reachable through alloc::collections::btree_map in Rust 1.96, including stable public entry, range, iterator, occupied/vacant-entry, and related map APIs owned by this module.
+- Derive all counts and ownership from authoritative Rust 1.96 source/rustdoc. Do not merge BTreeSet into this campaign.
+- Write all generated artifacts only under:
+  /home/chentianyu/nanvix-rust-std-spec-survey/nanvix-rust-std-btree-map-regeneration-20260901-v011-8798
+- Do not generate BTreeSet, Result, Cmp, VecDeque, HashMap, or unrelated artifacts.
+- Do not modify canonical Rust or vstd trees.
+- Treat prior broad or next-six-module artifacts only as negative lessons, never accepted inputs.
+
+Authoritative process and dependencies
+- Follow:
+  /home/chentianyu/.argus-skill/workspaces/s-8d9b336f/research/rust-std-lib-specgen-process.md
+- Freeze and reference accepted vstd plus completed sequence/container methodology. Where core::cmp behavior is required, record a narrow dependency contract; do not assume this concurrently running Cmp campaign is already accepted.
+- Use:
+  /home/chentianyu/nanvix-rust-std-spec-survey/nanvix-rust-std-slice-vec-implproof-2026-08-12/TRUST_BOUNDARY_AUDIT.md
+
+Mandatory delivery layout
+- Create top-level specs/ containing README.md, generated_btree_map_specs.rs, all_btree_map_specs.json, shared vocabulary, and existing_vstd/ references.
+- Create top-level proof_harnesses/ with exactly one directly discoverable directory per selected API.
+- Every target directory must colocate implementation_proof.rs and completeness_proof.rs with source excerpt, contract/equivalence, transformation, dependency, trust, mutation, and separate Verus evidence.
+- Missing or broken specs/ or proof_harnesses/ blocks final acceptance.
+
+Required gates
+1. Freeze Rust 1.96/vstd provenance, source ownership, versions, commands, and hashes.
+2. Build a live stable executable inventory with exact ownership and disjoint exclusions. Include public iterator/entry/range helper APIs but reject duplicates inherited or re-exported from other modules.
+3. Subtract only exact-vstd coverage after full target/signature matching.
+4. Define a coherent ordered-map semantic view and shared key-order/lookup/range/entry/iterator vocabulary before target contracts. Helpers must be reusable, source-backed, or explicit narrow boundaries.
+5. Put principal behavior directly in ensures: key/value membership, replacement/removal returns, length and final map state, entry state transitions, range bounds, ordered iteration, split/append effects, callback invocation and panic conditions. Do not use a whole-target helper wrapper.
+6. Preserve allocator/ownership movement, comparator/order dependencies, entry handles, iterator private state, borrowing/mutable-reference final frames, and panic/unsafe domains in source-shaped proofs.
+7. Completeness compares two outcomes/post-states satisfying the accepted contract. Exact observable equality is default. Iterator/internal representation freedom may use only a reviewed API-specific equivalence that preserves ordered observable behavior.
+8. Produce source-shaped implementation proofs and colocated completeness proofs for every selected exact-vstd/generated API; convenient map reimplementations are not proofs of the Rust source.
+9. Run separate --no-verify and actual-Verus evidence, meaningful negative mutations, hash/integrity checks, and fail closed on unknown, timeout, unsupported, stale, missing, or partial evidence.
+10. Account all literal external_body and semantic boundaries by target, completeness, helper/model, comparator/generic dependency, allocator/representation, and whole harness.
+11. Require canonical independent Reviewer handoffs for inventory/specification, proof/completeness, and final aggregate. Only producer_role=reviewer and review.status=done accepts a gate.
+12. Finish with reconciled inventory-derived counts, exact commands, actual proof outcomes, completeness classes, mutations, trust accounting, unresolved rows, and final canonical Reviewer binding.
+
+Do not stop after planning or a bounded gate. Complete alloc::collections::btree_map only, through final aggregate acceptance.

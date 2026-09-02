@@ -1,0 +1,107 @@
+{
+  "exact_reference_count": 10,
+  "references": [
+    {
+      "declaration_id": "vstd-result-assume-e3b5fd40cc2123e8",
+      "declaration_sha256": "ada98a2ecda6f8b8b41a84275f61b9a7b3c4a1d3d88087c797b5c2863fb9af3d",
+      "end_line": 139,
+      "rustdoc_item_id": 29278,
+      "source_path": "provenance/vstd-dependency-closure/source/vstd/std_specs/result.rs",
+      "source_sha256": "c0d32562ba5b25d9d7a1d5425e9b0ef848c1ab800e1ebba47737d89868b456ff",
+      "start_line": 135,
+      "target": "<core::result::Result<T, E>>::is_ok"
+    },
+    {
+      "declaration_id": "vstd-result-assume-dbdd254da487ab3d",
+      "declaration_sha256": "f7c820d72fed29ae2c67d9bd6285804a071f7e1f8db654c9442d50111cd6e000",
+      "end_line": 152,
+      "rustdoc_item_id": 29280,
+      "source_path": "provenance/vstd-dependency-closure/source/vstd/std_specs/result.rs",
+      "source_sha256": "c0d32562ba5b25d9d7a1d5425e9b0ef848c1ab800e1ebba47737d89868b456ff",
+      "start_line": 148,
+      "target": "<core::result::Result<T, E>>::is_err"
+    },
+    {
+      "declaration_id": "vstd-result-assume-5fc2d133bd9d66b0",
+      "declaration_sha256": "f7c6495f01040424fd36a52bdc71ad06f99f1a55734688796e665c225433bc35",
+      "end_line": 266,
+      "rustdoc_item_id": 29282,
+      "source_path": "provenance/vstd-dependency-closure/source/vstd/std_specs/result.rs",
+      "source_sha256": "c0d32562ba5b25d9d7a1d5425e9b0ef848c1ab800e1ebba47737d89868b456ff",
+      "start_line": 262,
+      "target": "<core::result::Result<T, E>>::ok"
+    },
+    {
+      "declaration_id": "vstd-result-assume-7fd5eaa10bef037c",
+      "declaration_sha256": "426f48e82e9881f53592a28c2d3e2eb8acaf63403ed494a55ed7e4606593b24b",
+      "end_line": 282,
+      "rustdoc_item_id": 29283,
+      "source_path": "provenance/vstd-dependency-closure/source/vstd/std_specs/result.rs",
+      "source_sha256": "c0d32562ba5b25d9d7a1d5425e9b0ef848c1ab800e1ebba47737d89868b456ff",
+      "start_line": 278,
+      "target": "<core::result::Result<T, E>>::err"
+    },
+    {
+      "declaration_id": "vstd-result-assume-9d5c19c57b24195a",
+      "declaration_sha256": "6d9aef4af06589309497fbcc71ef3101e0a85277afcdd00e0c996608c1ea3dd3",
+      "end_line": 165,
+      "rustdoc_item_id": 29284,
+      "source_path": "provenance/vstd-dependency-closure/source/vstd/std_specs/result.rs",
+      "source_sha256": "c0d32562ba5b25d9d7a1d5425e9b0ef848c1ab800e1ebba47737d89868b456ff",
+      "start_line": 155,
+      "target": "<core::result::Result<T, E>>::as_ref"
+    },
+    {
+      "declaration_id": "vstd-result-assume-a4baca64960c2980",
+      "declaration_sha256": "99149478abd2c8336aeebd9996e1962bee7b1c9e96457f931c53c42619d8729c",
+      "end_line": 238,
+      "rustdoc_item_id": 29286,
+      "source_path": "provenance/vstd-dependency-closure/source/vstd/std_specs/result.rs",
+      "source_sha256": "c0d32562ba5b25d9d7a1d5425e9b0ef848c1ab800e1ebba47737d89868b456ff",
+      "start_line": 226,
+      "target": "<core::result::Result<T, E>>::map"
+    },
+    {
+      "declaration_id": "vstd-result-assume-8aaa5fcfabca899d",
+      "declaration_sha256": "26d781ec13251e0a88346b49e3578ab39e1975770c48b8b613e06990caef5747",
+      "end_line": 250,
+      "rustdoc_item_id": 29290,
+      "source_path": "provenance/vstd-dependency-closure/source/vstd/std_specs/result.rs",
+      "source_sha256": "c0d32562ba5b25d9d7a1d5425e9b0ef848c1ab800e1ebba47737d89868b456ff",
+      "start_line": 242,
+      "target": "<core::result::Result<T, E>>::map_err"
+    },
+    {
+      "declaration_id": "vstd-result-assume-30b1cc2defe1c480",
+      "declaration_sha256": "c02502663bd5a9945f1e2b2dbb20358b280a5ad7696c5fc981222e26264363be",
+      "end_line": 223,
+      "rustdoc_item_id": 12974,
+      "source_path": "provenance/vstd-dependency-closure/source/vstd/std_specs/result.rs",
+      "source_sha256": "c0d32562ba5b25d9d7a1d5425e9b0ef848c1ab800e1ebba47737d89868b456ff",
+      "start_line": 215,
+      "target": "<core::result::Result<T, E>>::expect"
+    },
+    {
+      "declaration_id": "vstd-result-assume-708169d5760f7657",
+      "declaration_sha256": "983bb34fa0080976d9b543736762ef713bb6b0650de0faa5c7f09eaa9765f4e5",
+      "end_line": 184,
+      "rustdoc_item_id": 12973,
+      "source_path": "provenance/vstd-dependency-closure/source/vstd/std_specs/result.rs",
+      "source_sha256": "c0d32562ba5b25d9d7a1d5425e9b0ef848c1ab800e1ebba47737d89868b456ff",
+      "start_line": 177,
+      "target": "<core::result::Result<T, E>>::unwrap"
+    },
+    {
+      "declaration_id": "vstd-result-assume-850611dc0630150b",
+      "declaration_sha256": "392a6c9cadea7dd8bd01baf216f0a0def1d445ed0c066c91b936ba975b3aa687",
+      "end_line": 203,
+      "rustdoc_item_id": 29301,
+      "source_path": "provenance/vstd-dependency-closure/source/vstd/std_specs/result.rs",
+      "source_sha256": "c0d32562ba5b25d9d7a1d5425e9b0ef848c1ab800e1ebba47737d89868b456ff",
+      "start_line": 196,
+      "target": "<core::result::Result<T, E>>::unwrap_err"
+    }
+  ],
+  "schema_version": 1,
+  "source_rule": "Reference only exact full-signature matches from inventory/exact_vstd_audit.json; do not redeclare them locally."
+}

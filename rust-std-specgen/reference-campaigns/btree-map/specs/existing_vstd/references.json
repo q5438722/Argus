@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "module": "alloc::collections::btree_map",
+  "path_base": "campaign_root",
+  "exact_match_audit_status": "complete_13_full_signature_matches",
+  "references": [
+    {
+      "id": "vstd_btree",
+      "path": "../verus/source/vstd/std_specs/btree.rs",
+      "sha256": "56084afc69ae4b0a9380d3413e5523e6c4d5d281a4846c4589da7c1c34fa73b1",
+      "allowed_content": "BTreeMap declarations and shared ordered-map vocabulary only",
+      "excluded_content": "all BTreeSet declarations"
+    },
+    {
+      "id": "vstd_cmp",
+      "path": "../verus/source/vstd/std_specs/cmp.rs",
+      "sha256": "975a47ca5dc7fb3ad013fd55e894d6362752b080dd0024434f4368f7339a682c",
+      "allowed_content": "narrow OrdSpec comparator dependency only",
+      "excluded_content": "Cmp campaign ownership or acceptance"
+    },
+    {
+      "id": "vstd_laws_cmp",
+      "path": "../verus/source/vstd/laws_cmp.rs",
+      "sha256": "ee7c52937fe8fec6e3514bcbc31cb89f7bfcab7bf37bb31ee7eefc4101953401",
+      "allowed_content": "narrow obeys_cmp law dependency only",
+      "excluded_content": "Cmp campaign ownership or acceptance"
+    }
+  ]
+}

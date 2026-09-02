@@ -1,0 +1,112 @@
+{
+  "associated_type_bridge_count": 0,
+  "associated_type_bridges": [],
+  "assume_statements": 0,
+  "completeness_external": false,
+  "external_body_helpers": [
+    {
+      "call_site": {
+        "absolute_source_line": 237,
+        "excerpt_relative_line": 5,
+        "line_text": "iter::try_process(iter, |i| i.sum())",
+        "line_text_sha256": "26d40e6967cccb7bb726e83d8cf32f683482e54ed8056e141f89c53a4d222cf0",
+        "located_in": "source_excerpt",
+        "spelling": "iter::try_process"
+      },
+      "declaration_kind": "external_body",
+      "definition_anchor_line": 152,
+      "dependency": "core_iter_adapters_try_process",
+      "dependency_kind": "private_crate_callee",
+      "source_line": 52,
+      "source_sha256": "1ca887977e92e291f2d576743ad21d8f07268c2def688589c1efb01685c585ae",
+      "symbol": "source_try_process"
+    }
+  ],
+  "literal_external_body_count": 1,
+  "local_boundary_helpers": [
+    {
+      "call_site": {
+        "absolute_source_line": 237,
+        "excerpt_relative_line": 5,
+        "line_text": "iter::try_process(iter, |i| i.sum())",
+        "line_text_sha256": "26d40e6967cccb7bb726e83d8cf32f683482e54ed8056e141f89c53a4d222cf0",
+        "located_in": "source_excerpt",
+        "spelling": "iter::try_process"
+      },
+      "declaration_kind": "external_body",
+      "definition_anchor_line": 152,
+      "dependency": "core_iter_adapters_try_process",
+      "dependency_kind": "private_crate_callee",
+      "source_line": 52,
+      "source_sha256": "1ca887977e92e291f2d576743ad21d8f07268c2def688589c1efb01685c585ae",
+      "symbol": "source_try_process"
+    }
+  ],
+  "narrow_model_boundaries": [
+    {
+      "call_site": {
+        "absolute_source_line": 233,
+        "excerpt_relative_line": 1,
+        "line_text": "fn sum<I>(iter: I) -> Result<T, E>",
+        "line_text_sha256": "bc388fae6f802494773b7a83b7017895bfe8557c5a72e89405b273553835dd83",
+        "located_in": "source_excerpt",
+        "spelling": "Result<T, E>"
+      },
+      "definition_anchor_line": 557,
+      "kind": "frozen_source_datatype",
+      "local_helpers": [],
+      "name": "core_result_result_enum",
+      "proof_symbol": "Result",
+      "proof_symbols": [
+        "Result",
+        "source_ok_payload_identity_law",
+        "source_err_payload_identity_law"
+      ],
+      "source_sha256": "fc9cedba2ca1bb3d07b07d0f15160ed0277ed9a9cbc91fa5045125a73cdacb1d"
+    },
+    {
+      "call_site": {
+        "absolute_source_line": 237,
+        "excerpt_relative_line": 5,
+        "line_text": "iter::try_process(iter, |i| i.sum())",
+        "line_text_sha256": "26d40e6967cccb7bb726e83d8cf32f683482e54ed8056e141f89c53a4d222cf0",
+        "located_in": "source_excerpt",
+        "spelling": "iter::try_process"
+      },
+      "definition_anchor_line": 152,
+      "kind": "private_crate_callee",
+      "local_helpers": [
+        {
+          "call_site": {
+            "absolute_source_line": 237,
+            "excerpt_relative_line": 5,
+            "line_text": "iter::try_process(iter, |i| i.sum())",
+            "line_text_sha256": "26d40e6967cccb7bb726e83d8cf32f683482e54ed8056e141f89c53a4d222cf0",
+            "located_in": "source_excerpt",
+            "spelling": "iter::try_process"
+          },
+          "declaration_kind": "external_body",
+          "definition_anchor_line": 152,
+          "dependency": "core_iter_adapters_try_process",
+          "dependency_kind": "private_crate_callee",
+          "source_line": 52,
+          "source_sha256": "1ca887977e92e291f2d576743ad21d8f07268c2def688589c1efb01685c585ae",
+          "symbol": "source_try_process"
+        }
+      ],
+      "name": "core_iter_adapters_try_process",
+      "proof_symbol": "source_try_process",
+      "proof_symbols": [
+        "source_try_process"
+      ],
+      "source_sha256": "1ca887977e92e291f2d576743ad21d8f07268c2def688589c1efb01685c585ae"
+    }
+  ],
+  "rustdoc_item_id": 26760,
+  "schema_version": 2,
+  "target": "<core::result::Result<T, E> as core::iter::traits::accum::Sum<core::result::Result<U, E>>>::sum",
+  "target_external": false,
+  "unconstrained_output_oracle": false,
+  "uninterpreted_spec_count": 0,
+  "uninterpreted_spec_helpers": []
+}

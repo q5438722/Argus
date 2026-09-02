@@ -1,0 +1,39 @@
+Regenerate Rust 1.96 Verus/vstd specifications, implementation proofs, and completeness proofs for exactly one module: core::cmp.
+
+Scope and isolation
+- Work only on stable executable APIs publicly reachable through core::cmp in Rust 1.96.
+- Derive all counts from live Rust 1.96 inventory; historical counts are cross-checks only.
+- Write all generated artifacts only under:
+  /home/chentianyu/nanvix-rust-std-spec-survey/nanvix-rust-std-cmp-regeneration-20260901-v011-8798
+- Do not generate Result, BTreeMap, BTreeSet, or any other module's campaign artifacts.
+- Do not modify canonical Rust or vstd source trees.
+- Treat /home/chentianyu/nanvix-rust-std-spec-survey/nanvix-rust-std-next-six-modules-2026-08-25 only as negative lessons. Independently regenerate inventory, contracts, proofs, evidence, and review.
+
+Authoritative process and accepted methodology
+- Follow:
+  /home/chentianyu/.argus-skill/workspaces/s-8d9b336f/research/rust-std-lib-specgen-process.md
+- Reuse reviewed comparison, callback-trace, sequence, and trust-accounting methodology from completed Slice, Vec, Array, Option, and String campaigns only when semantically identical.
+- Reference:
+  /home/chentianyu/nanvix-rust-std-spec-survey/nanvix-rust-std-slice-vec-implproof-2026-08-12/TRUST_BOUNDARY_AUDIT.md
+
+Mandatory delivery layout
+- Create top-level specs/ containing README.md, generated_cmp_specs.rs, all_cmp_specs.json, shared vocabulary, and existing_vstd/ references.
+- Create top-level proof_harnesses/ with exactly one target directory per selected API.
+- Colocate implementation_proof.rs and completeness_proof.rs with source, contract/equivalence, transformation, dependency, trust, mutation, and two-mode evidence records.
+- Missing or broken specs/ or proof_harnesses/ blocks acceptance.
+
+Required gates
+1. Freeze authoritative Rust 1.96 and Verus/vstd provenance, binaries, versions, commands, and hashes.
+2. Inventory every stable executable core::cmp API, including inherent/trait/default methods and effective blanket/specialized implementation identities. Detect duplicate labels, concrete/default overlap, and specialization-path ambiguity.
+3. Subtract exact-vstd coverage only after exact signature and target matching.
+4. Generate source-backed contracts for all remaining APIs. Directly expose ordering/equality branches, callback observations, returned Ordering/bool values, reverse/min/max/clamp behavior, and panic domains in ensures. Never hide a whole target behind an uninterpreted helper.
+5. Preserve Rust forwarding, default-loop, dispatch, and specialization paths, including bytewise/slice paths where present. A synthesized element loop is not source-shaped proof unless the exact transitive source path is proved equivalent and recorded.
+6. Completeness must compare two accepted-contract outcomes. Exact equality is default; any equivalence quotient needs exact source/doc evidence plus positive and negative witnesses.
+7. Produce source-shaped implementation proofs and colocated completeness proofs for every exact-vstd or generated target.
+8. Run separate --no-verify and actual Verus evidence for every proof; retain complete commands/results and reject stale hashes.
+9. Add omission-sensitive structural probes and semantic mutations for forwarding, callbacks, branch reversal, equality/ordering distinctions, specialization, and panic conditions.
+10. Audit literal external_body at target, completeness, helper/model, dependency, and harness levels, plus semantic trust boundaries. Distinguish no-added-boundary from foundational trust-free.
+11. Require canonical independent Reviewer gates for specification, proof/completeness, and final aggregate; only producer_role=reviewer with review.status=done is acceptance.
+12. Finish with an inventory-derived reproducible aggregate and the mandatory top-level browsing interfaces.
+
+Do not stop at a bounded gate. Continue until core::cmp alone has canonical final aggregate acceptance.

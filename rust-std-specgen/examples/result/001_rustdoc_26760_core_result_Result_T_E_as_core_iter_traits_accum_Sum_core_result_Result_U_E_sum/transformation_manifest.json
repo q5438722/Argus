@@ -1,0 +1,50 @@
+{
+  "accepted_signature": "fn sum<I>(iter: I) -> core::result::Result<T, E>",
+  "exact_vstd_references": [],
+  "lowerings": [
+    {
+      "detail": "`try_process` returns `ControlFlow`, which Verus cannot destructure through the `Try` trait here; the residual is modelled as an explicit `Option<E>` out-parameter and the target still performs the residual-to-`Err` conversion itself.",
+      "kind": "residual_out_parameter"
+    },
+    {
+      "detail": "The delegated `|i| i.sum()` aggregate is observed only through the narrow `result_sum_output::<U, T>` output law over the ordered Ok payload sequence.",
+      "kind": "aggregate_output_law"
+    }
+  ],
+  "mutation_plan": {
+    "completeness": {
+      "anchor": "    &&& result_all_ok(into_iter_remaining::<Result<U, E>, I>(iter)) ==> exists|payloads: Seq<U>| result_ok_payloads_match(into_iter_remaining::<Result<U, E>, I>(iter), payloads) && result == Ok(result_sum_output::<U, T>(payloads))",
+      "description": "Without the aggregate payload witness the all-Ok case only knows that the outcome is some `Ok`, so two accepted runs may aggregate to different values.",
+      "expected_actual": "nonzero",
+      "expected_no_verify": 0,
+      "kind": "omitted_aggregate_payload_witness_clause",
+      "observable": "result_all_ok(remaining) ==> exists payloads. matched && result == Ok(result_sum_output::<U, T>(payloads))",
+      "replacement": "    &&& true"
+    },
+    "implementation": {
+      "anchor": "        Some(error) => Err(error),",
+      "description": "The first-Err residual is discarded and an Ok aggregate is produced instead of the accepted short-circuit error.",
+      "expected_actual": "nonzero",
+      "expected_no_verify": 0,
+      "kind": "residual_not_forwarded",
+      "observable": "!result_all_ok(remaining) ==> result == Err(remaining[stop]->Err_0)",
+      "replacement": "        Some(_) => Ok(value),"
+    }
+  },
+  "notes": [],
+  "proof_signature": "pub fn implementation_target<T: Sum<U>, U, E, I: Iterator<Item = Result<U, E>>>(iter: I) -> Result<T, E>",
+  "proof_template_id": "short_circuit_sum",
+  "rustdoc_item_id": 26760,
+  "schema_version": 2,
+  "semantic_family": "short_circuit_first_err_forwarding",
+  "semantic_replacement": false,
+  "signature_shape_sha256": "eb21bd06a6a5fd754ca984178d637188962515cb4b0b7865584a25f69166f12f",
+  "source_markers_required_in_proof": [
+    "source_try_process",
+    "Some(error) => Err(error),",
+    "let collected: Result<T, E> = Ok(value);",
+    "ResultShortCircuitOperation::Sum"
+  ],
+  "source_shape": "The executable target reproduces the Rust 1.96 branch/stage structure of this exact item; generics, lifetimes, references, `unsafe` and callback bounds are preserved wherever Verus supports them.",
+  "target": "<core::result::Result<T, E> as core::iter::traits::accum::Sum<core::result::Result<U, E>>>::sum"
+}

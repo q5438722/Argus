@@ -1,0 +1,62 @@
+{
+  "accepted_contract_file_sha256": "e77bd9c7497335fe5233b2e7a75e9c704c0ac33a6c79c2c68529812ef8c779f4",
+  "accepted_contract_segment_sha256": "0fe143042f6b6ecc9ad64c088f3703b71d3369ad76d5dde7b1fd32b921d440a4",
+  "accepted_outcome_equivalence": {
+    "artifact_path": "specs/result_outcome_equivalence.json",
+    "artifact_sha256": "9a56c2c7ff20c265d66812bb821f165ed8d3f21351fd8ecfd1e457dd6ba9fe4a",
+    "equality_scope": "complete_output_and_explicit_post_state",
+    "equivalence_expression": "output1 == output2 and every explicit mutable post_state1 == post_state2",
+    "equivalence_id": "core-result-rustdoc-26760",
+    "equivalence_version": 1,
+    "equivalence_version_id": "core-result-rustdoc-26760-v1",
+    "kind": "exact_equality",
+    "observation_schema_id": "complete-output-and-explicit-post-state-v1",
+    "proof_observation_schema": {
+      "mode": "exact_result_and_explicit_post_state"
+    },
+    "record_sha256": "beb806fb6d5daf66fb4e62f4bbc64c4f0b154801452a248885463dc03b403671",
+    "rustdoc_item_id": 26760,
+    "schema_version": 3,
+    "target": "<core::result::Result<T, E> as core::iter::traits::accum::Sum<core::result::Result<U, E>>>::sum",
+    "version_set_sha256": "8467537d70a2a64b867fd0bf8e0c37f183d0217df90c043c30f41254f0d6f649"
+  },
+  "proof_binding": {
+    "accepted_clause_count": 6,
+    "clause_bindings": [
+      {
+        "clause": "result_short_circuit_trace::<U, E, T, I>(ResultShortCircuitOperation::Sum, iter).len() <= into_iter_remaining::<Result<U, E>, I>(iter).len()",
+        "proof_clause": "result_short_circuit_trace::<U, E, T, I>(ResultShortCircuitOperation::Sum, iter).len() <= into_iter_remaining::<Result<U, E>, I>(iter).len()"
+      },
+      {
+        "clause": "forall|index: int| 0 <= index < result_short_circuit_trace::<U, E, T, I>(ResultShortCircuitOperation::Sum, iter).len() ==> result_short_circuit_trace::<U, E, T, I>(ResultShortCircuitOperation::Sum, iter)[index] == into_iter_remaining::<Result<U, E>, I>(iter)[index]",
+        "proof_clause": "forall|index: int| 0 <= index < result_short_circuit_trace::<U, E, T, I>(ResultShortCircuitOperation::Sum, iter).len() ==> result_short_circuit_trace::<U, E, T, I>(ResultShortCircuitOperation::Sum, iter)[index] == into_iter_remaining::<Result<U, E>, I>(iter)[index]"
+      },
+      {
+        "clause": "result_all_ok(into_iter_remaining::<Result<U, E>, I>(iter)) ==> result_short_circuit_trace::<U, E, T, I>(ResultShortCircuitOperation::Sum, iter) == into_iter_remaining::<Result<U, E>, I>(iter)",
+        "proof_clause": "result_all_ok(into_iter_remaining::<Result<U, E>, I>(iter)) ==> result_short_circuit_trace::<U, E, T, I>(ResultShortCircuitOperation::Sum, iter) == into_iter_remaining::<Result<U, E>, I>(iter)"
+      },
+      {
+        "clause": "result_all_ok(into_iter_remaining::<Result<U, E>, I>(iter)) <==> result is Ok",
+        "proof_clause": "result_all_ok(into_iter_remaining::<Result<U, E>, I>(iter)) <==> result is Ok"
+      },
+      {
+        "clause": "result_all_ok(into_iter_remaining::<Result<U, E>, I>(iter)) ==> exists|payloads: Seq<U>| result_ok_payloads_match(into_iter_remaining::<Result<U, E>, I>(iter), payloads) && result == Ok(result_sum_output::<U, T>(payloads))",
+        "proof_clause": "result_all_ok(into_iter_remaining::<Result<U, E>, I>(iter)) ==> exists|payloads: Seq<U>| result_ok_payloads_match(into_iter_remaining::<Result<U, E>, I>(iter), payloads) && result == Ok(result_sum_output::<U, T>(payloads))"
+      },
+      {
+        "clause": "!result_all_ok(into_iter_remaining::<Result<U, E>, I>(iter)) ==> exists|stop: int| 0 <= stop < into_iter_remaining::<Result<U, E>, I>(iter).len() && into_iter_remaining::<Result<U, E>, I>(iter)[stop] is Err && (forall|prior: int| 0 <= prior < stop ==> into_iter_remaining::<Result<U, E>, I>(iter)[prior] is Ok) && result_short_circuit_trace::<U, E, T, I>(ResultShortCircuitOperation::Sum, iter).len() == stop + 1 && result == Err(into_iter_remaining::<Result<U, E>, I>(iter)[stop]->Err_0)",
+        "proof_clause": "!result_all_ok(into_iter_remaining::<Result<U, E>, I>(iter)) ==> exists|stop: int| 0 <= stop < into_iter_remaining::<Result<U, E>, I>(iter).len() && into_iter_remaining::<Result<U, E>, I>(iter)[stop] is Err && (forall|prior: int| 0 <= prior < stop ==> into_iter_remaining::<Result<U, E>, I>(iter)[prior] is Ok) && result_short_circuit_trace::<U, E, T, I>(ResultShortCircuitOperation::Sum, iter).len() == stop + 1 && result == Err(into_iter_remaining::<Result<U, E>, I>(iter)[stop]->Err_0)"
+      }
+    ],
+    "contract_link_symbol": "implementation_contract_link",
+    "implementation_symbol": "implementation_target",
+    "outcome_equivalence_symbol": "outcomes_equivalent",
+    "reproduced_clause_count": 6,
+    "requires_clauses": [],
+    "theorem_symbol": "completeness_theorem"
+  },
+  "rustdoc_item_id": 26760,
+  "schema_version": 2,
+  "semantic_clause_sha256": "37701c58049bf9fbb82d7ff55c3f9ee694734a008cd05dea9302641ee4393e00",
+  "target": "<core::result::Result<T, E> as core::iter::traits::accum::Sum<core::result::Result<U, E>>>::sum"
+}

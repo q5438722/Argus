@@ -1,0 +1,645 @@
+{
+  "contracts_sha256": "d543751041a29992472b9767926edf155638e9e5078a8d1217ef39fbedc1aab7",
+  "defined_helper_count": 41,
+  "generated_target_count": 54,
+  "records": [
+    {
+      "boundary": false,
+      "classification": "defined_mathematical_view",
+      "helper": "result_all_ok",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        26760,
+        26882,
+        26942
+      ],
+      "target_count": 3,
+      "targets": [
+        "<core::result::Result<T, E> as core::iter::traits::accum::Sum<core::result::Result<U, E>>>::sum",
+        "<core::result::Result<T, E> as core::iter::traits::accum::Product<core::result::Result<U, E>>>::product",
+        "<core::result::Result<V, E> as core::iter::traits::collect::FromIterator<core::result::Result<A, E>>>::from_iter"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "narrow_dependency_law",
+      "helper": "result_clone_from_output",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        10005
+      ],
+      "target_count": 1,
+      "targets": [
+        "<core::result::Result<T, E> as core::clone::Clone>::clone_from"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "narrow_dependency_law",
+      "helper": "result_clone_output",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        10004,
+        10005,
+        10010,
+        29312,
+        29315
+      ],
+      "target_count": 5,
+      "targets": [
+        "<core::result::Result<T, E> as core::clone::Clone>::clone",
+        "<core::result::Result<T, E> as core::clone::Clone>::clone_from",
+        "<core::result::IntoIter<T> as core::clone::Clone>::clone",
+        "<core::result::Result<&T, E>>::cloned",
+        "<core::result::Result<&mut T, E>>::cloned"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "narrow_dependency_law",
+      "helper": "result_cmp_output",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        11356
+      ],
+      "target_count": 1,
+      "targets": [
+        "<core::result::Result<T, E> as core::cmp::Ord>::cmp"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "narrow_dependency_law",
+      "helper": "result_collect_output",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        26942
+      ],
+      "target_count": 1,
+      "targets": [
+        "<core::result::Result<V, E> as core::iter::traits::collect::FromIterator<core::result::Result<A, E>>>::from_iter"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "narrow_dependency_law",
+      "helper": "result_default_output",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        29299
+      ],
+      "target_count": 1,
+      "targets": [
+        "<core::result::Result<T, E>>::unwrap_or_default"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "reference_identity_projection",
+      "helper": "result_deref_mut_identity",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        29294
+      ],
+      "target_count": 1,
+      "targets": [
+        "<core::result::Result<T, E>>::as_deref_mut"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "mutable_state_projection",
+      "helper": "result_deref_mut_state",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        29294
+      ],
+      "target_count": 1,
+      "targets": [
+        "<core::result::Result<T, E>>::as_deref_mut"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "narrow_dependency_law",
+      "helper": "result_deref_shared",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        29293
+      ],
+      "target_count": 1,
+      "targets": [
+        "<core::result::Result<T, E>>::as_deref"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "reference_identity_projection",
+      "helper": "result_err_payload_identity",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        29293
+      ],
+      "target_count": 1,
+      "targets": [
+        "<core::result::Result<T, E>>::as_deref"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "reference_identity_projection",
+      "helper": "result_err_value_identity",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        29285,
+        29294
+      ],
+      "target_count": 2,
+      "targets": [
+        "<core::result::Result<T, E>>::as_mut",
+        "<core::result::Result<T, E>>::as_deref_mut"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "narrow_dependency_law",
+      "helper": "result_fn_once_output",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        29279,
+        29281,
+        29287,
+        29288,
+        29298,
+        29304,
+        29306
+      ],
+      "target_count": 7,
+      "targets": [
+        "<core::result::Result<T, E>>::is_ok_and",
+        "<core::result::Result<T, E>>::is_err_and",
+        "<core::result::Result<T, E>>::map_or_else",
+        "<core::result::Result<T, E>>::map_or",
+        "<core::result::Result<T, E>>::unwrap_or_else",
+        "<core::result::Result<T, E>>::and_then",
+        "<core::result::Result<T, E>>::or_else"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "narrow_dependency_law",
+      "helper": "result_formatter_debug_struct_post",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        29343,
+        29354,
+        29366
+      ],
+      "target_count": 3,
+      "targets": [
+        "<core::result::Iter<'a, T> as core::fmt::Debug>::fmt",
+        "<core::result::IterMut<'a, T> as core::fmt::Debug>::fmt",
+        "<core::result::IntoIter<T> as core::fmt::Debug>::fmt"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "narrow_dependency_law",
+      "helper": "result_formatter_debug_struct_result",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        29343,
+        29354,
+        29366
+      ],
+      "target_count": 3,
+      "targets": [
+        "<core::result::Iter<'a, T> as core::fmt::Debug>::fmt",
+        "<core::result::IterMut<'a, T> as core::fmt::Debug>::fmt",
+        "<core::result::IntoIter<T> as core::fmt::Debug>::fmt"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "narrow_dependency_law",
+      "helper": "result_formatter_debug_tuple_post",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        29329
+      ],
+      "target_count": 1,
+      "targets": [
+        "<core::result::Result<T, E> as core::fmt::Debug>::fmt"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "narrow_dependency_law",
+      "helper": "result_formatter_debug_tuple_result",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        29329
+      ],
+      "target_count": 1,
+      "targets": [
+        "<core::result::Result<T, E> as core::fmt::Debug>::fmt"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "formatter_private_state_projection",
+      "helper": "result_formatter_state",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        29329,
+        29343,
+        29354,
+        29366
+      ],
+      "target_count": 4,
+      "targets": [
+        "<core::result::Result<T, E> as core::fmt::Debug>::fmt",
+        "<core::result::Iter<'a, T> as core::fmt::Debug>::fmt",
+        "<core::result::IterMut<'a, T> as core::fmt::Debug>::fmt",
+        "<core::result::IntoIter<T> as core::fmt::Debug>::fmt"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "narrow_dependency_law",
+      "helper": "result_hasher_discriminant_post",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        29331
+      ],
+      "target_count": 1,
+      "targets": [
+        "<core::result::Result<T, E> as core::hash::Hash>::hash"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "narrow_dependency_law",
+      "helper": "result_hasher_payload_post",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        29331
+      ],
+      "target_count": 1,
+      "targets": [
+        "<core::result::Result<T, E> as core::hash::Hash>::hash"
+      ]
+    },
+    {
+      "boundary": false,
+      "classification": "linked_iterator_projection",
+      "helper": "result_into_iter_value_values",
+      "linked_to": "result_into_iter_values",
+      "rustdoc_item_ids": [
+        27051,
+        27291
+      ],
+      "target_count": 2,
+      "targets": [
+        "<core::result::IntoIter<T> as core::iter::traits::double_ended::DoubleEndedIterator>::next_back",
+        "<core::result::IntoIter<T> as core::iter::traits::iterator::Iterator>::next"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "iterator_private_state_projection",
+      "helper": "result_into_iter_values",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        10010,
+        26988,
+        27292,
+        29366
+      ],
+      "target_count": 4,
+      "targets": [
+        "<core::result::IntoIter<T> as core::clone::Clone>::clone",
+        "<core::result::Result<T, E> as core::iter::traits::collect::IntoIterator>::into_iter",
+        "<core::result::IntoIter<T> as core::iter::traits::iterator::Iterator>::size_hint",
+        "<core::result::IntoIter<T> as core::fmt::Debug>::fmt"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "iterator_private_state_projection",
+      "helper": "result_iter_identities",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        10007,
+        26992,
+        29295
+      ],
+      "target_count": 3,
+      "targets": [
+        "<core::result::Iter<'_, T> as core::clone::Clone>::clone",
+        "<&'a core::result::Result<T, E> as core::iter::traits::collect::IntoIterator>::into_iter",
+        "<core::result::Result<T, E>>::iter"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "iterator_private_state_projection",
+      "helper": "result_iter_mut_identities",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        26996,
+        29296
+      ],
+      "target_count": 2,
+      "targets": [
+        "<&'a mut core::result::Result<T, E> as core::iter::traits::collect::IntoIterator>::into_iter",
+        "<core::result::Result<T, E>>::iter_mut"
+      ]
+    },
+    {
+      "boundary": false,
+      "classification": "linked_iterator_projection",
+      "helper": "result_iter_mut_value_identities",
+      "linked_to": "result_iter_mut_identities",
+      "rustdoc_item_ids": [
+        27049,
+        27287
+      ],
+      "target_count": 2,
+      "targets": [
+        "<core::result::IterMut<'a, T> as core::iter::traits::double_ended::DoubleEndedIterator>::next_back",
+        "<core::result::IterMut<'a, T> as core::iter::traits::iterator::Iterator>::next"
+      ]
+    },
+    {
+      "boundary": false,
+      "classification": "linked_iterator_projection",
+      "helper": "result_iter_mut_value_values",
+      "linked_to": "result_iter_mut_values",
+      "rustdoc_item_ids": [
+        27049,
+        27287
+      ],
+      "target_count": 2,
+      "targets": [
+        "<core::result::IterMut<'a, T> as core::iter::traits::double_ended::DoubleEndedIterator>::next_back",
+        "<core::result::IterMut<'a, T> as core::iter::traits::iterator::Iterator>::next"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "iterator_private_state_projection",
+      "helper": "result_iter_mut_values",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        26996,
+        27288,
+        29296,
+        29354
+      ],
+      "target_count": 4,
+      "targets": [
+        "<&'a mut core::result::Result<T, E> as core::iter::traits::collect::IntoIterator>::into_iter",
+        "<core::result::IterMut<'a, T> as core::iter::traits::iterator::Iterator>::size_hint",
+        "<core::result::Result<T, E>>::iter_mut",
+        "<core::result::IterMut<'a, T> as core::fmt::Debug>::fmt"
+      ]
+    },
+    {
+      "boundary": false,
+      "classification": "linked_iterator_projection",
+      "helper": "result_iter_value_identities",
+      "linked_to": "result_iter_identities",
+      "rustdoc_item_ids": [
+        27047,
+        27283
+      ],
+      "target_count": 2,
+      "targets": [
+        "<core::result::Iter<'a, T> as core::iter::traits::double_ended::DoubleEndedIterator>::next_back",
+        "<core::result::Iter<'a, T> as core::iter::traits::iterator::Iterator>::next"
+      ]
+    },
+    {
+      "boundary": false,
+      "classification": "linked_iterator_projection",
+      "helper": "result_iter_value_values",
+      "linked_to": "result_iter_values",
+      "rustdoc_item_ids": [
+        27047,
+        27283
+      ],
+      "target_count": 2,
+      "targets": [
+        "<core::result::Iter<'a, T> as core::iter::traits::double_ended::DoubleEndedIterator>::next_back",
+        "<core::result::Iter<'a, T> as core::iter::traits::iterator::Iterator>::next"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "iterator_private_state_projection",
+      "helper": "result_iter_values",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        10007,
+        26992,
+        27284,
+        29295,
+        29343
+      ],
+      "target_count": 5,
+      "targets": [
+        "<core::result::Iter<'_, T> as core::clone::Clone>::clone",
+        "<&'a core::result::Result<T, E> as core::iter::traits::collect::IntoIterator>::into_iter",
+        "<core::result::Iter<'a, T> as core::iter::traits::iterator::Iterator>::size_hint",
+        "<core::result::Result<T, E>>::iter",
+        "<core::result::Iter<'a, T> as core::fmt::Debug>::fmt"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "mutable_state_projection",
+      "helper": "result_mut_ref_final_state",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        29294
+      ],
+      "target_count": 1,
+      "targets": [
+        "<core::result::Result<T, E>>::as_deref_mut"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "reference_identity_projection",
+      "helper": "result_mut_ref_identity",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        27049,
+        27287,
+        29285,
+        29294
+      ],
+      "target_count": 4,
+      "targets": [
+        "<core::result::IterMut<'a, T> as core::iter::traits::double_ended::DoubleEndedIterator>::next_back",
+        "<core::result::IterMut<'a, T> as core::iter::traits::iterator::Iterator>::next",
+        "<core::result::Result<T, E>>::as_mut",
+        "<core::result::Result<T, E>>::as_deref_mut"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "mutable_state_projection",
+      "helper": "result_mut_ref_initial_state",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        29294
+      ],
+      "target_count": 1,
+      "targets": [
+        "<core::result::Result<T, E>>::as_deref_mut"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "reference_identity_projection",
+      "helper": "result_ok_payload_identity",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        26992,
+        29295
+      ],
+      "target_count": 2,
+      "targets": [
+        "<&'a core::result::Result<T, E> as core::iter::traits::collect::IntoIterator>::into_iter",
+        "<core::result::Result<T, E>>::iter"
+      ]
+    },
+    {
+      "boundary": false,
+      "classification": "defined_mathematical_view",
+      "helper": "result_ok_payloads_match",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        26760,
+        26882,
+        26942
+      ],
+      "target_count": 3,
+      "targets": [
+        "<core::result::Result<T, E> as core::iter::traits::accum::Sum<core::result::Result<U, E>>>::sum",
+        "<core::result::Result<T, E> as core::iter::traits::accum::Product<core::result::Result<U, E>>>::product",
+        "<core::result::Result<V, E> as core::iter::traits::collect::FromIterator<core::result::Result<A, E>>>::from_iter"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "reference_identity_projection",
+      "helper": "result_ok_value_identity",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        26996,
+        29285,
+        29296
+      ],
+      "target_count": 3,
+      "targets": [
+        "<&'a mut core::result::Result<T, E> as core::iter::traits::collect::IntoIterator>::into_iter",
+        "<core::result::Result<T, E>>::as_mut",
+        "<core::result::Result<T, E>>::iter_mut"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "narrow_dependency_law",
+      "helper": "result_partial_cmp_output",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        11599
+      ],
+      "target_count": 1,
+      "targets": [
+        "<core::result::Result<T, E> as core::cmp::PartialOrd>::partial_cmp"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "narrow_dependency_law",
+      "helper": "result_partial_eq_output",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        11011
+      ],
+      "target_count": 1,
+      "targets": [
+        "<core::result::Result<T, E> as core::cmp::PartialEq>::eq"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "narrow_dependency_law",
+      "helper": "result_product_output",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        26882
+      ],
+      "target_count": 1,
+      "targets": [
+        "<core::result::Result<T, E> as core::iter::traits::accum::Product<core::result::Result<U, E>>>::product"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "reference_identity_projection",
+      "helper": "result_shared_ref_identity",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        27047,
+        27283,
+        29293
+      ],
+      "target_count": 3,
+      "targets": [
+        "<core::result::Iter<'a, T> as core::iter::traits::double_ended::DoubleEndedIterator>::next_back",
+        "<core::result::Iter<'a, T> as core::iter::traits::iterator::Iterator>::next",
+        "<core::result::Result<T, E>>::as_deref"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "short_circuit_trace_projection",
+      "helper": "result_short_circuit_trace",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        26760,
+        26882,
+        26942
+      ],
+      "target_count": 3,
+      "targets": [
+        "<core::result::Result<T, E> as core::iter::traits::accum::Sum<core::result::Result<U, E>>>::sum",
+        "<core::result::Result<T, E> as core::iter::traits::accum::Product<core::result::Result<U, E>>>::product",
+        "<core::result::Result<V, E> as core::iter::traits::collect::FromIterator<core::result::Result<A, E>>>::from_iter"
+      ]
+    },
+    {
+      "boundary": true,
+      "classification": "narrow_dependency_law",
+      "helper": "result_sum_output",
+      "linked_to": null,
+      "rustdoc_item_ids": [
+        26760
+      ],
+      "target_count": 1,
+      "targets": [
+        "<core::result::Result<T, E> as core::iter::traits::accum::Sum<core::result::Result<U, E>>>::sum"
+      ]
+    }
+  ],
+  "schema_version": 1,
+  "unused_helpers": [],
+  "vocabulary_path": "specs/result_shared_vocabulary.rs",
+  "vocabulary_sha256": "1d34ce6c72f630bad19b28c7cfcf69d533e7006b052adae154980ae6fbcfbfd0",
+  "whole_target_helpers": []
+}

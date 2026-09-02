@@ -1,0 +1,26 @@
+note: function body check: not all errors may have been reported; rerun with a higher value for --multiple-errors to find other potential errors in this function
+  --> proof_harnesses/001_rustdoc_26760_core_result_Result_T_E_as_core_iter_traits_accum_Sum_core_result_Result_U_E_sum/mutations/implementation_mutant.rs:72:1
+   |
+72 | pub fn implementation_target<T: Sum<U>, U, E, I: Iterator<Item = Result<U, E>>>(iter: I) -> (result: Result<T, E>)
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: postcondition not satisfied
+  --> proof_harnesses/001_rustdoc_26760_core_result_Result_T_E_as_core_iter_traits_accum_Sum_core_result_Result_U_E_sum/mutations/implementation_mutant.rs:77:9
+   |
+77 |         result_all_ok(into_iter_remaining::<Result<U, E>, I>(iter)) <==> result is Ok,
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ failed this postcondition
+...
+84 |         Some(_) => Ok(value),
+   |         ------- at the end of the function body
+
+error: postcondition not satisfied
+  --> proof_harnesses/001_rustdoc_26760_core_result_Result_T_E_as_core_iter_traits_accum_Sum_core_result_Result_U_E_sum/mutations/implementation_mutant.rs:79:9
+   |
+79 | ...   !result_all_ok(into_iter_remaining::<Result<U...aining::<Result<U, E>, I>(iter)[stop]->Err_0),
+   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ failed this postcondition
+...
+84 | ...   Some(_) => Ok(value),
+   |       ------- at the end of the function body
+
+error: aborting due to 2 previous errors
+

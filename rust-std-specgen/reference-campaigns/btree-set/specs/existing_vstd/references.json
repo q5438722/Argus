@@ -1,0 +1,185 @@
+{
+  "module": "alloc::collections::btree_set",
+  "reference_count": 11,
+  "rows": [
+    {
+      "block_sha256": "5af018569e08e7cd192092c644a5a4511bdb2898817da9e3a627699562749121",
+      "canonical_target": "<alloc::collections::btree_set::BTreeSet<T, A> as core::clone::Clone>::clone",
+      "line": 753,
+      "match_dimensions": [
+        "target_binding",
+        "receiver_reference_shape",
+        "parameter_shape",
+        "return_shape",
+        "lifetimes",
+        "generics",
+        "bounds",
+        "mutability"
+      ],
+      "target_id": "005_BTreeSet_Clone_clone_2135"
+    },
+    {
+      "block_sha256": "179f58254b5b6dd276161c4c19944a43b6a9129af4b60efe443c3227eee65eb9",
+      "canonical_target": "alloc::collections::btree_set::BTreeSet::<T>::new",
+      "line": 760,
+      "match_dimensions": [
+        "target_binding",
+        "receiver_reference_shape",
+        "parameter_shape",
+        "return_shape",
+        "lifetimes",
+        "generics",
+        "bounds",
+        "mutability"
+      ],
+      "target_id": "014_BTreeSet_inherent_new_2066"
+    },
+    {
+      "block_sha256": "53426deab6fb5735197c9597155fb512349eb98b888e25d33ec99e596343894f",
+      "canonical_target": "alloc::collections::btree_set::BTreeSet::<T, A>::clear",
+      "line": 905,
+      "match_dimensions": [
+        "target_binding",
+        "receiver_reference_shape",
+        "parameter_shape",
+        "return_shape",
+        "lifetimes",
+        "generics",
+        "bounds",
+        "mutability"
+      ],
+      "target_id": "020_BTreeSet_inherent_clear_2079"
+    },
+    {
+      "block_sha256": "3de9678cc4fee22aff692c8f6ddf771e83317054f2e9490390fcc16a505e4de6",
+      "canonical_target": "alloc::collections::btree_set::BTreeSet::<T, A>::contains::<Q>",
+      "line": 809,
+      "match_dimensions": [
+        "target_binding",
+        "receiver_reference_shape",
+        "parameter_shape",
+        "return_shape",
+        "lifetimes",
+        "generics",
+        "bounds",
+        "mutability"
+      ],
+      "target_id": "021_BTreeSet_inherent_contains_2080"
+    },
+    {
+      "block_sha256": "90b8bb68ba4bb11115ece94bd44ff67286c361f191fcb5cbb29ecebae6fe06fa",
+      "canonical_target": "alloc::collections::btree_set::BTreeSet::<T, A>::get::<Q>",
+      "line": 853,
+      "match_dimensions": [
+        "target_binding",
+        "receiver_reference_shape",
+        "parameter_shape",
+        "return_shape",
+        "lifetimes",
+        "generics",
+        "bounds",
+        "mutability"
+      ],
+      "target_id": "022_BTreeSet_inherent_get_2081"
+    },
+    {
+      "block_sha256": "85fd0c35ac6f99ed781e9a1e0181abfa3099f226a237ecb101469432dabfc9df",
+      "canonical_target": "alloc::collections::btree_set::BTreeSet::<T, A>::insert",
+      "line": 772,
+      "match_dimensions": [
+        "target_binding",
+        "receiver_reference_shape",
+        "parameter_shape",
+        "return_shape",
+        "lifetimes",
+        "generics",
+        "bounds",
+        "mutability"
+      ],
+      "target_id": "030_BTreeSet_inherent_insert_2089"
+    },
+    {
+      "block_sha256": "06dde4de442adb1ba05f41991d8df0d7642a5f15df15d7871e0297b718a9e9f3",
+      "canonical_target": "alloc::collections::btree_set::BTreeSet::<T, A>::remove::<Q>",
+      "line": 894,
+      "match_dimensions": [
+        "target_binding",
+        "receiver_reference_shape",
+        "parameter_shape",
+        "return_shape",
+        "lifetimes",
+        "generics",
+        "bounds",
+        "mutability"
+      ],
+      "target_id": "032_BTreeSet_inherent_remove_2093"
+    },
+    {
+      "block_sha256": "270f4e4f96d6dfb471947a6e2c985af5f32783ccb10cfb90b5da0e14fe012d7d",
+      "canonical_target": "alloc::collections::btree_set::BTreeSet::<T, A>::iter",
+      "line": 935,
+      "match_dimensions": [
+        "target_binding",
+        "receiver_reference_shape",
+        "parameter_shape",
+        "return_shape",
+        "lifetimes",
+        "generics",
+        "bounds",
+        "mutability"
+      ],
+      "target_id": "038_BTreeSet_inherent_iter_2064"
+    },
+    {
+      "block_sha256": "f5748d6502d4a6058209e1fbdaea5ddbd6f952a0d972c9fef12f7e4461791bc2",
+      "canonical_target": "alloc::collections::btree_set::BTreeSet::<T, A>::len",
+      "line": 739,
+      "match_dimensions": [
+        "target_binding",
+        "receiver_reference_shape",
+        "parameter_shape",
+        "return_shape",
+        "lifetimes",
+        "generics",
+        "bounds",
+        "mutability"
+      ],
+      "target_id": "039_BTreeSet_inherent_len_2101"
+    },
+    {
+      "block_sha256": "234e8f857a511e5440b0bf0ba16b5045466628e9b77b406717e730a8f2fdcb35",
+      "canonical_target": "alloc::collections::btree_set::BTreeSet::<T, A>::is_empty",
+      "line": 746,
+      "match_dimensions": [
+        "target_binding",
+        "receiver_reference_shape",
+        "parameter_shape",
+        "return_shape",
+        "lifetimes",
+        "generics",
+        "bounds",
+        "mutability"
+      ],
+      "target_id": "040_BTreeSet_inherent_is_empty_2102"
+    },
+    {
+      "block_sha256": "5c8b104e06a51689c8ff38bd1410b4118921959d961e18f2d0dae4e735034799",
+      "canonical_target": "<alloc::collections::btree_set::BTreeSet<T> as core::default::Default>::default",
+      "line": 765,
+      "match_dimensions": [
+        "target_binding",
+        "receiver_reference_shape",
+        "parameter_shape",
+        "return_shape",
+        "lifetimes",
+        "generics",
+        "bounds",
+        "mutability"
+      ],
+      "target_id": "050_BTreeSet_Default_default_2156"
+    }
+  ],
+  "schema_version": 1,
+  "source": "provenance/frozen/vstd/std_specs/btree.rs",
+  "source_sha256": "56084afc69ae4b0a9380d3413e5523e6c4d5d281a4846c4589da7c1c34fa73b1"
+}

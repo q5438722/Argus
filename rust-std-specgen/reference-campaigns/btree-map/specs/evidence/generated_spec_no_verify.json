@@ -1,0 +1,38 @@
+{
+  "command": [
+    "/home/chentianyu/nanvix-rust-std-spec-survey/verus/source/target-verus/release/verus",
+    "--crate-type=lib",
+    "--triggers-mode",
+    "silent",
+    "--no-verify",
+    "/home/chentianyu/nanvix-rust-std-spec-survey/nanvix-rust-std-btree-map-regeneration-20260901-v011-8798/specs/generated_btree_map_specs.rs"
+  ],
+  "completed_at": "2026-09-02T02:01:04.857115Z",
+  "cwd": "/home/chentianyu/nanvix-rust-std-spec-survey/nanvix-rust-std-btree-map-regeneration-20260901-v011-8798",
+  "duration_ms": 1280,
+  "inputs": {
+    "all_specs_catalog": {
+      "path": "specs/all_btree_map_specs.json",
+      "sha256": "e1f28c6fe64595a6fd4ece50bca80d2fd70529187cc0c17a4770fc4813f1457f"
+    },
+    "generated_source": {
+      "path": "specs/generated_btree_map_specs.rs",
+      "sha256": "13291bb31c2af5069ef6989959d6cb4cfedfc7a9e340f8663dc58c8ee8926f59"
+    },
+    "inventory": {
+      "path": "inventory/btree_map_exec_fn_inventory.json",
+      "sha256": "849ac18c2ba0c1de00b5d702837ef938aa6e2266f86bca4a2265631fae31f155"
+    },
+    "shared_vocabulary": {
+      "path": "specs/btree_map_shared_vocabulary.rs",
+      "sha256": "ae4c39b48a9605d4b36b97e9dafb2846d473d72d4d935bbf5688a7eed885152b"
+    }
+  },
+  "mode": "no_verify",
+  "name": "generated_spec_no_verify",
+  "passed": true,
+  "returncode": 0,
+  "schema_version": 2,
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

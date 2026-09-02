@@ -1,0 +1,118 @@
+{
+  "assumption_policy": "No whole-target external body and no assumed implementation. Only individually named external bodies, uninterpreted representation projections, and type-level bridges are retained. Every local helper is bound to one exact frozen Rust 1.96 definition span and to the exact call-site spelling in this target's own excerpt.",
+  "dependencies": [
+    {
+      "accepted_call_spellings": [
+        "Result<T, E>",
+        "Result::Ok",
+        "Result::Err",
+        "Ok(",
+        "Err(",
+        "Result<",
+        "self.inner"
+      ],
+      "call_spelling": "Result<T, E>",
+      "canonical_path": "/home/chentianyu/nanvix-rust-std-spec-survey/rust-1.96/library/core/src/result.rs",
+      "definition": {
+        "anchor_line": 557,
+        "anchor_regex": "^pub enum Result<",
+        "anchor_text": "pub enum Result<T, E> {",
+        "anchor_text_sha256": "bfc9a3dcb4bd1c682d9a86f572e660e9a6ddebf465cc66c4f464b9cd04d6b3fd",
+        "definition_end_line": 562,
+        "definition_snapshot": "pub enum Result<T, E> {\n    /// Contains the success value\n    #[lang = \"Ok\"]\n    #[stable(feature = \"rust1\", since = \"1.0.0\")]\n    Ok(#[stable(feature = \"rust1\", since = \"1.0.0\")] T),\n\n",
+        "definition_snapshot_sha256": "75532634b3328132c7143a2958add96a58a5497cd2cffd4215a6f417e4fc41ab",
+        "definition_start_line": 557
+      },
+      "definition_anchor_regex": "^pub enum Result<",
+      "freeze_mode": "exact_full_adjacent_source_file_plus_definition_span",
+      "kind": "frozen_source_datatype",
+      "literal_external_body": false,
+      "name": "core_result_result_enum",
+      "proof_symbol": "Result",
+      "proof_symbols": [
+        "Result",
+        "source_ok_payload_identity_law",
+        "source_err_payload_identity_law"
+      ],
+      "rationale": "The accepted target matches directly on the frozen Rust 1.96 `Result` declaration; the proof uses the same two-variant datatype.",
+      "rust_relative_path": "library/core/src/result.rs",
+      "sha256": "fc9cedba2ca1bb3d07b07d0f15160ed0277ed9a9cbc91fa5045125a73cdacb1d",
+      "size": 73702,
+      "snapshot_path": "frozen_inputs/source_dependencies/library/core/src/result.rs",
+      "snapshot_sha256": "fc9cedba2ca1bb3d07b07d0f15160ed0277ed9a9cbc91fa5045125a73cdacb1d",
+      "target_call_site": {
+        "absolute_source_line": 233,
+        "excerpt_relative_line": 1,
+        "line_text": "fn sum<I>(iter: I) -> Result<T, E>",
+        "line_text_sha256": "bc388fae6f802494773b7a83b7017895bfe8557c5a72e89405b273553835dd83",
+        "located_in": "source_excerpt",
+        "spelling": "Result<T, E>"
+      },
+      "target_source_excerpt_sha256": "da050c3bf87df6a96dbc7bccf116bbe998dedbbf78f51a96d4804635a1d49f9c"
+    },
+    {
+      "accepted_call_spellings": [
+        "iter::try_process(iter.into_iter(), |i| i.sum())",
+        "iter::try_process"
+      ],
+      "call_spelling": "iter::try_process(iter.into_iter(), |i| i.sum())",
+      "canonical_path": "/home/chentianyu/nanvix-rust-std-spec-survey/rust-1.96/library/core/src/iter/adapters/mod.rs",
+      "definition": {
+        "anchor_line": 152,
+        "anchor_regex": "^pub\\(crate\\) fn try_process<",
+        "anchor_text": "pub(crate) fn try_process<I, T, R, F, U>(iter: I, mut f: F) -> ChangeOutputType<I::Item, U>",
+        "anchor_text_sha256": "7a7c20bc19d63c86a2ef71163320ba62bee6d9c15264a58e83593aad96ff311e",
+        "definition_end_line": 157,
+        "definition_snapshot": "pub(crate) fn try_process<I, T, R, F, U>(iter: I, mut f: F) -> ChangeOutputType<I::Item, U>\nwhere\n    I: Iterator<Item: Try<Output = T, Residual = R>>,\n    for<'a> F: FnMut(GenericShunt<'a, I, R>) -> U,\n    R: Residual<U>,\n{\n",
+        "definition_snapshot_sha256": "271d5b8d329ffe15e2457d3528f7442b6af12cac16345ab5ed0dfc2a04564928",
+        "definition_start_line": 152
+      },
+      "definition_anchor_regex": "^pub\\(crate\\) fn try_process<",
+      "freeze_mode": "exact_full_adjacent_source_file_plus_definition_span",
+      "kind": "private_crate_callee",
+      "literal_external_body": true,
+      "name": "core_iter_adapters_try_process",
+      "proof_symbol": "source_try_process",
+      "proof_symbols": [
+        "source_try_process"
+      ],
+      "rationale": "`iter::try_process` is `pub(crate)`; it drives a `ShuntIterator` that consumes an ordered prefix of the source iterator and stops at the first `Err`, storing that residual.  The boundary exposes exactly that prefix trace, the residual and the delegated aggregate value.",
+      "rust_relative_path": "library/core/src/iter/adapters/mod.rs",
+      "sha256": "1ca887977e92e291f2d576743ad21d8f07268c2def688589c1efb01685c585ae",
+      "size": 8495,
+      "snapshot_path": "frozen_inputs/source_dependencies/library/core/src/iter/adapters/mod.rs",
+      "snapshot_sha256": "1ca887977e92e291f2d576743ad21d8f07268c2def688589c1efb01685c585ae",
+      "target_call_site": {
+        "absolute_source_line": 237,
+        "excerpt_relative_line": 5,
+        "line_text": "iter::try_process(iter, |i| i.sum())",
+        "line_text_sha256": "26d40e6967cccb7bb726e83d8cf32f683482e54ed8056e141f89c53a4d222cf0",
+        "located_in": "source_excerpt",
+        "spelling": "iter::try_process"
+      },
+      "target_source_excerpt_sha256": "da050c3bf87df6a96dbc7bccf116bbe998dedbbf78f51a96d4804635a1d49f9c"
+    }
+  ],
+  "local_boundary_helpers": [
+    {
+      "call_site": {
+        "absolute_source_line": 237,
+        "excerpt_relative_line": 5,
+        "line_text": "iter::try_process(iter, |i| i.sum())",
+        "line_text_sha256": "26d40e6967cccb7bb726e83d8cf32f683482e54ed8056e141f89c53a4d222cf0",
+        "located_in": "source_excerpt",
+        "spelling": "iter::try_process"
+      },
+      "declaration_kind": "external_body",
+      "definition_anchor_line": 152,
+      "dependency": "core_iter_adapters_try_process",
+      "dependency_kind": "private_crate_callee",
+      "source_line": 52,
+      "source_sha256": "1ca887977e92e291f2d576743ad21d8f07268c2def688589c1efb01685c585ae",
+      "symbol": "source_try_process"
+    }
+  ],
+  "rustdoc_item_id": 26760,
+  "schema_version": 2,
+  "target": "<core::result::Result<T, E> as core::iter::traits::accum::Sum<core::result::Result<U, E>>>::sum"
+}

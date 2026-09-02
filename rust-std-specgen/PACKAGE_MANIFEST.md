@@ -18,6 +18,14 @@ For Result, Cmp, BTreeMap, and BTreeSet:
 - top-level generated `specs/`
 - delivery and trust-boundary documentation when present
 
+The package also includes:
+
+- the source-only `spec-determinism` engine subset used by Rust std feedback
+- the Rust std feedback adapter with a repository-relative checker import
+- 16 Rust std specgen wiki pages
+- the two reviewed research/process documents
+- final checkpoints and canonical final Reviewer handoffs for four modules
+
 One Result target is included under `examples/result/` with:
 
 - accepted contract
@@ -36,3 +44,4 @@ One Result target is included under `examples/result/` with:
 - full Rust, Verus, Z3, and vstd checkouts
 - full per-target proof trees
 - large live-run and mutation evidence
+- generated `spec-determinism` result corpora and binary artifacts

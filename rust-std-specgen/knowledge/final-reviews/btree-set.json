@@ -1,0 +1,18 @@
+{
+  "checkpoint": {
+    "path": "/home/chentianyu/.argus-skill-v011-slice-conditional/projects/s-fb203e1c/handoffs/cd7d6323fa36/CHECKPOINT.md"
+  },
+  "created_at": 1788328819.003024,
+  "kind": "round_reviewed_handoff",
+  "mission_context": "/home/chentianyu/.argus-skill-v011-slice-conditional/projects/s-fb203e1c/handoffs/cd7d6323fa36/mission.json",
+  "mission_id": "cd7d6323fa36",
+  "producer_role": "reviewer",
+  "review": {
+    "next_action": "",
+    "operator_question": "",
+    "reason": "The campaign is sealed complete: same-round compilation succeeded, all 43 task-native tests passed, and the final checker reported campaign_complete. Independent proof/completeness and final-aggregate reviews accepted all 92 source-shaped targets, with 92 implementation proofs, 92 completeness proofs, 92 semantic mutation rejections, category-specific trust accounting, and zero failed or pending rows.",
+    "status": "done"
+  },
+  "round": 66,
+  "schema_version": 2
+}

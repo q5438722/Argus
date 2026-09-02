@@ -1,0 +1,415 @@
+"""Batch runner for single-file Verus corpora (verusage-style).
+
+Walks a directory tree, discovers ``.rs`` files with exec fn + ensures,
+and runs the single-file determinism pipeline on each target function.
+
+Usage:
+    spec-determinism-verusage --project vest --roots ~/.../verusage/source-projects \\
+        --out results-verusage
+
+Writes:
+    <out>/full_run.json                            — aggregated results list
+    <out>/artifacts/<proj>__<relpath>__<fn>/       — per-target artifacts
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import logging
+import re
+import sys
+import time
+from pathlib import Path
+
+from spec_determinism.classify import (
+    BUCKET_COMPLETE,
+    BUCKET_COMPLETE_LLM,
+    BUCKET_INCOMPLETE,
+    BUCKET_INCONCLUSIVE,
+    BUCKET_UNKNOWN_KIND,
+    OK_BUCKETS,
+    classify_ok,
+)
+from spec_determinism.extract.extractor import extract_spec
+from spec_determinism.verus.single_file import (
+    _DEFAULT_VERUS,
+    discover_exec_fns,
+    run_single_file,
+)
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
+log = logging.getLogger("spec_determinism.verusage")
+
+
+_ENSURES_RE = re.compile(r"\bensures\b")
+
+
+def _has_ensures(source: str) -> bool:
+    return bool(_ENSURES_RE.search(source))
+
+
+def _artifact_key(project: str, rel_path: Path, fn: str) -> str:
+    flat = str(rel_path).replace("/", "__").replace(".rs", "")
+    return f"{project}__{flat}__{fn}"
+
+
+def _discover_targets(
+    roots: list[Path],
+    project: str,
+    subdir: str,
+) -> list[tuple[Path, str, str]]:
+    """Return (file_path, fn_name, artifact_key) tuples for every exec fn
+    with ensures found under ``<root>/<project>/<subdir>``.
+    """
+    out: list[tuple[Path, str, str]] = []
+    for root in roots:
+        base = root / project / subdir
+        if not base.exists():
+            log.warning("missing: %s", base)
+            continue
+        for rs in sorted(base.rglob("*.rs")):
+            src = rs.read_text(errors="replace")
+            if not _has_ensures(src):
+                continue
+            fn_names = discover_exec_fns(src)
+            if not fn_names:
+                continue
+            rel = rs.relative_to(root / project)
+            for fn in fn_names:
+                # Filter at extract time: only keep fns that actually
+                # carry ensures in their signature/attribute. This is
+                # cheap (no subprocess), but still catches the case
+                # where a file has both a proof fn with ensures and an
+                # exec fn without.
+                try:
+                    spec = extract_spec(src, fn, type_sources=[])
+                except Exception as e:
+                    log.debug("extract skip %s::%s: %s", rs.name, fn, e)
+                    continue
+                if not spec.ensures:
+                    continue
+                out.append((rs, fn, _artifact_key(project, rel, fn)))
+    return out
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--project", required=True,
+                    help="Project name under --roots (e.g. vest, storage)")
+    ap.add_argument("--roots", type=Path, required=True,
+                    help="Directory containing projects (e.g. "
+                         "~/intent_formalization/verusage/source-projects)")
+    ap.add_argument("--subdir", default="verified",
+                    help="Subdirectory to walk (default: verified)")
+    ap.add_argument("--out", type=Path, default=Path("results-verusage"),
+                    help="Output root (default: results-verusage)")
+    ap.add_argument("--verus-path", default=_DEFAULT_VERUS,
+                    help=f"Path to verus dir (default: {_DEFAULT_VERUS})")
+    ap.add_argument("--timeout", type=int, default=120,
+                    help="Per-target Verus timeout (s, default: 120)")
+    ap.add_argument("--limit", type=int, default=None,
+                    help="Only run first N targets (for smoke testing)")
+    ap.add_argument("--filter", default=None,
+                    help="Only run targets whose artifact key matches this "
+                         "substring")
+    ap.add_argument("--keep-tmp", action="store_true",
+                    help="Preserve the injected .rs / verus_log tmpdirs per "
+                         "target (debug).")
+    ap.add_argument("--use-view-registry", action="store_true",
+                    help="Phase-2: build a per-project L1+L2+L3+L4 "
+                         "ViewRegistry (prelude / alias / impl-View / "
+                         "LLM cache) and consult it from "
+                         "gen_det.build_equal_expr. No LLM is called at "
+                         "run time — L4 only reads the pre-populated cache "
+                         "(see `view.llm prefill`). Uncovered types still "
+                         "fall through to structural ==.")
+    ap.add_argument("--view-cache-dir", type=Path, default=None,
+                    help="Path to an L4 view cache (overrides the canonical "
+                         "results-verusage/view_registry/<project>/ "
+                         "location). Pass an empty/nonexistent path to "
+                         "explicitly disable L4.")
+    ap.add_argument("--use-llm-proof", action="store_true",
+                    help="Escalate to LLM proof loop when the baseline z3 "
+                         "check returns `unknown`. Requires the `copilot` "
+                         "CLI on PATH. Disabled by default; can also be "
+                         "toggled via the env var SPEC_DET_LLM_PROOF=1.")
+    ap.add_argument("--llm-proof-max-attempts", type=int, default=3,
+                    help="Maximum LLM iterations per target before giving "
+                         "up and reporting ok_inconclusive (default: 3).")
+    ap.add_argument("--llm-proof-model", default=None,
+                    help="Copilot CLI --model passthrough.")
+    ap.add_argument("--llm-proof-effort", default=None,
+                    help="Copilot CLI --effort passthrough (e.g. low/medium/high).")
+    ap.add_argument("--llm-proof-cache-dir", type=Path, default=None,
+                    help="Directory to persist LLM-authored proof blocks "
+                         "across runs. On hit the loop re-verifies the "
+                         "cached proof against current Verus and skips the "
+                         "LLM. Default: <results-root>/llm_proof_cache/<proj>/ "
+                         "computed from --out.")
+    ap.add_argument("--llm-proof-cache-mode", default="use",
+                    choices=["use", "refresh", "bypass"],
+                    help="`use` (default): read+write; `refresh`: ignore "
+                         "prior hits and overwrite; `bypass`: don't touch "
+                         "the cache.")
+    ap.add_argument("--llm-proof-timeout", type=int, default=None,
+                    help="Per-LLM-invocation timeout in seconds (default: "
+                         "max(--timeout, 600)). Separate from Verus timeout.")
+    ap.add_argument("--llm-proof-mode", default="single_shot",
+                    choices=["single_shot", "agentic"],
+                    help="`single_shot` (default): N stateless `copilot -p` "
+                         "calls per target with Python-side iteration; "
+                         "`agentic`: one `copilot -p ... --allow-all-tools` "
+                         "session per target — the CLI edits a workdir "
+                         "file, runs Verus itself, and iterates inside one "
+                         "model session. Cache is namespaced per mode so "
+                         "the two can co-exist on disk for A/B comparison.")
+    ap.add_argument("--llm-proof-session-timeout", type=int, default=1800,
+                    help="Wall-clock cap for the agentic Copilot CLI "
+                         "session, in seconds (default: 1800 = 30 min). "
+                         "Ignored in single_shot mode.")
+    ap.add_argument("--llm-type-completion", action="store_true",
+                    help="Tier 1.5: between extract and gen_det, invoke "
+                         "Copilot CLI to fill in missing TypeInfo for "
+                         "generic/macro-wrapped types the extractor "
+                         "couldn't resolve. Results are cached per project "
+                         "+ type-name.")
+    ap.add_argument("--llm-type-completion-cache-dir", type=Path, default=None,
+                    help="Override default live cache root "
+                         "(~/.cache/spec_determinism/type_completion). "
+                         "Writes from this run land here.")
+    ap.add_argument("--llm-type-completion-pinned-dir", type=Path, default=None,
+                    help="Optional pinned (read-only) cache snapshot for "
+                         "Tier 1.5. Read-through fallback when a type is "
+                         "missing from the live cache; never modified. Use "
+                         "this for deterministic A/B testing. If omitted, "
+                         "auto-detect at "
+                         "<roots>/../cache_snapshots/<project>/ "
+                         "(where <roots> is --roots).")
+    ap.add_argument("--no-llm-type-completion-pinned-autodetect",
+                    dest="llm_type_completion_pinned_autodetect",
+                    action="store_false", default=True,
+                    help="Disable auto-detection of pinned cache snapshot.")
+    ap.add_argument("--llm-type-completion-timeout", type=int, default=300,
+                    help="Per-target Copilot CLI timeout for Tier 1.5 "
+                         "(default: 300s).")
+    args = ap.parse_args()
+
+    roots = args.roots.expanduser().resolve()
+    out_root = args.out.expanduser().resolve()
+    artifacts_dir = out_root / "artifacts"
+    out_root.mkdir(parents=True, exist_ok=True)
+    artifacts_dir.mkdir(parents=True, exist_ok=True)
+
+    targets = _discover_targets([roots], args.project, args.subdir)
+    if args.filter:
+        targets = [t for t in targets if args.filter in t[2]]
+    if args.limit:
+        targets = targets[: args.limit]
+
+    log.info("Discovered %d target(s) under %s/%s/%s",
+             len(targets), roots, args.project, args.subdir)
+
+    # Project root path (used both as a ViewRegistry input and as the
+    # `source_project_root` we pass to the LLM-proof pipeline so the
+    # agentic CLI can grep for missing type definitions).
+    proj_root = roots / args.project
+
+    view_registry = None
+    if args.use_view_registry:
+        from spec_determinism.view.registry import ViewRegistry
+        from spec_determinism.view.llm import ViewCache
+        log.info("Building ViewRegistry from %s ...", proj_root)
+        t_reg = time.monotonic()
+        # PR-D2: attach the L4 LLM cache if one exists on disk.  We
+        # look under the same default path that ``view.llm prefill``
+        # writes to.  Absence is fine — registry falls back to
+        # L1+L2+L3 only.
+        cache_root = (out_root.parent / "view_registry" / args.project
+                      if out_root.name != "view_registry"
+                      else out_root / args.project)
+        # Default canonical location matches the prefill CLI:
+        #   <repo_root>/results-verusage/view_registry/<project>/
+        # The repo root is the package's grandparent — `parents[2]` from
+        # this file is `spec-determinism/` (the repo root); using
+        # `parent.parent` would give `spec_determinism/` (the *package*
+        # directory) and silently miss the real cache (ISSUES #11).
+        canonical = (Path(__file__).resolve().parents[2]
+                     / "results-verusage" / "view_registry"
+                     / args.project)
+        llm_cache = None
+        if args.view_cache_dir is not None:
+            llm_cache = ViewCache(args.view_cache_dir)
+        elif canonical.exists():
+            llm_cache = ViewCache(canonical)
+        elif cache_root.exists():
+            llm_cache = ViewCache(cache_root)
+        if llm_cache is not None:
+            log.info("Attaching L4 view cache from %s", llm_cache.root)
+        else:
+            # User asked for the registry but no L4 cache is reachable.
+            # Be explicit so reproductions don't silently degrade to
+            # L1+L2+L3 only (ISSUES #11).
+            log.warning(
+                "--use-view-registry set but no L4 cache attached "
+                "(checked --view-cache-dir, canonical=%s, fallback=%s); "
+                "proceeding with L1+L2+L3 only.",
+                canonical, cache_root,
+            )
+        view_registry = ViewRegistry.from_project(proj_root,
+                                                  llm_cache=llm_cache)
+        log.info("ViewRegistry: %d types, %d view impls, %d L4 cache "
+                 "entries, built in %.2fs",
+                 len(view_registry.types_by_short),
+                 sum(len(v) for v in view_registry.scan.views.values()),
+                 (len(llm_cache.all_entries()) if llm_cache else 0),
+                 time.monotonic() - t_reg)
+
+    # Resolve LLM proof cache dir. Default: <out_root>/llm_proof_cache/
+    # (note: out_root already includes the project subdir in the rerun
+    # script's invocation, so this is per-project automatically).
+    #
+    # When --llm-proof-mode is set we namespace the cache by mode so the
+    # two modes can co-exist on disk (apples-to-apples A/B comparison).
+    # Legacy flat caches from before this flag existed are migrated
+    # automatically into the `single_shot/` subdir.
+    llm_proof_cache_dir = None
+    if args.use_llm_proof:
+        if args.llm_proof_cache_dir is not None:
+            llm_proof_cache_base = args.llm_proof_cache_dir.expanduser().resolve()
+        else:
+            llm_proof_cache_base = out_root / "llm_proof_cache"
+        llm_proof_cache_base.mkdir(parents=True, exist_ok=True)
+        llm_proof_cache_dir = llm_proof_cache_base / args.llm_proof_mode
+        llm_proof_cache_dir.mkdir(parents=True, exist_ok=True)
+        # Migrate legacy flat *.json entries (pre-mode caches) into
+        # single_shot/ so they remain useable as the historical
+        # baseline without colliding with future agentic entries.
+        if args.llm_proof_mode == "single_shot":
+            for p in llm_proof_cache_base.glob("*.json"):
+                target = llm_proof_cache_dir / p.name
+                if not target.exists():
+                    p.rename(target)
+                    log.info("migrated legacy cache entry: %s → %s", p.name, target)
+        log.info("LLM-proof cache: %s (cache_mode=%s, llm_mode=%s)",
+                 llm_proof_cache_dir, args.llm_proof_cache_mode,
+                 args.llm_proof_mode)
+
+    # Resolve Tier 1.5 pinned cache directory. Priority:
+    #   1. Explicit --llm-type-completion-pinned-dir
+    #   2. Auto-detect at <roots>/../cache_snapshots/<project>/ (i.e.,
+    #      verusage/cache_snapshots/<project>/ for the canonical layout).
+    #      Disabled by --no-llm-type-completion-pinned-autodetect.
+    #   3. None (live-only operation, preserving pre-pin behavior).
+    llm_type_pinned_dir = None
+    if args.llm_type_completion:
+        if args.llm_type_completion_pinned_dir is not None:
+            cand = args.llm_type_completion_pinned_dir.expanduser().resolve()
+            if cand.is_dir():
+                llm_type_pinned_dir = cand
+            else:
+                log.warning("Tier 1.5: --llm-type-completion-pinned-dir %s "
+                            "does not exist; running live-only.", cand)
+        elif args.llm_type_completion_pinned_autodetect:
+            cand = (roots.parent / "cache_snapshots" / args.project).resolve()
+            if cand.is_dir():
+                llm_type_pinned_dir = cand
+                log.info("Tier 1.5: auto-detected pinned cache at %s", cand)
+        if llm_type_pinned_dir:
+            log.info("Tier 1.5: pinned cache = %s (read-only)",
+                     llm_type_pinned_dir)
+
+    results: list[dict] = []
+    t0 = time.monotonic()
+    for i, (file_path, fn, key) in enumerate(targets, 1):
+        log.info("[%d/%d] %s :: %s", i, len(targets), key, fn)
+        art_dir = artifacts_dir / key
+        try:
+            r = run_single_file(
+                file_path, fn,
+                verus_path=args.verus_path,
+                timeout=args.timeout,
+                artifact_dir=art_dir,
+                keep_tmp=args.keep_tmp,
+                view_registry=view_registry,
+                use_llm_proof=args.use_llm_proof,
+                llm_proof_max_attempts=args.llm_proof_max_attempts,
+                llm_proof_model=args.llm_proof_model,
+                llm_proof_effort=args.llm_proof_effort,
+                llm_proof_cache_dir=llm_proof_cache_dir,
+                llm_proof_cache_mode=args.llm_proof_cache_mode,
+                llm_proof_timeout=args.llm_proof_timeout,
+                llm_proof_mode=args.llm_proof_mode,
+                llm_proof_session_timeout=args.llm_proof_session_timeout,
+                llm_proof_source_project_root=proj_root,
+                artifact_key=key,
+                use_llm_type_completion=args.llm_type_completion,
+                llm_type_completion_cache_dir=args.llm_type_completion_cache_dir,
+                llm_type_completion_pinned_dir=llm_type_pinned_dir,
+                llm_type_completion_timeout=args.llm_type_completion_timeout,
+                llm_type_completion_project_root=proj_root,
+            )
+        except Exception as e:
+            r = {"file": str(file_path), "function": fn,
+                 "status": "runner_crash",
+                 "error": f"{type(e).__name__}: {e}"}
+        r["artifact_key"] = key
+        results.append(r)
+        log.info(
+            "  → %s  rounds=%s  assumes=%s  llm=%s",
+            r.get("status"), r.get("n_rounds"), len(r.get("assumes", [])),
+            "yes" if r.get("llm_assisted") else
+            (str(r.get("llm_proof_attempts")) if r.get("llm_proof_attempts") else "-"),
+        )
+
+    full = out_root / "full_run.json"
+    full.write_text(json.dumps(results, indent=2, default=str))
+
+    # Summary
+    total_ms = int((time.monotonic() - t0) * 1000)
+    by_status: dict[str, int] = {}
+    ok_buckets: dict[str, int] = {b: 0 for b in OK_BUCKETS}
+    for r in results:
+        s = r.get("status", "?")
+        by_status[s] = by_status.get(s, 0) + 1
+        if s == "ok":
+            ok_buckets[classify_ok(r)] += 1
+
+    print("\n" + "=" * 80)
+    print(f"verusage run: project={args.project}  subdir={args.subdir}  "
+          f"n={len(results)}  wall={total_ms/1000:.1f}s")
+    print(f"by status: {by_status}")
+    print(f"  {BUCKET_COMPLETE:18s}: {ok_buckets[BUCKET_COMPLETE]:4d}  (R0=unsat, spec pins unique post)")
+    if ok_buckets[BUCKET_COMPLETE_LLM]:
+        print(f"  {BUCKET_COMPLETE_LLM:18s}: {ok_buckets[BUCKET_COMPLETE_LLM]:4d}  (R0=unknown → LLM proof closed it)")
+    permitted = sum(1 for r in results
+                    if r.get("status") == "ok"
+                    and classify_ok(r) == BUCKET_INCOMPLETE
+                    and r.get("permitted"))
+    permitted_or = sum(1 for r in results
+                       if r.get("status") == "ok"
+                       and classify_ok(r) == BUCKET_INCOMPLETE
+                       and r.get("permitted_reason") == "permissive_or")
+    permitted_manual = sum(1 for r in results
+                           if r.get("status") == "ok"
+                           and classify_ok(r) == BUCKET_INCOMPLETE
+                           and r.get("permitted_reason") == "spec_underconstrained_manual")
+    incomplete_note = f"  (R0=sat or permitted=True"
+    if permitted:
+        bd = []
+        if permitted_or:
+            bd.append(f"{permitted_or} via `|||`")
+        if permitted_manual:
+            bd.append(f"{permitted_manual} via REAL_SAT allowlist")
+        incomplete_note += f"; permitted={permitted} ({', '.join(bd)})"
+    incomplete_note += ")"
+    print(f"  {BUCKET_INCOMPLETE:18s}: {ok_buckets[BUCKET_INCOMPLETE]:4d}{incomplete_note}")
+    print(f"  {BUCKET_INCONCLUSIVE:18s}: {ok_buckets[BUCKET_INCONCLUSIVE]:4d}  (R0=unknown / legacy, z3 undecided)")
+    if ok_buckets[BUCKET_UNKNOWN_KIND]:
+        print(f"  {BUCKET_UNKNOWN_KIND:18s}: {ok_buckets[BUCKET_UNKNOWN_KIND]:4d}  (unexpected r0_z3 value)")
+    print(f"full → {full}")
+    print("=" * 80)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

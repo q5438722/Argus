@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spec-determinism"
+version = "0.1.0"
+description = "Schema-driven determinism check for Verus spec fns"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "tree-sitter==0.25.2",
+    "tree-sitter-verus",
+    "z3-solver==4.12.5.0",
+]
+
+[project.scripts]
+spec-determinism-run = "spec_determinism.cli:run_all_main"
+spec-determinism-regen = "spec_determinism.cli:regen_main"
+spec-determinism-verusage = "spec_determinism.cli:verusage_main"
+spec-determinism-step2 = "spec_determinism.verus.step2_sweep:main"
+
+[tool.setuptools.packages.find]
+include = ["spec_determinism*"]
+exclude = ["results*", "docs*", "configs*"]

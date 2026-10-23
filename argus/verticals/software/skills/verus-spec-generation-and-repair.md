@@ -1,9 +1,19 @@
 ---
 name: "Verus Module Specification Workflow"
-description: "Specify Rust submodules with view-first contracts, Verus correctness and spec-determin-tool completeness feedback, reviewed implementation-change issues, and explicit limitation reports."
+description: "Specify Rust submodules with view-first contracts, Verus correctness and spec-determin-tool completeness feedback, explicit trust boundaries, reviewed implementation-change issues, and limitation reports."
 ---
 
 # Verus Module Specification Workflow
+
+For Rust std work, also apply [direct API postconditions](verus-inline-api-postconditions.md)
+and [centralized artifact storage](spec-artifact-workspace.md).
+Use the [campaign-local Verus policy](verus-campaign-local-toolchain.md) for
+demonstrated unsupported Rust language/verifier features, and the
+[callback triage policy](verus-callback-api-triage.md) for callback-heavy APIs.
+Write the actual guarantees in the API's `ensures`, not a single whole-contract
+spec-function call. Helpers or external type registrations without an effective
+API binding are unfinished generation work. New output belongs below the
+assigned `~/rust-std-specgen-artifacts/` campaign root, not directly under home.
 
 For Verus module-specification tasks, all four roles must use this shared
 contract and their own role Skill. This is a domain delivery requirement, not
@@ -51,7 +61,9 @@ conditions, and relevant examples. Record both source and docstring locations.
 Resolve material disagreements instead of silently choosing whichever makes
 verification easier.
 
-Preserve public bindings, signatures, lifetimes, and the intended input domain.
+Preserve Rust public bindings, signatures, lifetimes, and the original input domain.
+Distinguish legal calls from conditional guarantees; a postcondition guard is
+not an extra API precondition or a claim of unrestricted determinism.
 Do not add `Copy`, `Eq`, or `'static` merely to make proofs pass. Preserve
 existing vstd contracts unless changing them is explicitly in scope.
 Use direct `@`, `Seq`, indexing, subranges, and existing abstractions where
@@ -62,10 +74,44 @@ regions, and required writeback. Pointer metadata alone does not establish
 pointee contents. Signature-only, domain-only, and trivial length-only contracts
 are partial results, not complete content specifications.
 
+### Existing-abstraction integration
+
+For values consumed through a library protocol, follow the
+[abstraction-integration reference](references/spec-abstraction-integration.md).
+Reuse adequate specification interfaces, not just similarly named views.
+Connect constructor guarantees to the actual consumer contracts and later
+observations; initial metadata alone is not a complete stateful family.
+Representative repository clients must exercise that connection, as supplements
+to the two required proof tracks, not replacements for them.
+
+### Equality-model trust boundary
+
+`T: PartialEq<U>` does not imply Verus equality-model conformance. Of the two
+valid approaches (restrict callers with a conformance precondition, or guard
+all guarantees), this workflow defaults to **option (2): conditional
+postconditions**. A separately approved restricted wrapper is not an
+original-domain std specification or an automatic proof-failure fallback.
+
+Apply [TB-PARTIAL-EQ](references/trust-boundaries/partial-eq.md),
+revision **conditional-posts-v2**: **if needed**, put all postconditions of the
+affected function on the right of `T::obeys_eq_spec() ==>`, using the exact
+qualified `PartialEqSpec<U>` pair where necessary. This is not a blanket
+assumption: do not add this guard as an API `requires` or introduce new trait bounds.
+Unaffected functions keep ordinary contracts. Record the complete guarded
+postcondition and why it is needed in `trust_boundaries/TB-PARTIAL-EQ.md`.
+Correctness checks the guarded contract under original preconditions;
+completeness must distinguish conditional uniqueness from unrestricted
+determinism. An `!obeys_eq_spec()` call remains legal but receives no guarantee
+from the guarded postconditions. Label results with the policy revision;
+old premise-only successes need migration checks, not silent relabeling.
+Source/content correspondence and all obligations inside the guard still
+require proof; no additional assumptions or tool/implementation edits are authorized.
+
 ## 3. Require two independent feedback dimensions for each API
 
-Both dimensions must refer to the same candidate specification, views, input
-domain, and intended Rust/Verus baseline.
+Both dimensions must refer to the same candidate specification, views, original
+input domain, stated conditional guarantees, and intended Rust/Verus baseline.
+Any analysis-only restriction must be visible and must not become an API precondition.
 
 | Dimension | Required proof | Not a substitute |
 |---|---|---|
@@ -118,9 +164,10 @@ candidate, dependencies, and baseline remain unchanged.
 
 Use precise failures or counterexamples to guide the next attempt. Do not
 repeatedly run an unchanged broad suite, weaken a required check, or narrow
-legal inputs just to get a pass. If an actual source/tool limitation prevents
-closure, retain the candidate and proof attempts, and raise the corresponding
-issue below. That API remains incomplete; reporting a blocker or raising an
+legal calls just to get a pass. The approved optional postcondition guard does
+not authorize an extra API calling requirement. If an actual source/tool
+limitation prevents closure, retain the candidate and proof attempts, and raise
+the corresponding issue below. That API remains incomplete; reporting a blocker or raising an
 issue is not a successful repair.
 
 ## 5. Raise issues before implementation changes
@@ -132,6 +179,14 @@ changes. Do not disguise executable changes as proof cleanup. Ordinary proof
 annotations and lemmas that leave the executable implementation unchanged do
 not by themselves require an implementation-change issue.
 
+The [proof-only field-visibility Skill](verus-proof-only-field-visibility.md)
+is a pre-authorized, visibility-only exception for isolated correctness-proof
+copies. It does not authorize changing canonical libraries or executable code.
+Keep newly exposed fields out of exported contracts and completeness inputs;
+record and independently review the original/copy correspondence.
+For this Rust std work, pointer and ownership properties are not required
+spec/completeness observations; their absence alone is not incompleteness.
+
 Raise an issue before making an implementation change. Include the proposed
 diff and its rationale; any exploratory patch must remain an isolated,
 unaccepted proposal until reviewed. Reviewer must compare original and proposed
@@ -140,6 +195,12 @@ correspondence, and affected correctness/completeness proofs. Strict review is
 not replaced by a green build or self-review. Changes to the canonical source,
 Verus, or the trusted basis also need explicit operator authorization; a review
 approval alone does not grant that permission.
+
+The campaign-local Verus policy is the operator's standing authorization for
+narrow verifier/vstd changes inside an isolated campaign toolchain. It does
+not authorize editing the immutable shared baseline or weakening verification.
+Callback APIs may be retained as partial/local skips after bounded supported
+attempts; continue independent APIs rather than blocking the whole module.
 
 The following findings must also be raised as issues:
 
@@ -181,6 +242,12 @@ At minimum, deliver all four collections:
 | `proofs/completeness/<submodule>/<api>.rs` | Per-API completeness proof/harness artifacts produced for `spec-determin-tool` |
 | `issues/` | `issues/INDEX.md` plus the discovered-problem and implementation-change proposal reports, review decisions, and external filing references when applicable |
 
+Maintain the dedicated `trust_boundaries/` records alongside these collections;
+link their IDs from each affected API and both proof tracks. Disclose conditional
+guarantees, analysis scope and policy revisions separately from unresolved
+issues and unrestricted claims. A trust-boundary record is required metadata,
+not a substitute proof.
+
 Mirror the submodule map in the specs rather than mixing unrelated APIs into
 one flat file. Put genuinely shared views in shared spec files instead of
 duplicating them. A root aggregate can include the submodule specs.
@@ -200,8 +267,9 @@ states the reviewed scope; do not invent issues to populate the directory.
 
 Accept an API only after both dimensions pass for its current candidate.
 Accept the whole module only after coverage and all four artifact collections
-are reconciled. A planning or view-only task can complete its own bounded work
-without claiming that dependent APIs or the module have passed.
+and the trust-boundary records are reconciled. A planning or view-only task can
+complete its own bounded work without claiming that dependent APIs or the
+module have passed.
 
 ## 7. Keep verification and borrowing boundaries intact
 
@@ -235,3 +303,44 @@ Relevant vstd examples include `ref_mut_array_unsizing_coercion` in
 `source/vstd/std_specs/vec.rs`, and `first_mut`, `split_at_mut`, and `iter_mut`
 in `source/vstd/std_specs/slice.rs`. Inspect the selected version rather than
 assuming all versions have identical definitions.
+
+## 8. Bound input snapshots and preserve evidence
+
+Before dispatch and before every discover/analyze/reexecute or witness batch,
+read the project's `storage-policy.json` and run its guarded checker entry point.
+The project records `max_input_mib`, `min_free_gib`, and the pinned checker version;
+the same limits apply to Engineer and independent Reviewer scratch execution.
+The bundled [storage preflight](spec_storage_scripts/specdet_storage.py) checks
+the real non-excluded snapshot inputs and output filesystem, then delegates
+unchanged CLI arguments to the pinned checker. It is not a replacement checker.
+Run it with that checker's Python, `--storage-policy <file> -- <checker args>`.
+`--storage-check-only` is readiness information, never a proof result.
+
+`targets.include` filters target discovery, not the input snapshot. Use a
+bounded, dependency-complete input root or explicit snapshot exclusions.
+Keep old runs, caches, downloaded source archives, and unrelated experimental
+source copies out of that root; exclude all historical outputs, not only the
+current output directory. Keep genuine source dependencies, entrypoints, type
+sources, and representation bridges. The verifier must still check the full
+dependency closure; deleting a dependency to meet a size limit is not a repair.
+Account for per-attempt and witness copies when budgeting a batch. A threshold
+failure blocks new work with an explicit issue; do not bypass it, silently
+shrink the semantic domain, or retry the unchanged oversized command.
+
+Retain specs, both proof tracks, original source mappings, commands, generated
+comparisons/queries, results, hashes, and review receipts. Repeated isolated
+input copies may be compacted only with operator authorization: preserve a
+content-verified, restorable archive and original paths/modes/timestamps before
+removing each replaced copy. Keep unique evidence and original run manifests
+unchanged. Mark compacted runs as requiring materialization before replay;
+an archive receipt does not change a proof verdict or make an absent workspace
+directly replayable. Do not hardlink writable attempts to live or archived inputs.
+Pause/drain on storage exhaustion; resumption requires passing readiness and
+the operator's resumption decision, not merely some newly available space.
+
+Keep checker-managed proof/query evidence, but do not add blanket `--log-all`
+to every ordinary compiler or source-proof invocation. Expanded VIR/AIR, full
+graphs and verbose solver transcripts can dwarf the actual proof inputs.
+Generate extra diagnostics only for a bounded question; retain commands and
+outcomes, and compact obsolete derived diagnostics under the same archive policy.
+Cargo caches and intermediate object files are not additional proof evidence.

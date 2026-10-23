@@ -44,7 +44,8 @@
 同时记录源码与 docstring 的位置。
 若存在实质分歧，应先明确处理方式，不能只挑容易让证明通过的一方。
 
-保留公开绑定、签名、生命周期和预期输入域。
+保留原 Rust 公开绑定、签名、生命周期和输入域。
+区分合法调用与条件性保证；后置 guard 不是额外 API 前提，也不表示无条件确定性。
 不得为方便证明增加 `Copy`、`Eq` 或 `'static`；
 除非任务明确要求，否则保留已有 vstd 合同。
 优先使用直接的 `@`、`Seq`、索引、子区间和适当的既有抽象。
@@ -54,9 +55,34 @@ Helper 应表达可复用结构，而不是隐藏 API 的全部答案。
 指针元数据不等于指向内容。只有签名、调用域或简单长度关系的合同是部分结果，
 不能算完整的内容规格。
 
+### 接入既有抽象
+
+通过库协议消费的值采用[抽象接入参考](spec-abstraction-integration.zh-CN.md)。
+复用足够的规格接口，不只是采用相似名称的 view。
+接通 constructor 保证、实际 consumer 合同和后续观察；
+仅有创建时的元数据不等于完整的有状态 family。
+代表性仓库客户端要实际使用该连接，作为两条必要证明链的补充，而不是替代。
+
+### 相等比较模型的信任边界
+
+`T: PartialEq<U>` 不意味着符合 Verus 相等模型。两种合法方案分别是通过符合性
+前置限制调用者，或保护全部后置；本流程默认采用**方案 (2)：条件后置**。
+另获批准的受限 wrapper 不是原调用域的 std 规格，也不是证明失败后的自动回退。
+
+采用 [TB-PARTIAL-EQ](trust-boundaries/partial-eq.zh-CN.md) 的
+**conditional-posts-v2** 更正：**如果有需要**，将受影响函数的全部后置条件
+放在 `T::obeys_eq_spec() ==>` 右侧，必要时限定准确的 `PartialEqSpec<U>` 配对。
+这不是统一假设，不能把该 guard 作为额外 API `requires` 或引入新的 trait bounds；
+无关函数保留普通合同。在 `trust_boundaries/TB-PARTIAL-EQ.md` 记录完整 guard 和理由。
+Correctness 在原前提下验证条件合同；completeness 区分条件唯一性与无条件确定性。
+`!obeys_eq_spec()` 调用仍合法，只是这些后置不提供保证。
+结果须带规则版本；旧的仅在 B 前提下通过需要迁移检查，不能静默改名。
+guard 内的内容、状态及源码对应仍须证明，不授权新增假设或修改工具/implementation。
+
 ## 3. 每个 API 必须有两个独立反馈维度
 
-两类证明必须对应同一版候选 spec、view、输入域和 Rust/Verus 基线。
+两类证明必须对应同一版候选 spec、view、原输入域、明确的条件性保证和 Rust/Verus 基线。
+analysis-only 的检查范围必须可见，不能变成 API 的额外调用前提。
 
 | 维度 | 必须提供的证明 | 不能拿什么替代 |
 |---|---|---|
@@ -101,9 +127,21 @@ Completeness 要先确认项目实际的 `spec-determin-tool` 入口，使用受
 语义变化后重跑受影响的两类检查；只有候选、依赖和基线都未变的结果才能复用。
 
 用明确失败或反例指导下一次尝试。
-不能反复跑未改变的大套件，不能削弱必要检查或排除合法输入来换取通过。
+不能反复跑未改变的大套件，不能削弱必要检查或排除合法调用来换取通过。
+获准的按需条件后置不授权增加 API 调用前提。
 如果确有源码/工具限制无法闭合，保留候选和两类证明尝试，并按下一节提出对应 issue。
 该 API 仍是未完成；报告 blocker 或 raise issue 不等于修复成功。
+
+## API 后置与产物目录
+
+同时遵循[API 后置直接展开](verus-inline-api-postconditions.zh-CN.md)与
+[统一产物目录](spec-artifact-workspace.zh-CN.md)。
+遇到明确不支持的 Rust／验证器 feature 时使用
+[任务本地 Verus 工具链](verus-campaign-local-toolchain.zh-CN.md)；
+回调密集 API 使用[回调 API 生成与跳过策略](verus-callback-api-triage.zh-CN.md)。
+真实 API 的 `ensures` 直接写保证，不只调用包装整份后置的 spec 函数。
+没有有效 API 绑定的辅助函数或类型登记仍属生成未完成。
+新产物放在指定的 `~/rust-std-specgen-artifacts/` campaign 目录，不直接放在 home。
 
 ## 5. 改 implementation 前先 raise issue
 
@@ -112,12 +150,23 @@ Implementation 改动必须先提出 issue，并经严格的独立 review 后才
 以及 verifier/tool 的实现修改。不能把可执行代码改动包装成“proof cleanup”。
 不改变可执行实现的普通证明注解和 lemma，本身不需要 implementation-change issue。
 
+[仅用于证明的字段可见性 Skill](verus-proof-only-field-visibility.zh-CN.md)
+是已获授权的限定例外，只能修改隔离 correctness 源码副本的字段可见性，
+不授权修改原始库或可执行代码。正式合同与 completeness 不得依赖临时公开字段；
+原始/副本对应仍要记录并独立审阅。
+本 Rust std 任务不要求指针与 ownership 属性的 spec/completeness，
+不能仅因缺少这些属性判为未完成。
+
 修改 implementation 前先创建 issue，说明拟议差异及理由。
 探索性 patch 只能作为隔离、尚未被接受的提案保留。
 Reviewer 必须对照原实现与提案，严格审查源码/docstring 语义、安全与行为影响、
 源码到 proof 的对应关系，以及受影响的 correctness/completeness 证明。
 构建通过或作者自审不能替代独立 review。
 修改原始源码、Verus 或可信基础，还需要用户明确授权；review 通过不等于获得该权限。
+`campaign-local-verus-v1` 已作为常设授权，允许在任务隔离目录内进行范围明确的
+Verus/vstd 修改，但不允许修改共享只读基线或削弱验证。
+回调 API 经有界尝试仍受支持不足时，可以保留为 partial/local skip 并继续其他 API，
+不能因此阻塞整个模块或把跳过计为完成。
 
 以下发现同样必须以 issue 形式提出：
 
@@ -157,6 +206,10 @@ Reviewer 必须对照原实现与提案，严格审查源码/docstring 语义、
 | `proofs/completeness/<submodule>/<api>.rs` | 每个 API 供 `spec-determin-tool` 检查的完整性 proof/harness |
 | `issues/` | `issues/INDEX.md`、发现的问题和 implementation-change 提案、review 结论，以及适用的外部提交记录 |
 
+另行维护专门的 `trust_boundaries/` 记录，每个受影响 API 和两类 proof 都关联边界 ID。
+把条件性保证、分析范围及规则版本与未解决 issues、不受限结论分开披露。
+信任边界记录是必要元数据，不替代 proof。
+
 Specs 应对应子模块图，不把无关 API 全部混在一个扁平文件里。
 真正共用的 view 放在共享规格文件，避免重复；根聚合入口可以 include 各子模块规格。
 可以沿用仓库等价布局，但必须明确映射到这四类交付物。
@@ -171,7 +224,7 @@ correctness 证明与命令/结果、completeness 证明与命令/结果，以�
 不能为了填满目录而编造 issue。
 
 只有当前候选的两轴均通过，才能接受该 API。
-只有全模块覆盖和四类产物都对齐，才能接受整个模块。
+只有全模块覆盖、四类产物及 trust-boundary 记录都对齐，才能接受整个模块。
 规划或仅 view 的子任务可以完成自己的有界目标，但不能声称依赖它的 API 或全模块已通过。
 
 ## 7. 保持验证与借用边界
@@ -203,3 +256,33 @@ lowering、借用检查、lifecycle 跟踪、可信 intrinsic 与公理变动属
 `source/vstd/std_specs/vec.rs` 中的 `Vec::as_mut_slice`/`vec_index_mut`，
 以及 `source/vstd/std_specs/slice.rs` 中的 `first_mut`/`split_at_mut`/`iter_mut`。
 不要假设不同版本的定义始终相同。
+
+## 8. 限制输入快照并保留证据
+
+派工前及每次 discover/analyze/reexecute、witness 批次前，读取项目
+`storage-policy.json`，使用带存储检查的 checker 入口。
+项目明确 `max_input_mib`、`min_free_gib` 和固定 checker 版本；
+Engineer 与独立 Reviewer 的 scratch 执行遵守相同阈值。
+使用 checker 的 Python 执行
+`spec_storage_scripts/specdet_storage.py --storage-policy <file> -- <checker args>`；
+它检查真实快照输入和输出所在文件系统，再原样转交 CLI 参数，不替代 checker。
+`--storage-check-only` 只表示开工条件，不表示 proof 通过。
+
+`targets.include` 只筛发现目标，不限制输入快照。使用包含完整依赖的有界输入根，
+或明确排除全部历史输出、缓存、下载源码包、无关实验源码副本。
+不得为满足大小阈值移除真实源码依赖、type sources、入口或表示桥接；
+完整依赖闭包仍由 verifier 检查。预算包含 proof attempt 和 witness 的复制倍增。
+超限必须明确阻塞并记录 issue，不能绕过检查、缩小合法域或原样反复重跑。
+
+保留 specs、两类 proofs、源码映射、命令、生成的 comparison/query、结果、
+hash 与 review receipt。重复的隔离输入副本只有在操作者授权后才可归档；
+移除被替代副本前，必须验证归档内容和可恢复性，并保留路径、权限、时间。
+不改变原 snapshot manifest，不删除唯一证据；标明旧 run 需 materialize 才能重放。
+归档成功不改变 proof verdict，也不表示缺少 workspace 的旧 run 可直接 replay。
+禁止把可写 attempt 硬链接到 live 或归档输入。空间耗尽时暂停并排空；
+恢复需要开工检查通过以及操作者的恢复决定，不能因刚释放空间就自行启动。
+
+保留 checker 管理的 proof/query 证据，但不要给每次普通编译或源码证明都追加
+`--log-all`。完整 VIR/AIR 展开、调用图和详细 solver transcript 可能远大于
+实际证明输入。额外诊断限定于具体问题；保留命令和结果，过时派生产物按同一
+归档规则压缩。Cargo 缓存和中间目标文件不是新增的证明证据。

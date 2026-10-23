@@ -6,6 +6,16 @@
 
 ## 范围与交接
 
+将[任务本地 Verus 授权](../../../references/verus-campaign-local-toolchain.zh-CN.md)
+和[回调 API 策略](../../../references/verus-callback-api-triage.zh-CN.md)带入任务。
+官方基线保持只读；需要补语言 feature 时使用独立可修改工具链。
+回调支持不足的跳过项保留在清单中，但不阻塞其他 ready API。
+
+要求[直接展开且实际绑定的 API 后置](../../../references/verus-inline-api-postconditions.zh-CN.md)，
+并指定[统一产物根](../../../references/spec-artifact-workspace.zh-CN.md)。
+不能把辅助函数交付当作剩余 API 规格队列完成。
+获准搬迁时使用受支持的生命周期/workdir 接口，保留历史证据和原任务身份。
+
 1. 确认目标模块、Rust 源码与 docstrings、已有 vstd 合同、输出位置和固定 Verus 基线。
    保留用户要求的 API 范围；有歧义就说明，不能悄悄排除困难 API 或修改签名。
 2. 要求先分析子模块与依赖，再生成 API spec。
@@ -25,6 +35,31 @@
    review 本身不授权修改原始 Rust/std 或 Verus。
    获得明确批准前保留目标源码。
 
+## 要求可用的库接入
+
+私有字段阻碍源码证明时，将[仅用于证明的字段可见性授权](../../../references/verus-proof-only-field-visibility.zh-CN.md)
+带入任务。只允许适配隔离的 correctness 副本，不修改真实 std/vstd 或扩展公开接口。
+要求对应性审阅及原库下的 spec/completeness；不只为字段可见性再次等待批准，
+也不自动改写旧失败的分类。
+
+依据[抽象接入参考](../../../references/spec-abstraction-integration.zh-CN.md)，
+要求复用足够的既有规格协议；不足时提供有依据的桥接。
+对范围内有状态 family，交付要求包含 constructor/consumer 互通与代表性仓库客户端。
+不预设必须新增 view 或指定具体表示，详细分析交给 Planner。
+孤立模型输出唯一，不证明调用者能通过已有库合同使用 API。
+接入客户端只补充检查，不能替代任一证明维度。
+
+## 声明验证的信任边界
+
+采用 [TB-PARTIAL-EQ](../../../references/trust-boundaries/partial-eq.zh-CN.md)
+的 **conditional-posts-v2** 更正。**如果有需要**，要求该函数全部后置位于
+`T::obeys_eq_spec() ==>` 右侧，不统一假定标志成立，也不增加 API `requires`。
+无关函数与原 Rust 调用域不变。专门的 `trust_boundaries/TB-PARTIAL-EQ.md`
+记录理由、准确配对、完整受保护保证及条件分析范围。
+通过正常规划修正冲突的项目指导，旧前提式证据保留为历史，
+安排迁移检查而非把旧成功静默改名。区分条件完整性与无条件确定性；
+本次更正不授权其他 trust boundary。
+
 ## 完成与升级
 
 未通过的 API 带着明确失败或 blocker 继续 repair。
@@ -40,3 +75,12 @@
 规划/view 子任务完成，与 API 已通过验收分开。
 工具限制不授权修改 verifier 或 lifecycle 引擎；确有需要时应另行取得批准。
 版本、路径、范围决策和进度保留在项目里。
+
+## 存储开工条件与保留规则
+
+派工前设置 `storage-policy.json`、有界输入根和带存储检查的 checker 入口。
+Engineer 与 Reviewer 都检查真实输出文件系统的空闲空间与输入大小；
+超限不得派工，用户暂停后不能因清理释放空间就自动恢复。
+存储阻塞期间保留完整 API 目标。明确批准归档范围，保留唯一
+spec/proof/query/review 证据以及重复输入的已验证恢复路径。
+清理不改变接受数量，也不授权修改 checker 或源码 implementation。

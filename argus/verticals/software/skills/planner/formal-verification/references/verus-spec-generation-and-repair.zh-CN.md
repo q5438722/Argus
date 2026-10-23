@@ -36,7 +36,44 @@
    为疑似 Verus 限制安排最小复现，为疑似 std 实现/docstring 缺陷安排 review。
    不能从一个未决证明直接假定上游存在 bug。
 
+## 扩展 family 前先规划协议连接
+
+字段隐私阻碍源码证明时，先考虑已授权的[proof-only 可见性路线](../../../references/verus-proof-only-field-visibility.zh-CN.md)，
+不要直接把隐私判为不可避免。适配 correctness 构建与原库下的 spec/completeness 分开；
+规划精确字段 diff、类型/view 对应及独立审阅。
+opaque 类型支持或 callee 合同缺失仍是不同的义务。
+
+采用[抽象接入参考](../../../references/spec-abstraction-integration.zh-CN.md)。
+规划平行 view 前，检查既有 trait 规格、真实 item/返回类型、consumer 合同及启用条件。
+在现有依赖图中包含 constructor -> consumer -> observer，
+以及适用的耗尽或可变借用写回义务。
+将同一模型推广到更多 API 前，先安排一个代表性客户端组合。
+区分 constructor-only 桥接与消费后需要的关系，明确不能支持的义务。
+客户端是补充工作，不是可替代必要证明的第三条证明链。
+
+## 规划中携带信任边界
+
+使用 [TB-PARTIAL-EQ](../../../references/trust-boundaries/partial-eq.zh-CN.md)
+的 **conditional-posts-v2** 及 `trust_boundaries/TB-PARTIAL-EQ.md`。
+逐函数判断**如果有需要**，再将全部后置放在准确配对的
+`T::obeys_eq_spec() ==>` 右侧；不把 guard 传成额外 API `requires`，
+不给无关工作增加比较界限。规划原调用域内的正确性与明确的条件唯一性，
+包括 B 为真的正例及仍合法的 !B 情况。
+为旧前提式合同安排有界迁移，只复用候选及结论仍匹配的证据。
+!B 时无条件唯一性不成立不反驳条件完整性；真实源码/内容桥接及模型定义仍是义务。
+
 ## 反馈与重规划
+
+按[任务本地 Verus 规则](../../../references/verus-campaign-local-toolchain.zh-CN.md)
+规划范围明确的验证器 feature 工作，并单独安排 patch、测试和 review 依赖；
+不能让它串行阻塞无关 API。按[回调 triage](../../../references/verus-callback-api-triage.zh-CN.md)
+安排有界且实质不同的尝试；若需要大规模新回调语义，则登记 callback-support
+local skip 后继续其他工作。
+
+按[直接 API 后置规则](../../../references/verus-inline-api-postconditions.zh-CN.md)
+规划实际绑定/协议接入和展开后的保证，不用仅辅助函数里程碑替代 API。
+全部交付物使用指定的[统一产物目录](../../../references/spec-artifact-workspace.zh-CN.md)；
+保留搬迁检查点，不重新把旧绝对路径当作新产物根。
 
 用实际 correctness 失败义务、completeness 反例或未决 query 决定下一项有界修复。
 View/helper 改变会重新打开全部依赖它的 API 检查。
@@ -48,3 +85,13 @@ View/helper 改变会重新打开全部依赖它的 API 检查。
 可以继续独立子模块，但不得绕过 issue/review 要求。
 调查、仅 view 的结果或单轴通过，都不等于 API 完成。
 最后安排覆盖核对，以及 Reviewer 对模块两条证明链的独立验收。
+
+## 规划有界输入快照
+
+交接明确 `storage-policy.json` 和带存储检查的 checker 命令。
+列出完整 source/spec 依赖闭包与快照排除项；
+`targets.include` 本身不能限制复制量。历史输出、下载源码树和无关实验副本
+不得进入输入根。预算考虑 proof attempt 与 witness candidate 的复制倍增，
+派工前检查存储条件。可复用 hash 匹配的未变证据，不重复跑无变化的大批次。
+超限是明确 blocker，不是删除 implementation 桥接、弱化 comparison
+或移除唯一 proof/review 证据的许可。

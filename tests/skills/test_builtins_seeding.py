@@ -117,6 +117,12 @@ def test_iter_vertical_skill_texts_unknown_or_skill_less_is_empty() -> None:
         "planner/software-project-grounding.md",
         "reviewer/formal-verification/verus-spec-generation-and-repair.md",
         "reviewer/software-change-review.md",
+        "spec-artifact-workspace.md",
+        "spec_storage_scripts/specdet_storage.py",
+        "verus-callback-api-triage.md",
+        "verus-campaign-local-toolchain.md",
+        "verus-inline-api-postconditions.md",
+        "verus-proof-only-field-visibility.md",
         "verus-spec-generation-and-repair.md",
     }
 

@@ -48,7 +48,53 @@ project inventory; it does not require a new planning-file protocol.
    suspected std implementation/docstring defects. Do not turn an inconclusive
    proof into an assumed upstream bug.
 
+## Plan protocol connections before expanding a family
+
+For a field-privacy source blocker, consider the authorized
+[proof-only visibility route](../../verus-proof-only-field-visibility.md)
+before treating privacy as unavoidable. Separate the adapted correctness
+build from the original-library spec/completeness build. Plan the exact
+field diff, type/view correspondence and independent review; missing opaque
+type support or callee contracts remain distinct obligations.
+
+Apply the [abstraction-integration reference](../../references/spec-abstraction-integration.md).
+Inspect existing trait specifications, actual item/return types, consumer
+contracts, and their enabling conditions before planning a parallel view.
+Include constructor -> consumer -> observer dependencies and applicable
+exhaustion or mutable-writeback obligations in the existing map.
+Schedule a representative client composition before expanding the same model
+across a larger API family. Distinguish constructor-only bridges from relations
+needed after consumption; identify any unsupported obligation explicitly.
+These clients are supplemental work, not a third substitute proof track.
+
+## Carry trust boundaries into proof planning
+
+Use [TB-PARTIAL-EQ](../../references/trust-boundaries/partial-eq.md),
+revision **conditional-posts-v2**, and `trust_boundaries/TB-PARTIAL-EQ.md`.
+Decide **if needed** per function, then plan all its postconditions on the
+right of `T::obeys_eq_spec() ==>` for the exact receiver/Rhs pair.
+Do not propagate the guard as a new API `requires` or add comparison bounds
+to unrelated work. Plan original-domain correctness and explicitly conditional
+uniqueness, including B-true witnesses and the legal !B cases.
+Prioritize affected old premise-only contracts for bounded migration; reuse
+evidence only where its candidate and claim still match. Unrestricted
+nondeterminism outside the guard does not refute conditional completeness.
+Missing source/content bridges and meaningful model definitions remain obligations.
+
 ## Feedback and replanning
+
+Plan narrow verifier-feature work under the
+[campaign-local toolchain policy](../../verus-campaign-local-toolchain.md),
+with its own patch/test/review dependencies and without serializing unrelated
+API work behind it. Apply [callback triage](../../verus-callback-api-triage.md):
+schedule bounded materially different attempts, then record a callback-support
+local skip and continue when broad new callback semantics would be required.
+
+Apply [direct API postconditions](../../verus-inline-api-postconditions.md):
+plan actual bindings/protocol integration and inlined guarantees, not a
+helper-only milestone in place of the API. Keep all planned deliverables under
+the assigned [central artifact workspace](../../spec-artifact-workspace.md);
+honor relocation checkpoints and do not reopen old absolute paths as new roots.
 
 Use the failed correctness obligation, completeness counterexample, or
 inconclusive query to choose the next bounded repair. A view/helper change
@@ -62,3 +108,14 @@ continue independent submodules without bypassing the issue/review requirement.
 Do not convert investigation, a view-only result, or one passing dimension into
 API completion. Finish with a coverage reconciliation and independent Reviewer
 acceptance of both proof tracks for the module.
+
+## Plan bounded snapshots
+
+Resolve `storage-policy.json` and the guarded checker command in each handoff.
+List the complete source/spec dependency closure and snapshot exclusions;
+`targets.include` alone is not a snapshot-size control. Keep historical outputs,
+downloaded trees, and unrelated experimental copies outside the selected root.
+Estimate multiplication by proof attempts and witness candidates, and run
+storage readiness before dispatch. Reuse hash-matching unchanged evidence,
+not broad duplicate runs. Budget failure is a visible blocker, not permission
+to drop a source bridge, weaken a comparison, or delete unique proof evidence.

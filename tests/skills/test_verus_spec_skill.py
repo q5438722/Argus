@@ -28,6 +28,15 @@ CHINESE_REVIEWS = {
         for role, skill in ROLE_SKILLS.items()
     },
 }
+TRUST_BOUNDARY_REFERENCES = (
+    "references/trust-boundaries/partial-eq.md",
+    "references/trust-boundaries/partial-eq.zh-CN.md",
+)
+SPEC_ABSTRACTION_REFERENCES = (
+    "references/spec-abstraction-integration.md",
+    "references/spec-abstraction-integration.zh-CN.md",
+)
+SUPPORTING_REFERENCES = TRUST_BOUNDARY_REFERENCES + SPEC_ABSTRACTION_REFERENCES
 BASE_ROLE_GUIDES = {
     "manager": "manager/software-project-grounding.md",
     "planner": "planner/software-project-grounding.md",
@@ -126,6 +135,7 @@ def test_verus_skills_are_software_scoped(tmp_path: Path, vertical: str) -> None
     assert skills.isdisjoint(written)
     assert not any((tmp_path / skill).exists() for skill in skills)
     assert not any((tmp_path / review).exists() for review in CHINESE_REVIEWS.values())
+    assert not any((tmp_path / reference).exists() for reference in SUPPORTING_REFERENCES)
 
 
 @pytest.mark.parametrize("role", [*ROLE_SKILLS, "self"])
@@ -164,6 +174,11 @@ def test_each_role_gets_own_verus_skill_and_shared_contract(
         assert (vertical_dir / review).read_text(encoding="utf-8") == dict(
             iter_context_skill_assets("software")
         )[review]
+    for reference in SUPPORTING_REFERENCES:
+        assert written[reference] is True
+        assert (vertical_dir / reference).read_text(encoding="utf-8") == dict(
+            iter_context_skill_assets("software")
+        )[reference]
 
 
 def test_seeded_role_routing_and_bilingual_navigation_links_resolve(tmp_path: Path) -> None:
@@ -174,9 +189,11 @@ def test_seeded_role_routing_and_bilingual_navigation_links_resolve(tmp_path: Pa
             guide.read_text(encoding="utf-8")
         )
         assert (tmp_path / ROLE_SKILLS[role]).is_file()
-    for relative in (*CHINESE_REVIEWS, *CHINESE_REVIEWS.values()):
+    for relative in (*CHINESE_REVIEWS, *CHINESE_REVIEWS.values(), *SUPPORTING_REFERENCES):
         path = tmp_path / relative
         for target in re.findall(r"\[[^\]]+\]\(([^)]+)\)", path.read_text(encoding="utf-8")):
+            if target.startswith(("https://", "http://")):
+                continue
             resolved = (path.parent / target).resolve()
             assert resolved.is_relative_to(tmp_path.resolve())
             assert resolved.is_file(), (relative, target)
@@ -204,6 +221,7 @@ def test_cli_exports_all_verus_role_skills_only_for_decided_software_project(
 
     assert main(["--export-builtin-skills", str(target)]) == 0
     assert not any((target / skill).exists() for skill in CHINESE_REVIEWS)
+    assert not any((target / reference).exists() for reference in SUPPORTING_REFERENCES)
     capsys.readouterr()
 
     persist_vertical(target.parent, "software")
@@ -217,3 +235,124 @@ def test_cli_exports_all_verus_role_skills_only_for_decided_software_project(
         assert (target / review).read_text(encoding="utf-8") == dict(
             iter_context_skill_assets("software")
         )[review]
+    for reference in SUPPORTING_REFERENCES:
+        assert (target / reference).read_text(encoding="utf-8") == dict(
+            iter_context_skill_assets("software")
+        )[reference]
+
+
+@pytest.mark.parametrize("skill", CHINESE_REVIEWS)
+def test_storage_policy_is_required_in_shared_and_each_own_skill(skill: str) -> None:
+    english = dict(iter_vertical_skill_texts("software"))[skill]
+    chinese = dict(iter_context_skill_assets("software"))[CHINESE_REVIEWS[skill]]
+    assert "storage-policy.json" in english
+    assert "storage-policy.json" in chinese
+    assert "storage" in english.lower()
+    assert "存储" in chinese
+
+
+@pytest.mark.parametrize("skill", CHINESE_REVIEWS)
+def test_partial_eq_boundary_reaches_shared_and_each_own_skill(skill: str) -> None:
+    texts = dict(iter_vertical_skill_texts("software"))
+    assets = dict(iter_context_skill_assets("software"))
+    for text in (texts[skill], assets[CHINESE_REVIEWS[skill]]):
+        assert "TB-PARTIAL-EQ" in text
+        assert "trust_boundaries/TB-PARTIAL-EQ.md" in text
+        assert "obeys_eq_spec()" in text
+        assert "trust-boundaries/partial-eq" in text
+        assert "conditional-posts-v2" in text
+        assert "T::obeys_eq_spec() ==>" in text
+        assert "if needed" in text.lower() or "如果有需要" in text
+
+
+@pytest.mark.parametrize("reference", SUPPORTING_REFERENCES)
+def test_supporting_references_seed_as_assets_and_preserve_local_edits(
+    tmp_path: Path, reference: str
+) -> None:
+    assert reference not in dict(iter_vertical_skill_texts("software"))
+    assert reference not in dict(iter_builtin_skill_texts())
+    asset = dict(iter_context_skill_assets("software"))[reference]
+    assert asset == (vertical_skill_source_path("software") / reference).read_text(
+        encoding="utf-8"
+    )
+    written = seed_context_skills(tmp_path, "software")
+    path = tmp_path / reference
+    assert written[reference] is True
+    assert path.read_text(encoding="utf-8") == asset
+    edited = asset + "\nLocal reference interpretation.\n"
+    path.write_text(edited, encoding="utf-8")
+    assert seed_context_skills(tmp_path, "software")[reference] is False
+    assert path.read_text(encoding="utf-8") == edited
+
+
+@pytest.mark.parametrize("skill", CHINESE_REVIEWS)
+def test_abstraction_integration_reaches_shared_and_each_own_skill(skill: str) -> None:
+    english = dict(iter_vertical_skill_texts("software"))[skill]
+    chinese = dict(iter_context_skill_assets("software"))[CHINESE_REVIEWS[skill]]
+    assert "spec-abstraction-integration.md)" in english
+    assert "spec-abstraction-integration.zh-CN.md)" in chinese
+    for text in (english, chinese):
+        assert "constructor" in text
+        assert "consumer" in text
+
+
+def test_abstraction_reference_keeps_semantic_connections_and_proof_boundaries() -> None:
+    assets = dict(iter_context_skill_assets("software"))
+    english = " ".join(assets[SPEC_ABSTRACTION_REFERENCES[0]].split())
+    for requirement in (
+        "existing specification protocol",
+        "`Seq<Self::Item>`",
+        "view-level uniqueness",
+        "constructor -> consumer -> observer",
+        "constructor-only",
+        "`old`/`final`",
+        "zero-UF",
+        "repository's existing test suite",
+        "do not replace either required proof track",
+    ):
+        assert requirement in english
+    chinese = assets[SPEC_ABSTRACTION_REFERENCES[1]]
+    for requirement in (
+        "`Seq<Self::Item>`",
+        "constructor -> consumer -> observer",
+        "constructor-only",
+        "`old`/`final`",
+        "zero-UF",
+        "不能替代任一必要证明链",
+    ):
+        assert requirement in chinese
+
+
+def test_partial_eq_policy_uses_optional_conditional_posts() -> None:
+    assets = dict(iter_context_skill_assets("software"))
+    for reference in TRUST_BOUNDARY_REFERENCES:
+        text = assets[reference]
+        assert "<T as vstd::std_specs::cmp::PartialEqSpec<U>>::obeys_eq_spec()" in text
+        assert "trust_boundaries/TB-PARTIAL-EQ.md" in text
+        assert "conditional-posts-v2" in text
+        assert "verified under TB-PARTIAL-EQ (conditional-posts-v2)" in text
+        assert "UNKNOWN" in text
+        example = re.search(r"```rust\nensures\n(.*?)```", text, re.DOTALL)
+        assert example is not None
+        guarded = example.group(1)
+        assert guarded.count(
+            "<T as vstd::std_specs::cmp::PartialEqSpec<U>>::obeys_eq_spec() ==>"
+        ) == 1
+        assert all(f"&&& P{index}" in guarded for index in (1, 2, 3))
+        assert guarded.strip().endswith("},")
+        assert "requires" not in guarded
+    english = " ".join(assets[TRUST_BOUNDARY_REFERENCES[0]].split())
+    for requirement in (
+        "If needed",
+        "all of that function's postconditions",
+        "Do not add B as an API precondition",
+        "not a condition on whether the API may be called",
+        "separate from `issues/` and proof files",
+        "never transfer the adapter's premise into the API contract",
+        "remove `B` preconditions introduced solely by the old policy",
+        "Do not assume the target postcondition",
+        "Old `UNKNOWN`/failed runs do not become passes",
+    ):
+        assert requirement in english
+    assert "the admitted verification domain assumes" not in english
+    assert "纳入验证的类型实例统一假设" not in assets[TRUST_BOUNDARY_REFERENCES[1]]

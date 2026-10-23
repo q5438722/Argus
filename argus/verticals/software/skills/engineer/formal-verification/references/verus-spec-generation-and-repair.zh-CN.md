@@ -27,7 +27,51 @@ Manager 范围和 Planner 的子模块/依赖图。
    若有具体限制无法闭合，保留尝试并报告 blocker；
    不得标记 API 完成，也不能静默改变 Verus 的可信基础。
 
+## 实现可观察协议，而不只是元数据
+
+遵循[抽象接入参考](../../../references/spec-abstraction-integration.zh-CN.md)。
+实现足够的既有规格接口，把 constructor 后置接到 consumer 使用的值和状态转换。
+Iterator 通过标准剩余序列建模实际返回的 item；仅展平源内容并没有规定这些 item。
+用已有借用机制保留可变 item 的初始内容、最终写回与未影响区域的 frame。
+不能仅凭构造时等式，就假定消费后辅助 observer 仍等于标准状态。
+必要 helper 要有源码依据并接通语义；这不放宽明确的 zero-UF 要求，
+也不授权新增可信假设。
+在仓库已有验证测试中加入使用真实合同的有界客户端，
+覆盖消费和适用的边界/写回情况。
+
+## 编码已批准的相等比较边界
+
+遵循 [TB-PARTIAL-EQ](../../../references/trust-boundaries/partial-eq.zh-CN.md)
+的 **conditional-posts-v2**，写入 `trust_boundaries/TB-PARTIAL-EQ.md`。
+**如果有需要**，把整个后置集合而非仅返回关系放在
+`T::obeys_eq_spec() ==>` 右侧。移除仅由旧规则给 API 添加的 B 前置，
+保留原安全前提、签名、可执行体及无关函数。
+不统一假设 B 来证明条件合同；显式区分 analysis-only 适配入口，
+不把其分析前提加回 API，也不声称无条件确定性。
+检查生成比较/reexecute，并按版本保留旧证据。guard 内的内容和状态仍须证明，
+不假设目标答案或改写固定 vstd。
+
 ## 提出 issue，而不是静默修改 implementation
+
+遇到已复现的不支持 Rust／验证器 feature，遵循
+[任务本地 Verus Skill](../../../references/verus-campaign-local-toolchain.zh-CN.md)：
+在本任务中从固定 commit 派生，构建匹配 vstd，保留 patch 和二进制来源，
+所有相关结果明确标注为本地工具链结果；不修改共享官方工具链。
+
+回调 API 遵循[回调 triage](../../../references/verus-callback-api-triage.zh-CN.md)。
+能够 sound 地生成就生成；有界忠实尝试后仍需要大量未支持回调语义时，
+保留候选和失败并登记 callback-support local skip，继续其他 API。
+不能缩小回调域，也不能把跳过计为完成。
+
+遵循[API 后置直接展开](../../../references/verus-inline-api-postconditions.zh-CN.md)：
+在真实 API 的 `ensures` 展开整份 post 包装，保留全部 guard，并展示实际绑定，
+不能只证明模型谓词。产物使用指定的[统一根目录](../../../references/spec-artifact-workspace.zh-CN.md)，
+旧兼容链接仅用于历史引用，不作为新产物根。
+
+隐私阻碍 correctness 时，使用[仅用于证明的字段可见性 Skill](../../../references/verus-proof-only-field-visibility.zh-CN.md)。
+只在隔离副本公开字段，保留执行正文并记录构建如何使用该副本。
+内部证明可访问这些字段，正式 spec 与 completeness 则用原类型/view，不依赖临时字段。
+这一可见性权限已获批准，但不允许发明不变量、以无对应的镜像替代目标或改其他可见性。
 
 修改 implementation 前，在 `issues/` 中提出 issue，
 包括源码证明副本的可执行重写或 verifier workaround。
@@ -64,3 +108,14 @@ review 确认后才能标记为已确认缺陷。`UNKNOWN` 本身不是上游 bu
 客户端、原生测试与负控可以补充发现语义问题，但不能替代任一必要维度。
 先检查受影响范围，复用未变化构建，保留准确诊断，
 不要反复跑未改变的大套件，也不能从某个子模块通过推导全模块完成。
+
+## 复制输入前检查存储
+
+每次 discover/analyze/reexecute 和 witness 批次通过项目的 guarded checker
+入口及 `storage-policy.json`；保持原 selector、verifier 参数、合法域和完整依赖。
+检查真实 snapshot manifest，而不只看 `targets.include`；
+排除全部旧输出、缓存和无关下载源码树，新输出与输入隔离。
+超限明确记录并停止批次，不能换用裸 specdet 绕过。开工检查不等于验证通过。
+保留唯一 spec/proof/query/review receipt；
+经操作者授权并验证可恢复的重复输入才可被归档替代，原 manifest 不变。
+这不授权改写 implementation。

@@ -104,6 +104,19 @@ Typechecking, source review, native tests, and client proofs do not substitute
 for either requirement. Failed or inconclusive results feed repair; accept an
 API only when both dimensions pass for the same candidate.
 
+The dedicated
+[trust-boundary reference](../argus/verticals/software/skills/references/trust-boundaries/partial-eq.md)
+records `TB-PARTIAL-EQ`, revision **conditional-posts-v2**: **if needed**, put
+all postconditions of an affected function on the right of
+`T::obeys_eq_spec() ==>`. Do not assume the flag globally or add it as an API
+precondition; unrelated functions and original Rust calling bounds remain
+unchanged. Projects keep `trust_boundaries/TB-PARTIAL-EQ.md` separately and link
+the guarded contracts, original-domain source proofs and explicitly conditional
+completeness claims. Legal calls with a false guard receive no guarantee from
+those postconditions. Old premise-only successes require migration review, not
+silent relabeling. Missing source bridges and hidden assumptions remain blockers.
+These bilingual references seed as supporting assets, not additional Skills.
+
 Implementation changes must first be raised as issues and receive strict
 independent review, including executable rewrites in proof copies. Canonical
 Rust/std or Verus changes also need explicit operator authorization. Demonstrated
@@ -127,6 +140,17 @@ as `references/` assets, not additional independently enumerated Skills.
 The fixed verifier baseline and existing `old`/`final` borrowing guidance remain
 in the shared contract. Project-specific paths, versions, counts, and progress
 remain in the project.
+
+The bilingual
+[abstraction-integration reference](../argus/verticals/software/skills/references/spec-abstraction-integration.md)
+and its [Chinese version](../argus/verticals/software/skills/references/spec-abstraction-integration.zh-CN.md)
+teach reuse of existing specification protocols, observable item/state modeling,
+and constructor/consumer/observer composition. Manager requires usable
+integration, Planner schedules the connections, Engineer implements them and
+repository clients, and Reviewer independently checks their semantic reach.
+These are software-scoped role Skill duties, not additions to every role's
+general prompt or a new runtime stage. The references seed as supporting assets;
+client checks supplement, not replace, correctness and completeness proofs.
 
 ## Read-only Reviewer validation
 
